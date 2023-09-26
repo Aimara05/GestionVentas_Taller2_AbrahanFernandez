@@ -17,6 +17,7 @@ namespace CapaPresentacion.Usuarios
 {
     public partial class FormUsu : Form
     {
+        private int filaSeleccionada = -1; // variable para mantener el indice de mi fila seleccionada en mi dgv
         public FormUsu()
         {
             InitializeComponent();
@@ -60,26 +61,10 @@ namespace CapaPresentacion.Usuarios
 
         private void dataGridUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-           /* if (dataGridUsuario.Columns[e.ColumnIndex].Name == "btnSeleccionar")
+            if (dataGridUsuario.Columns[e.ColumnIndex].Name == "btnSeleccionar")
             {
-                int indice = e.RowIndex;
-
-                if(indice >= 0)
-                {
-                    EditarUsuario edit = new EditarUsuario();
-                    edit.TBdni.Text = dataGridUsuario.Rows[indice].Cells["dni"].Value.ToString();
-                    edit.TBNombree.Text = dataGridUsuario.Rows[indice].Cells["nombre"].Value.ToString();
-                    edit.TBapellido.Text = dataGridUsuario.Rows[indice].Cells["apellido"].Value.ToString();
-                    edit.txtTelefono.Text = dataGridUsuario.Rows[indice].Cells["telefono"].Value.ToString();
-                    edit.txtDomicilio.Text = dataGridUsuario.Rows[indice].Cells["Domicilio"].Value.ToString();
-                    edit.textBox1.Text = dataGridUsuario.Rows[indice].Cells["Correo"].Value.ToString();
-                    edit.TBusuario.Text = dataGridUsuario.Rows[indice].Cells["usuario"].Value.ToString();
-
-
-                    abrirFormularios(edit);
-                }
-
-            } */
+                filaSeleccionada = e.RowIndex;                             
+            } 
         } 
 
         private void btnAltausuario_Click(object sender, EventArgs e)
@@ -92,7 +77,25 @@ namespace CapaPresentacion.Usuarios
 
         private void btnEditarUsuario_Click(object sender, EventArgs e)
         {
-            abrirFormularios(new Usuarios.EditarUsuario());
+            if (filaSeleccionada >= 0)
+            {
+                EditarUsuario edit = new EditarUsuario();
+                edit.TBdni.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["dni"].Value.ToString();
+                edit.TBNombree.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["nombre"].Value.ToString();
+                edit.TBapellido.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["apellido"].Value.ToString();
+                edit.txtTelefono.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["telefono"].Value.ToString();
+                edit.txtDomicilio.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["Domicilio"].Value.ToString();
+                edit.textBox1.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["Correo"].Value.ToString();
+                edit.TBusuario.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["usuario"].Value.ToString();
+
+
+                abrirFormularios(edit);
+            }
+            else
+            {
+                MessageBox.Show("Por favor, seleccione un usuario antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
         }
 
         private void btnRefresh_Click(object sender, EventArgs e)
