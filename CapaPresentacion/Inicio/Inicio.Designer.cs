@@ -93,7 +93,7 @@
             this.panelBotones.Location = new System.Drawing.Point(0, 170);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelBotones.Size = new System.Drawing.Size(151, 445);
+            this.panelBotones.Size = new System.Drawing.Size(151, 538);
             this.panelBotones.TabIndex = 1;
             // 
             // btnSeguridad
@@ -113,6 +113,7 @@
             this.btnSeguridad.TabIndex = 13;
             this.btnSeguridad.Text = "Seguridad";
             this.btnSeguridad.UseVisualStyleBackColor = false;
+            this.btnSeguridad.Click += new System.EventHandler(this.btnSeguridad_Click);
             // 
             // btnReportes
             // 
@@ -344,7 +345,7 @@
             this.lblUsuario.AutoSize = true;
             this.lblUsuario.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUsuario.Location = new System.Drawing.Point(12, 15);
+            this.lblUsuario.Location = new System.Drawing.Point(42, 23);
             this.lblUsuario.Name = "lblUsuario";
             this.lblUsuario.Size = new System.Drawing.Size(67, 17);
             this.lblUsuario.TabIndex = 3;
@@ -366,9 +367,9 @@
             // picAvatar
             // 
             this.picAvatar.Image = global::CapaPresentacion.Properties.Resources.pqueño;
-            this.picAvatar.Location = new System.Drawing.Point(29, 35);
+            this.picAvatar.Location = new System.Drawing.Point(29, 43);
             this.picAvatar.Name = "picAvatar";
-            this.picAvatar.Size = new System.Drawing.Size(100, 105);
+            this.picAvatar.Size = new System.Drawing.Size(100, 95);
             this.picAvatar.TabIndex = 4;
             this.picAvatar.TabStop = false;
             // 
@@ -420,15 +421,16 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 35);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 615);
+            this.panel2.Size = new System.Drawing.Size(151, 708);
             this.panel2.TabIndex = 4;
             // 
             // panelContenedorForms
             // 
             this.panelContenedorForms.BackColor = System.Drawing.Color.DarkGray;
+            this.panelContenedorForms.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedorForms.Location = new System.Drawing.Point(151, 131);
             this.panelContenedorForms.Name = "panelContenedorForms";
-            this.panelContenedorForms.Size = new System.Drawing.Size(1089, 519);
+            this.panelContenedorForms.Size = new System.Drawing.Size(1149, 612);
             this.panelContenedorForms.TabIndex = 5;
             this.panelContenedorForms.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorForms_Paint);
             // 
@@ -501,7 +503,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1300, 650);
+            this.ClientSize = new System.Drawing.Size(1300, 743);
             this.Controls.Add(this.panelContenedorForms);
             this.Controls.Add(this.panelTitulo);
             this.Controls.Add(this.panel2);

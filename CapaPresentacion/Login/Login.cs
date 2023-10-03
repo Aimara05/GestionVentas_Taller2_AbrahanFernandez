@@ -62,13 +62,13 @@ namespace CapaPresentacion
             {
                 if (ousuario != null) // validar si recibe informacion  la variable osuario
                 {
-                    if (ousuario.oRol.idRol == 1)
+                    if (ousuario.oRol.idRol == 1) // administrador
                     {
                         Inicio form = new Inicio(ousuario); //instancia
                         form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
                         form.lblRol.Text = ousuario.oRol.descripcion;
 
-                        /*form.btnUsuarios.Visible = false*/
+                        form.btnUsuarios.Visible = false;
                         form.btnRegistrarVent.Visible = false;
                         form.btnSeguridad.Visible = false;
 
@@ -77,26 +77,10 @@ namespace CapaPresentacion
 
                         form.FormClosing += frm_clossing; //cuando estamos cerrando el formulario tome el evento
 
-                    }
-                    else if (ousuario.oRol.idRol == 2)
+                    } 
+                    else if (ousuario.oRol.idRol == 2) //superAdmin
                     {
-                        Inicio form = new Inicio(ousuario);
-                        form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
-                        form.lblRol.Text = ousuario.oRol.descripcion;
 
-                        form.btnUsuarios.Visible = false;
-                        form.btnCategorias.Visible = false;
-
-                        form.btnReportes.Visible = false;
-                        form.btnSeguridad.Visible = false;
-
-                        form.Show(); //se muestre el formulario
-                        this.Hide();    //que se oculte el login
-
-                        form.FormClosing += frm_clossing;
-                    }
-                    else if (ousuario.oRol.idRol == 3)
-                    {
                         Inicio form = new Inicio(ousuario);
                         form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
                         form.lblRol.Text = ousuario.oRol.descripcion;
@@ -108,6 +92,25 @@ namespace CapaPresentacion
                         form.btnVentas.Visible = false;
                         form.btnReportes.Visible = false;
                         form.btnVentas.Visible = false;
+
+                        form.Show(); //se muestre el formulario
+                        this.Hide();    //que se oculte el login
+
+                        form.FormClosing += frm_clossing;
+
+                        
+                    }
+                    else if (ousuario.oRol.idRol == 3) // vendedor
+                    {
+                        Inicio form = new Inicio(ousuario);
+                        form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
+                        form.lblRol.Text = ousuario.oRol.descripcion;
+
+                        form.btnUsuarios.Visible = false;
+                        form.btnCategorias.Visible = false;
+
+                        form.btnReportes.Visible = false;
+                        form.btnSeguridad.Visible = false;
 
                         form.Show(); //se muestre el formulario
                         this.Hide();    //que se oculte el login

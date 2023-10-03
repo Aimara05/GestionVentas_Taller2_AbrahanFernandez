@@ -66,7 +66,7 @@ namespace CapaDatos
 
 
 
-
+        //Registrar
          public int Registrar(USUARIO obj, out string mensaje)
          {
              int idusuariogenerado = 0;
@@ -142,7 +142,7 @@ namespace CapaDatos
                      cmd.Parameters.AddWithValue("estado", obj.estado);
                      //parametros de salida
                      cmd.Parameters.Add("respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                     cmd.Parameters.Add("mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                     cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
 
                      cmd.CommandType = CommandType.StoredProcedure;
 
@@ -185,7 +185,7 @@ namespace CapaDatos
 
                      //parametros de salida
                      cmd.Parameters.Add("respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
-                     cmd.Parameters.Add("mensaje", SqlDbType.VarChar).Direction = ParameterDirection.Output;
+                     cmd.Parameters.Add("mensaje", SqlDbType.VarChar,500).Direction = ParameterDirection.Output;
 
                      cmd.CommandType = CommandType.StoredProcedure;
 
@@ -208,6 +208,53 @@ namespace CapaDatos
 
              }
 
-     }
+        public bool Alta(USUARIO obj, out string mensaje)
+        {
+            bool respuesta = false;
+            mensaje = String.Empty;
+
+            try
+            {
+
+                using (SqlConnection oconexion = new SqlConnection(Conexion.cadena))
+                {
+
+
+
+                    SqlCommand cmd = new SqlCommand("SP_ALTAUSUARIO", oconexion);
+                    //parametros de entrada del proc almacenado
+                    cmd.Parameters.AddWithValue("idUsuario", obj.idUsuario);
+
+                    //parametros de salida
+                    cmd.Parameters.Add("respuesta", SqlDbType.Int).Direction = ParameterDirection.Output;
+                    cmd.Parameters.Add("mensaje", SqlDbType.VarChar, 500).Direction = ParameterDirection.Output;
+
+                    cmd.CommandType = CommandType.StoredProcedure;
+
+                    oconexion.Open();
+
+                    cmd.ExecuteNonQuery();
+
+                    respuesta = Convert.ToBoolean(cmd.Parameters["respuesta"].Value);
+                    mensaje = cmd.Parameters["mensaje"].Value.ToString();
+
+
+                }
+
+            }
+            catch (Exception ex)
+            {
+                respuesta = false;
+                mensaje = ex.Message;
+            }
+
+            return respuesta;
+
         }
+
+
+    }
+
+
+}
     

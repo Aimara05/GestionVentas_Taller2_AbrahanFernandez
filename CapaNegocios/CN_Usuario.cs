@@ -24,7 +24,7 @@ namespace CapaNegocios
             mensaje = string.Empty;
 
             //validaciones
-            if (obj.nombre == "")
+           /* if (obj.nombre == "")
             {
                 mensaje += "Es necesario que ingrese el nombre del usuario \n";
             }
@@ -48,7 +48,7 @@ namespace CapaNegocios
             if (obj.telefono == "")
             {
                 mensaje += "Es necesario que ingrese el telefono del usuario\n";
-            }
+            }*/
 
             if (mensaje != string.Empty)
             {
@@ -67,32 +67,7 @@ namespace CapaNegocios
         {
             mensaje = string.Empty;
 
-            //validaciones
-            if (obj.nombre == "")
-            {
-                mensaje += "Es necesario que ingrese el nombre del usuario";
-            }
-
-            if (obj.documento == "")
-            {
-                mensaje += "Es necesario que ingrese el documento del usuario\n";
-            }
-            if (obj.usuario == "")
-            {
-                mensaje += "Es necesario que ingrese el usuario\n";
-            }
-            if (obj.clave == "")
-            {
-                mensaje += "Es necesario que ingrese la clave del usuario\n";
-            }
-            if (obj.direccion == "")
-            {
-                mensaje += "Es necesario que ingrese la direccion del usuario\n";
-            }
-            if (obj.telefono == "")
-            {
-                mensaje += "Es necesario que ingrese el telefono del usuario\n";
-            }
+          
 
             if (mensaje != string.Empty)
             {
@@ -108,6 +83,11 @@ namespace CapaNegocios
         public bool Eliminar(USUARIO obj, out string mensaje)
         {
             return objcd_usuario.Eliminar(obj, out mensaje);
+        }
+
+        public bool Alta(USUARIO obj, out string mensaje)
+        {
+            return objcd_usuario.Alta(obj, out mensaje);
         }
 
     }

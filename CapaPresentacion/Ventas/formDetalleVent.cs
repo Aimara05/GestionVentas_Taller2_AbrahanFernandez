@@ -16,5 +16,20 @@ namespace CapaPresentacion.Ventas
         {
             InitializeComponent();
         }
+
+        private void lblRegistrar_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void formDetalleVent_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lblDni_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

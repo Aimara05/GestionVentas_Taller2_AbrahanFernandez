@@ -1,5 +1,6 @@
 ﻿using CapaEntidad;
 using CapaNegocios;
+using CapaPresentacion.Ventas;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -36,7 +37,7 @@ namespace CapaPresentacion
 
 
         //Metodos para menú desplegable.
-        private void personalizarDiseño()
+       public void personalizarDiseño()
         {
             panelDesplegableArt.Visible = false;
             panelDesplegableVent.Visible = false;
@@ -169,7 +170,17 @@ namespace CapaPresentacion
         //Metodo del botón Productos.
         private void BProductos_Click(object sender, EventArgs e)
         {
-            abrirFormularios((Button)sender, new FormProducto());
+          FormProducto formprod = new FormProducto();
+            
+          if(usuarioActual.oRol.idRol == 3)
+          {
+              formprod.btnAgregarProd.Visible = false;
+                formprod.btnEditarProd.Visible = false;
+                formprod.btnAltaProd.Visible = false;
+                formprod.btnBajaUsuario.Visible = false;
+          }
+
+            abrirFormularios((Button)sender, formprod);
 
             ocultarSubmenu();
         }
@@ -190,7 +201,7 @@ namespace CapaPresentacion
               if(usuarioActual.oRol.idRol == 3)
               {
                   formClientes.btnBajaUsuario.Visible = false;
-                  formClientes.btnEditarCliente.Visible = false;
+                 
               }
               abrirFormularios((Button)sender, formClientes);
 
@@ -215,7 +226,13 @@ namespace CapaPresentacion
 
         private void btnDetalleVent_Click(object sender, EventArgs e)
         {
-            abrirFormularios((Button)sender, new Ventas.formDetalleVent());
+            formDetalleVent detalle = new formDetalleVent();
+
+            if(usuarioActual.oRol.idRol == 3)
+            {
+                detalle.GbxUsuario.Visible = false;
+            }
+            abrirFormularios((Button)sender, detalle);
             ocultarSubmenu();
         }
 
@@ -229,26 +246,17 @@ namespace CapaPresentacion
             mostrarSubmenuArt(panelDesplegableArt);
         }
 
+        private void btnSeguridad_Click(object sender, EventArgs e)
+        {
+            abrirFormularios((Button)sender, new Seguridad.FormSeguridad());
+        }
+        
+        private void panelContenedorForms_Paint(object sender, PaintEventArgs e)
+            {
+          
+        }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    private void panelContenedorForms_Paint(object sender, PaintEventArgs e)
-    {
-
-    }
-
+       
     }
 }
     

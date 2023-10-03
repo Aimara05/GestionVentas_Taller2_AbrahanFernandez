@@ -28,329 +28,360 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.LCategoriaa = new System.Windows.Forms.Label();
-            this.PFormUsuario = new System.Windows.Forms.Panel();
-            this.TIdCategoria = new System.Windows.Forms.TextBox();
-            this.LTitulo = new System.Windows.Forms.Label();
-            this.BEliminar = new System.Windows.Forms.Button();
-            this.LCodCategoria = new System.Windows.Forms.Label();
-            this.BEditar = new System.Windows.Forms.Button();
-            this.TBdni = new System.Windows.Forms.TextBox();
-            this.BGuardar = new System.Windows.Forms.Button();
-            this.LNombree = new System.Windows.Forms.Label();
-            this.CBestado = new System.Windows.Forms.ComboBox();
-            this.TBNombree = new System.Windows.Forms.TextBox();
-            this.Lestado = new System.Windows.Forms.Label();
-            this.LDescripcion = new System.Windows.Forms.Label();
-            this.TBapellido = new System.Windows.Forms.TextBox();
-            this.dataGridProducto = new System.Windows.Forms.DataGridView();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            this.panelTopCateg = new System.Windows.Forms.Panel();
+            this.panelLogoTit = new System.Windows.Forms.Panel();
+            this.lblTituloCateg = new System.Windows.Forms.Label();
+            this.panelBuscador = new System.Windows.Forms.Panel();
+            this.txtbuscarPor = new System.Windows.Forms.TextBox();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.cboBusqueda = new System.Windows.Forms.ComboBox();
+            this.panelRigtUsuario = new System.Windows.Forms.Panel();
+            this.dataGridUsuario = new System.Windows.Forms.DataGridView();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_categ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCateg = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PFormUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducto)).BeginInit();
+            this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnAltaUsu = new System.Windows.Forms.Button();
+            this.btnBajaCateg = new System.Windows.Forms.Button();
+            this.btnEditarCateg = new System.Windows.Forms.Button();
+            this.btnAltaCateg = new System.Windows.Forms.Button();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.picUsuario = new System.Windows.Forms.PictureBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.panelTopCateg.SuspendLayout();
+            this.panelLogoTit.SuspendLayout();
+            this.panelBuscador.SuspendLayout();
+            this.panelRigtUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuario)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             this.SuspendLayout();
             // 
-            // LCategoriaa
+            // panelTopCateg
             // 
-            this.LCategoriaa.BackColor = System.Drawing.Color.White;
-            this.LCategoriaa.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LCategoriaa.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LCategoriaa.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCategoriaa.Location = new System.Drawing.Point(0, 0);
-            this.LCategoriaa.Name = "LCategoriaa";
-            this.LCategoriaa.Size = new System.Drawing.Size(630, 47);
-            this.LCategoriaa.TabIndex = 27;
-            this.LCategoriaa.Text = "Lista de Categorías:";
-            this.LCategoriaa.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelTopCateg.BackColor = System.Drawing.Color.LightGray;
+            this.panelTopCateg.Controls.Add(this.panelLogoTit);
+            this.panelTopCateg.Controls.Add(this.panelBuscador);
+            this.panelTopCateg.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopCateg.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelTopCateg.Location = new System.Drawing.Point(0, 0);
+            this.panelTopCateg.Name = "panelTopCateg";
+            this.panelTopCateg.Size = new System.Drawing.Size(799, 107);
+            this.panelTopCateg.TabIndex = 1;
             // 
-            // PFormUsuario
+            // panelLogoTit
             // 
-            this.PFormUsuario.AutoScroll = true;
-            this.PFormUsuario.BackColor = System.Drawing.Color.White;
-            this.PFormUsuario.Controls.Add(this.TIdCategoria);
-            this.PFormUsuario.Controls.Add(this.LTitulo);
-            this.PFormUsuario.Controls.Add(this.BEliminar);
-            this.PFormUsuario.Controls.Add(this.LCodCategoria);
-            this.PFormUsuario.Controls.Add(this.BEditar);
-            this.PFormUsuario.Controls.Add(this.TBdni);
-            this.PFormUsuario.Controls.Add(this.BGuardar);
-            this.PFormUsuario.Controls.Add(this.LNombree);
-            this.PFormUsuario.Controls.Add(this.CBestado);
-            this.PFormUsuario.Controls.Add(this.TBNombree);
-            this.PFormUsuario.Controls.Add(this.Lestado);
-            this.PFormUsuario.Controls.Add(this.LDescripcion);
-            this.PFormUsuario.Controls.Add(this.TBapellido);
-            this.PFormUsuario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PFormUsuario.Location = new System.Drawing.Point(372, 47);
-            this.PFormUsuario.Name = "PFormUsuario";
-            this.PFormUsuario.Size = new System.Drawing.Size(258, 463);
-            this.PFormUsuario.TabIndex = 28;
+            this.panelLogoTit.Controls.Add(this.btnRefresh);
+            this.panelLogoTit.Controls.Add(this.lblTituloCateg);
+            this.panelLogoTit.Controls.Add(this.picUsuario);
+            this.panelLogoTit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelLogoTit.Location = new System.Drawing.Point(522, 0);
+            this.panelLogoTit.Name = "panelLogoTit";
+            this.panelLogoTit.Size = new System.Drawing.Size(277, 107);
+            this.panelLogoTit.TabIndex = 27;
             // 
-            // TIdCategoria
+            // lblTituloCateg
             // 
-            this.TIdCategoria.Location = new System.Drawing.Point(215, 39);
-            this.TIdCategoria.Name = "TIdCategoria";
-            this.TIdCategoria.Size = new System.Drawing.Size(31, 20);
-            this.TIdCategoria.TabIndex = 23;
-            this.TIdCategoria.Text = "0";
-            this.TIdCategoria.Visible = false;
+            this.lblTituloCateg.AutoSize = true;
+            this.lblTituloCateg.Location = new System.Drawing.Point(3, 41);
+            this.lblTituloCateg.Name = "lblTituloCateg";
+            this.lblTituloCateg.Size = new System.Drawing.Size(102, 25);
+            this.lblTituloCateg.TabIndex = 1;
+            this.lblTituloCateg.Text = "Categorías";
             // 
-            // LTitulo
+            // panelBuscador
             // 
-            this.LTitulo.AutoSize = true;
-            this.LTitulo.BackColor = System.Drawing.Color.White;
-            this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTitulo.Location = new System.Drawing.Point(36, 11);
-            this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(192, 25);
-            this.LTitulo.TabIndex = 22;
-            this.LTitulo.Text = "Detalle de Categoría";
+            this.panelBuscador.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscador.Controls.Add(this.btnBuscar);
+            this.panelBuscador.Controls.Add(this.txtbuscarPor);
+            this.panelBuscador.Controls.Add(this.txtBusqueda);
+            this.panelBuscador.Controls.Add(this.cboBusqueda);
+            this.panelBuscador.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelBuscador.Location = new System.Drawing.Point(0, 0);
+            this.panelBuscador.Name = "panelBuscador";
+            this.panelBuscador.Size = new System.Drawing.Size(425, 107);
+            this.panelBuscador.TabIndex = 26;
             // 
-            // BEliminar
+            // txtbuscarPor
             // 
-            this.BEliminar.BackColor = System.Drawing.Color.Silver;
-            this.BEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BEliminar.FlatAppearance.BorderSize = 0;
-            this.BEliminar.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEliminar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.BEliminar.Location = new System.Drawing.Point(20, 354);
-            this.BEliminar.Name = "BEliminar";
-            this.BEliminar.Size = new System.Drawing.Size(216, 39);
-            this.BEliminar.TabIndex = 21;
-            this.BEliminar.Text = "Eliminar";
-            this.BEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEliminar.UseVisualStyleBackColor = false;
+            this.txtbuscarPor.BackColor = System.Drawing.Color.LightGray;
+            this.txtbuscarPor.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.txtbuscarPor.Location = new System.Drawing.Point(11, 40);
+            this.txtbuscarPor.Name = "txtbuscarPor";
+            this.txtbuscarPor.Size = new System.Drawing.Size(106, 26);
+            this.txtbuscarPor.TabIndex = 25;
+            this.txtbuscarPor.Text = "Buscar por :";
             // 
-            // LCodCategoria
+            // txtBusqueda
             // 
-            this.LCodCategoria.AutoSize = true;
-            this.LCodCategoria.BackColor = System.Drawing.Color.White;
-            this.LCodCategoria.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCodCategoria.Location = new System.Drawing.Point(17, 47);
-            this.LCodCategoria.Name = "LCodCategoria";
-            this.LCodCategoria.Size = new System.Drawing.Size(94, 17);
-            this.LCodCategoria.TabIndex = 1;
-            this.LCodCategoria.Text = "Cod. categoría";
+            this.txtBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(247, 45);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(144, 25);
+            this.txtBusqueda.TabIndex = 28;
             // 
-            // BEditar
+            // cboBusqueda
             // 
-            this.BEditar.BackColor = System.Drawing.Color.Silver;
-            this.BEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BEditar.FlatAppearance.BorderSize = 0;
-            this.BEditar.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BEditar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.BEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEditar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.BEditar.Location = new System.Drawing.Point(20, 311);
-            this.BEditar.Name = "BEditar";
-            this.BEditar.Size = new System.Drawing.Size(216, 37);
-            this.BEditar.TabIndex = 20;
-            this.BEditar.Text = "Editar";
-            this.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEditar.UseVisualStyleBackColor = false;
+            this.cboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboBusqueda.FormattingEnabled = true;
+            this.cboBusqueda.Location = new System.Drawing.Point(123, 45);
+            this.cboBusqueda.Name = "cboBusqueda";
+            this.cboBusqueda.Size = new System.Drawing.Size(118, 25);
+            this.cboBusqueda.TabIndex = 27;
             // 
-            // TBdni
+            // panelRigtUsuario
             // 
-            this.TBdni.Location = new System.Drawing.Point(31, 67);
-            this.TBdni.Name = "TBdni";
-            this.TBdni.Size = new System.Drawing.Size(208, 20);
-            this.TBdni.TabIndex = 7;
+            this.panelRigtUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.panelRigtUsuario.Controls.Add(this.btnAltaUsu);
+            this.panelRigtUsuario.Controls.Add(this.btnBajaCateg);
+            this.panelRigtUsuario.Controls.Add(this.btnEditarCateg);
+            this.panelRigtUsuario.Controls.Add(this.btnAltaCateg);
+            this.panelRigtUsuario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRigtUsuario.Location = new System.Drawing.Point(596, 107);
+            this.panelRigtUsuario.Name = "panelRigtUsuario";
+            this.panelRigtUsuario.Size = new System.Drawing.Size(203, 403);
+            this.panelRigtUsuario.TabIndex = 3;
             // 
-            // BGuardar
+            // dataGridUsuario
             // 
-            this.BGuardar.BackColor = System.Drawing.Color.Silver;
-            this.BGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BGuardar.FlatAppearance.BorderSize = 0;
-            this.BGuardar.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardar.ForeColor = System.Drawing.Color.Black;
-            
-            this.BGuardar.Location = new System.Drawing.Point(21, 269);
-            this.BGuardar.Name = "BGuardar";
-            this.BGuardar.Size = new System.Drawing.Size(216, 36);
-            this.BGuardar.TabIndex = 19;
-            this.BGuardar.Text = "Guardar";
-            this.BGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BGuardar.UseVisualStyleBackColor = false;
-            // 
-            // LNombree
-            // 
-            this.LNombree.AutoSize = true;
-            this.LNombree.BackColor = System.Drawing.Color.White;
-            this.LNombree.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LNombree.Location = new System.Drawing.Point(18, 98);
-            this.LNombree.Name = "LNombree";
-            this.LNombree.Size = new System.Drawing.Size(57, 17);
-            this.LNombree.TabIndex = 2;
-            this.LNombree.Text = "Nombre";
-            // 
-            // CBestado
-            // 
-            this.CBestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBestado.FormattingEnabled = true;
-            this.CBestado.Location = new System.Drawing.Point(32, 231);
-            this.CBestado.Name = "CBestado";
-            this.CBestado.Size = new System.Drawing.Size(208, 21);
-            this.CBestado.TabIndex = 18;
-            // 
-            // TBNombree
-            // 
-            this.TBNombree.Location = new System.Drawing.Point(31, 118);
-            this.TBNombree.Name = "TBNombree";
-            this.TBNombree.Size = new System.Drawing.Size(208, 20);
-            this.TBNombree.TabIndex = 8;
-            // 
-            // Lestado
-            // 
-            this.Lestado.AutoSize = true;
-            this.Lestado.BackColor = System.Drawing.Color.White;
-            this.Lestado.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lestado.Location = new System.Drawing.Point(18, 211);
-            this.Lestado.Name = "Lestado";
-            this.Lestado.Size = new System.Drawing.Size(48, 17);
-            this.Lestado.TabIndex = 17;
-            this.Lestado.Text = "Estado";
-            // 
-            // LDescripcion
-            // 
-            this.LDescripcion.AutoSize = true;
-            this.LDescripcion.BackColor = System.Drawing.Color.White;
-            this.LDescripcion.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDescripcion.Location = new System.Drawing.Point(17, 148);
-            this.LDescripcion.Name = "LDescripcion";
-            this.LDescripcion.Size = new System.Drawing.Size(76, 17);
-            this.LDescripcion.TabIndex = 3;
-            this.LDescripcion.Text = "Descripción";
-            // 
-            // TBapellido
-            // 
-            this.TBapellido.Location = new System.Drawing.Point(31, 168);
-            this.TBapellido.Name = "TBapellido";
-            this.TBapellido.Size = new System.Drawing.Size(208, 20);
-            this.TBapellido.TabIndex = 9;
-            // 
-            // dataGridProducto
-            // 
-            this.dataGridProducto.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridUsuario.AllowUserToAddRows = false;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataGridUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
-            this.id_categ,
-            this.cod,
+            this.idCateg,
             this.nombre,
-            this.descripcion});
-            this.dataGridProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridProducto.Location = new System.Drawing.Point(0, 47);
-            this.dataGridProducto.MultiSelect = false;
-            this.dataGridProducto.Name = "dataGridProducto";
-            this.dataGridProducto.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridProducto.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridProducto.RowTemplate.Height = 28;
-            this.dataGridProducto.Size = new System.Drawing.Size(372, 463);
-            this.dataGridProducto.TabIndex = 29;
+            this.descripcion,
+            this.Estado});
+            this.dataGridUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridUsuario.Location = new System.Drawing.Point(0, 107);
+            this.dataGridUsuario.MultiSelect = false;
+            this.dataGridUsuario.Name = "dataGridUsuario";
+            this.dataGridUsuario.ReadOnly = true;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridUsuario.RowsDefaultCellStyle = dataGridViewCellStyle4;
+            this.dataGridUsuario.RowTemplate.Height = 28;
+            this.dataGridUsuario.Size = new System.Drawing.Size(596, 403);
+            this.dataGridUsuario.TabIndex = 27;
             // 
             // btnSeleccionar
             // 
             this.btnSeleccionar.HeaderText = "";
             this.btnSeleccionar.Name = "btnSeleccionar";
             this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 30;
+            this.btnSeleccionar.Width = 88;
             // 
-            // id_categ
+            // idCateg
             // 
-            this.id_categ.HeaderText = "id_Categoria";
-            this.id_categ.Name = "id_categ";
-            this.id_categ.ReadOnly = true;
-            this.id_categ.Visible = false;
-            // 
-            // cod
-            // 
-            this.cod.HeaderText = "Codigo ";
-            this.cod.Name = "cod";
-            this.cod.ReadOnly = true;
+            this.idCateg.HeaderText = "idCateg";
+            this.idCateg.Name = "idCateg";
+            this.idCateg.ReadOnly = true;
+            this.idCateg.Visible = false;
             // 
             // nombre
             // 
             this.nombre.HeaderText = "Nombre";
             this.nombre.Name = "nombre";
             this.nombre.ReadOnly = true;
+            this.nombre.Width = 87;
             // 
             // descripcion
             // 
-            this.descripcion.HeaderText = "Descripción";
+            this.descripcion.HeaderText = "Descripcion";
             this.descripcion.Name = "descripcion";
             this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 88;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 88;
+            // 
+            // btnAltaUsu
+            // 
+            this.btnAltaUsu.BackColor = System.Drawing.Color.LightGray;
+            this.btnAltaUsu.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAltaUsu.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAltaUsu.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAltaUsu.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnAltaUsu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaUsu.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaUsu.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAltaUsu.Image = global::CapaPresentacion.Properties.Resources.usuarios_alt1;
+            this.btnAltaUsu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAltaUsu.Location = new System.Drawing.Point(19, 239);
+            this.btnAltaUsu.Name = "btnAltaUsu";
+            this.btnAltaUsu.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAltaUsu.Size = new System.Drawing.Size(166, 49);
+            this.btnAltaUsu.TabIndex = 7;
+            this.btnAltaUsu.Text = "Alta Usuario";
+            this.btnAltaUsu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAltaUsu.UseVisualStyleBackColor = false;
+            // 
+            // btnBajaCateg
+            // 
+            this.btnBajaCateg.BackColor = System.Drawing.Color.LightGray;
+            this.btnBajaCateg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBajaCateg.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnBajaCateg.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnBajaCateg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnBajaCateg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaCateg.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBajaCateg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBajaCateg.Image = global::CapaPresentacion.Properties.Resources.papelera_xmark;
+            this.btnBajaCateg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBajaCateg.Location = new System.Drawing.Point(19, 173);
+            this.btnBajaCateg.Name = "btnBajaCateg";
+            this.btnBajaCateg.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnBajaCateg.Size = new System.Drawing.Size(166, 49);
+            this.btnBajaCateg.TabIndex = 5;
+            this.btnBajaCateg.Text = "Baja Categoría";
+            this.btnBajaCateg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBajaCateg.UseVisualStyleBackColor = false;
+            // 
+            // btnEditarCateg
+            // 
+            this.btnEditarCateg.BackColor = System.Drawing.Color.LightGray;
+            this.btnEditarCateg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarCateg.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEditarCateg.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnEditarCateg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnEditarCateg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarCateg.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarCateg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditarCateg.Image = global::CapaPresentacion.Properties.Resources.editar;
+            this.btnEditarCateg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarCateg.Location = new System.Drawing.Point(19, 102);
+            this.btnEditarCateg.Name = "btnEditarCateg";
+            this.btnEditarCateg.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnEditarCateg.Size = new System.Drawing.Size(167, 49);
+            this.btnEditarCateg.TabIndex = 6;
+            this.btnEditarCateg.Text = "Editar Categoría";
+            this.btnEditarCateg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditarCateg.UseVisualStyleBackColor = false;
+            // 
+            // btnAltaCateg
+            // 
+            this.btnAltaCateg.BackColor = System.Drawing.Color.LightGray;
+            this.btnAltaCateg.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAltaCateg.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAltaCateg.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAltaCateg.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnAltaCateg.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaCateg.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaCateg.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAltaCateg.Image = global::CapaPresentacion.Properties.Resources.paraArticulos;
+            this.btnAltaCateg.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAltaCateg.Location = new System.Drawing.Point(19, 36);
+            this.btnAltaCateg.Name = "btnAltaCateg";
+            this.btnAltaCateg.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAltaCateg.Size = new System.Drawing.Size(166, 49);
+            this.btnAltaCateg.TabIndex = 4;
+            this.btnAltaCateg.Text = "Añadir Categoría";
+            this.btnAltaCateg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAltaCateg.UseVisualStyleBackColor = false;
+            // 
+            // btnRefresh
+            // 
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = global::CapaPresentacion.Properties.Resources.recargar;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.Location = new System.Drawing.Point(111, 35);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 38);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // picUsuario
+            // 
+            this.picUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.lista;
+            this.picUsuario.Location = new System.Drawing.Point(176, 21);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 40, 0);
+            this.picUsuario.Size = new System.Drawing.Size(70, 71);
+            this.picUsuario.TabIndex = 0;
+            this.picUsuario.TabStop = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBuscar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.busqueda;
+            this.btnBuscar.Location = new System.Drawing.Point(397, 48);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(25, 22);
+            this.btnBuscar.TabIndex = 25;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
             // 
             // FormCategorias
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(630, 510);
-            this.Controls.Add(this.dataGridProducto);
-            this.Controls.Add(this.PFormUsuario);
-            this.Controls.Add(this.LCategoriaa);
+            this.ClientSize = new System.Drawing.Size(799, 510);
+            this.Controls.Add(this.dataGridUsuario);
+            this.Controls.Add(this.panelRigtUsuario);
+            this.Controls.Add(this.panelTopCateg);
             this.Name = "FormCategorias";
             this.Text = "FormCategorias";
-            this.PFormUsuario.ResumeLayout(false);
-            this.PFormUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducto)).EndInit();
+            this.panelTopCateg.ResumeLayout(false);
+            this.panelLogoTit.ResumeLayout(false);
+            this.panelLogoTit.PerformLayout();
+            this.panelBuscador.ResumeLayout(false);
+            this.panelBuscador.PerformLayout();
+            this.panelRigtUsuario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuario)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label LCategoriaa;
-        private System.Windows.Forms.Panel PFormUsuario;
-        private System.Windows.Forms.TextBox TIdCategoria;
-        private System.Windows.Forms.Label LTitulo;
-        private System.Windows.Forms.Button BEliminar;
-        private System.Windows.Forms.Label LCodCategoria;
-        private System.Windows.Forms.Button BEditar;
-        private System.Windows.Forms.TextBox TBdni;
-        private System.Windows.Forms.Button BGuardar;
-        private System.Windows.Forms.Label LNombree;
-        private System.Windows.Forms.ComboBox CBestado;
-        private System.Windows.Forms.TextBox TBNombree;
-        private System.Windows.Forms.Label Lestado;
-        private System.Windows.Forms.Label LDescripcion;
-        private System.Windows.Forms.TextBox TBapellido;
-        private System.Windows.Forms.DataGridView dataGridProducto;
+        private System.Windows.Forms.Panel panelTopCateg;
+        private System.Windows.Forms.Panel panelLogoTit;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lblTituloCateg;
+        private System.Windows.Forms.PictureBox picUsuario;
+        private System.Windows.Forms.Panel panelBuscador;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox txtbuscarPor;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.ComboBox cboBusqueda;
+        private System.Windows.Forms.Panel panelRigtUsuario;
+        public System.Windows.Forms.Button btnAltaUsu;
+        public System.Windows.Forms.Button btnBajaCateg;
+        public System.Windows.Forms.Button btnEditarCateg;
+        public System.Windows.Forms.Button btnAltaCateg;
+        public System.Windows.Forms.DataGridView dataGridUsuario;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_categ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCateg;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

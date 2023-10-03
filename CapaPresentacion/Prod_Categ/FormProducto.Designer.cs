@@ -30,362 +30,106 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.LProducto = new System.Windows.Forms.Label();
-            this.PFormUsuario = new System.Windows.Forms.Panel();
-            this.TIdProducto = new System.Windows.Forms.TextBox();
-            this.LTitulo = new System.Windows.Forms.Label();
-            this.LCodProduct = new System.Windows.Forms.Label();
-            this.TBdni = new System.Windows.Forms.TextBox();
-            this.LNombree = new System.Windows.Forms.Label();
-            this.CBestado = new System.Windows.Forms.ComboBox();
-            this.TBNombree = new System.Windows.Forms.TextBox();
-            this.Lestado = new System.Windows.Forms.Label();
-            this.LDescripcion = new System.Windows.Forms.Label();
-            this.CBRol = new System.Windows.Forms.ComboBox();
-            this.LCategoria = new System.Windows.Forms.Label();
-            this.TBapellido = new System.Windows.Forms.TextBox();
-            this.LStock = new System.Windows.Forms.Label();
-            this.TBusuario = new System.Windows.Forms.TextBox();
-            this.TBcontrasena = new System.Windows.Forms.TextBox();
-            this.LPrecio = new System.Windows.Forms.Label();
-            this.dataGridProducto = new System.Windows.Forms.DataGridView();
+            this.panelTopProd = new System.Windows.Forms.Panel();
+            this.panelLogoTit = new System.Windows.Forms.Panel();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.lblTituloProd = new System.Windows.Forms.Label();
+            this.picUsuario = new System.Windows.Forms.PictureBox();
+            this.panelBuscador = new System.Windows.Forms.Panel();
+            this.btnBuscar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.cboBusqueda = new System.Windows.Forms.ComboBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.cboBusqueda = new System.Windows.Forms.ComboBox();
+            this.panelRigtUsuario = new System.Windows.Forms.Panel();
+            this.btnAltaProd = new System.Windows.Forms.Button();
+            this.btnBajaUsuario = new System.Windows.Forms.Button();
+            this.btnEditarProd = new System.Windows.Forms.Button();
+            this.btnAgregarProd = new System.Windows.Forms.Button();
+            this.dataGridUsuario = new System.Windows.Forms.DataGridView();
             this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.id_Prod = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cod = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCateg = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Stock = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Categ = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.categoria = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.BEliminar = new System.Windows.Forms.Button();
-            this.BEditar = new System.Windows.Forms.Button();
-            this.BGuardar = new System.Windows.Forms.Button();
-            this.PFormUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducto)).BeginInit();
+            this.panelTopProd.SuspendLayout();
+            this.panelLogoTit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
+            this.panelBuscador.SuspendLayout();
+            this.panelRigtUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuario)).BeginInit();
             this.SuspendLayout();
             // 
-            // LProducto
+            // panelTopProd
             // 
-            this.LProducto.BackColor = System.Drawing.Color.White;
-            this.LProducto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.LProducto.Dock = System.Windows.Forms.DockStyle.Top;
-            this.LProducto.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LProducto.Location = new System.Drawing.Point(0, 0);
-            this.LProducto.Name = "LProducto";
-            this.LProducto.Size = new System.Drawing.Size(1017, 47);
-            this.LProducto.TabIndex = 26;
-            this.LProducto.Text = "Lista de Productos:";
-            this.LProducto.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.panelTopProd.BackColor = System.Drawing.Color.LightGray;
+            this.panelTopProd.Controls.Add(this.panelLogoTit);
+            this.panelTopProd.Controls.Add(this.panelBuscador);
+            this.panelTopProd.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopProd.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelTopProd.Location = new System.Drawing.Point(0, 0);
+            this.panelTopProd.Name = "panelTopProd";
+            this.panelTopProd.Size = new System.Drawing.Size(1124, 107);
+            this.panelTopProd.TabIndex = 1;
             // 
-            // PFormUsuario
+            // panelLogoTit
             // 
-            this.PFormUsuario.AutoScroll = true;
-            this.PFormUsuario.BackColor = System.Drawing.Color.White;
-            this.PFormUsuario.Controls.Add(this.TIdProducto);
-            this.PFormUsuario.Controls.Add(this.LTitulo);
-            this.PFormUsuario.Controls.Add(this.BEliminar);
-            this.PFormUsuario.Controls.Add(this.LCodProduct);
-            this.PFormUsuario.Controls.Add(this.BEditar);
-            this.PFormUsuario.Controls.Add(this.TBdni);
-            this.PFormUsuario.Controls.Add(this.BGuardar);
-            this.PFormUsuario.Controls.Add(this.LNombree);
-            this.PFormUsuario.Controls.Add(this.CBestado);
-            this.PFormUsuario.Controls.Add(this.TBNombree);
-            this.PFormUsuario.Controls.Add(this.Lestado);
-            this.PFormUsuario.Controls.Add(this.LDescripcion);
-            this.PFormUsuario.Controls.Add(this.CBRol);
-            this.PFormUsuario.Controls.Add(this.LCategoria);
-            this.PFormUsuario.Controls.Add(this.TBapellido);
-            this.PFormUsuario.Controls.Add(this.LStock);
-            this.PFormUsuario.Controls.Add(this.TBusuario);
-            this.PFormUsuario.Controls.Add(this.TBcontrasena);
-            this.PFormUsuario.Controls.Add(this.LPrecio);
-            this.PFormUsuario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PFormUsuario.Location = new System.Drawing.Point(759, 47);
-            this.PFormUsuario.Name = "PFormUsuario";
-            this.PFormUsuario.Size = new System.Drawing.Size(258, 545);
-            this.PFormUsuario.TabIndex = 27;
+            this.panelLogoTit.Controls.Add(this.btnRefresh);
+            this.panelLogoTit.Controls.Add(this.lblTituloProd);
+            this.panelLogoTit.Controls.Add(this.picUsuario);
+            this.panelLogoTit.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelLogoTit.Location = new System.Drawing.Point(847, 0);
+            this.panelLogoTit.Name = "panelLogoTit";
+            this.panelLogoTit.Size = new System.Drawing.Size(277, 107);
+            this.panelLogoTit.TabIndex = 27;
             // 
-            // TIdProducto
+            // btnRefresh
             // 
-            this.TIdProducto.Location = new System.Drawing.Point(205, 39);
-            this.TIdProducto.Name = "TIdProducto";
-            this.TIdProducto.Size = new System.Drawing.Size(31, 20);
-            this.TIdProducto.TabIndex = 23;
-            this.TIdProducto.Text = "0";
-            this.TIdProducto.Visible = false;
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = global::CapaPresentacion.Properties.Resources.recargar;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.Location = new System.Drawing.Point(96, 35);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 38);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.UseVisualStyleBackColor = true;
             // 
-            // LTitulo
+            // lblTituloProd
             // 
-            this.LTitulo.AutoSize = true;
-            this.LTitulo.BackColor = System.Drawing.Color.White;
-            this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTitulo.Location = new System.Drawing.Point(36, 11);
-            this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(189, 25);
-            this.LTitulo.TabIndex = 22;
-            this.LTitulo.Text = "Detalle de Producto";
+            this.lblTituloProd.AutoSize = true;
+            this.lblTituloProd.Location = new System.Drawing.Point(3, 41);
+            this.lblTituloProd.Name = "lblTituloProd";
+            this.lblTituloProd.Size = new System.Drawing.Size(97, 25);
+            this.lblTituloProd.TabIndex = 1;
+            this.lblTituloProd.Text = "Productos";
             // 
-            // LCodProduct
+            // picUsuario
             // 
-            this.LCodProduct.AutoSize = true;
-            this.LCodProduct.BackColor = System.Drawing.Color.White;
-            this.LCodProduct.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCodProduct.Location = new System.Drawing.Point(17, 47);
-            this.LCodProduct.Name = "LCodProduct";
-            this.LCodProduct.Size = new System.Drawing.Size(115, 17);
-            this.LCodProduct.TabIndex = 1;
-            this.LCodProduct.Text = "Cod. del producto";
+            this.picUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.wishlist_product_list_order_cart_icon_225172;
+            this.picUsuario.Location = new System.Drawing.Point(170, 12);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 40, 0);
+            this.picUsuario.Size = new System.Drawing.Size(89, 89);
+            this.picUsuario.TabIndex = 0;
+            this.picUsuario.TabStop = false;
             // 
-            // TBdni
+            // panelBuscador
             // 
-            this.TBdni.Location = new System.Drawing.Point(31, 67);
-            this.TBdni.Name = "TBdni";
-            this.TBdni.Size = new System.Drawing.Size(208, 20);
-            this.TBdni.TabIndex = 7;
-            // 
-            // LNombree
-            // 
-            this.LNombree.AutoSize = true;
-            this.LNombree.BackColor = System.Drawing.Color.White;
-            this.LNombree.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LNombree.Location = new System.Drawing.Point(18, 98);
-            this.LNombree.Name = "LNombree";
-            this.LNombree.Size = new System.Drawing.Size(57, 17);
-            this.LNombree.TabIndex = 2;
-            this.LNombree.Text = "Nombre";
-            // 
-            // CBestado
-            // 
-            this.CBestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBestado.FormattingEnabled = true;
-            this.CBestado.Location = new System.Drawing.Point(32, 372);
-            this.CBestado.Name = "CBestado";
-            this.CBestado.Size = new System.Drawing.Size(208, 21);
-            this.CBestado.TabIndex = 18;
-            // 
-            // TBNombree
-            // 
-            this.TBNombree.Location = new System.Drawing.Point(31, 118);
-            this.TBNombree.Name = "TBNombree";
-            this.TBNombree.Size = new System.Drawing.Size(208, 20);
-            this.TBNombree.TabIndex = 8;
-            // 
-            // Lestado
-            // 
-            this.Lestado.AutoSize = true;
-            this.Lestado.BackColor = System.Drawing.Color.White;
-            this.Lestado.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Lestado.Location = new System.Drawing.Point(18, 352);
-            this.Lestado.Name = "Lestado";
-            this.Lestado.Size = new System.Drawing.Size(48, 17);
-            this.Lestado.TabIndex = 17;
-            this.Lestado.Text = "Estado";
-            // 
-            // LDescripcion
-            // 
-            this.LDescripcion.AutoSize = true;
-            this.LDescripcion.BackColor = System.Drawing.Color.White;
-            this.LDescripcion.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LDescripcion.Location = new System.Drawing.Point(17, 148);
-            this.LDescripcion.Name = "LDescripcion";
-            this.LDescripcion.Size = new System.Drawing.Size(76, 17);
-            this.LDescripcion.TabIndex = 3;
-            this.LDescripcion.Text = "Descripción";
-            // 
-            // CBRol
-            // 
-            this.CBRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBRol.FormattingEnabled = true;
-            this.CBRol.Location = new System.Drawing.Point(32, 322);
-            this.CBRol.Name = "CBRol";
-            this.CBRol.Size = new System.Drawing.Size(208, 21);
-            this.CBRol.TabIndex = 15;
-            // 
-            // LCategoria
-            // 
-            this.LCategoria.AutoSize = true;
-            this.LCategoria.BackColor = System.Drawing.Color.White;
-            this.LCategoria.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LCategoria.Location = new System.Drawing.Point(21, 302);
-            this.LCategoria.Name = "LCategoria";
-            this.LCategoria.Size = new System.Drawing.Size(65, 17);
-            this.LCategoria.TabIndex = 16;
-            this.LCategoria.Text = "Categoría";
-            // 
-            // TBapellido
-            // 
-            this.TBapellido.Location = new System.Drawing.Point(31, 168);
-            this.TBapellido.Name = "TBapellido";
-            this.TBapellido.Size = new System.Drawing.Size(208, 20);
-            this.TBapellido.TabIndex = 9;
-            // 
-            // LStock
-            // 
-            this.LStock.AutoSize = true;
-            this.LStock.BackColor = System.Drawing.Color.White;
-            this.LStock.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LStock.Location = new System.Drawing.Point(20, 199);
-            this.LStock.Name = "LStock";
-            this.LStock.Size = new System.Drawing.Size(39, 17);
-            this.LStock.TabIndex = 4;
-            this.LStock.Text = "Stock";
-            // 
-            // TBusuario
-            // 
-            this.TBusuario.Location = new System.Drawing.Point(31, 219);
-            this.TBusuario.Name = "TBusuario";
-            this.TBusuario.Size = new System.Drawing.Size(208, 20);
-            this.TBusuario.TabIndex = 10;
-            // 
-            // TBcontrasena
-            // 
-            this.TBcontrasena.Location = new System.Drawing.Point(31, 270);
-            this.TBcontrasena.Name = "TBcontrasena";
-            this.TBcontrasena.Size = new System.Drawing.Size(208, 20);
-            this.TBcontrasena.TabIndex = 11;
-            // 
-            // LPrecio
-            // 
-            this.LPrecio.AutoSize = true;
-            this.LPrecio.BackColor = System.Drawing.Color.White;
-            this.LPrecio.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LPrecio.Location = new System.Drawing.Point(17, 250);
-            this.LPrecio.Name = "LPrecio";
-            this.LPrecio.Size = new System.Drawing.Size(44, 17);
-            this.LPrecio.TabIndex = 5;
-            this.LPrecio.Text = "Precio";
-            // 
-            // dataGridProducto
-            // 
-            this.dataGridProducto.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridProducto.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dataGridProducto.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridProducto.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.btnSeleccionar,
-            this.id_Prod,
-            this.cod,
-            this.nombre,
-            this.descripcion,
-            this.stock,
-            this.Precio,
-            this.Id_Categ,
-            this.categoria,
-            this.Estado});
-            this.dataGridProducto.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridProducto.Location = new System.Drawing.Point(0, 47);
-            this.dataGridProducto.MultiSelect = false;
-            this.dataGridProducto.Name = "dataGridProducto";
-            this.dataGridProducto.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridProducto.RowsDefaultCellStyle = dataGridViewCellStyle2;
-            this.dataGridProducto.RowTemplate.Height = 28;
-            this.dataGridProducto.Size = new System.Drawing.Size(759, 545);
-            this.dataGridProducto.TabIndex = 28;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(193, 20);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(106, 13);
-            this.textBox1.TabIndex = 29;
-            this.textBox1.Text = "Buscar por :";
-            // 
-            // cboBusqueda
-            // 
-            this.cboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBusqueda.FormattingEnabled = true;
-            this.cboBusqueda.Location = new System.Drawing.Point(260, 17);
-            this.cboBusqueda.Name = "cboBusqueda";
-            this.cboBusqueda.Size = new System.Drawing.Size(118, 21);
-            this.cboBusqueda.TabIndex = 30;
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Location = new System.Drawing.Point(388, 18);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(144, 20);
-            this.txtBusqueda.TabIndex = 31;
-            // 
-            // btnSeleccionar
-            // 
-            this.btnSeleccionar.HeaderText = "";
-            this.btnSeleccionar.Name = "btnSeleccionar";
-            this.btnSeleccionar.ReadOnly = true;
-            this.btnSeleccionar.Width = 30;
-            // 
-            // id_Prod
-            // 
-            this.id_Prod.HeaderText = "id_Prod";
-            this.id_Prod.Name = "id_Prod";
-            this.id_Prod.ReadOnly = true;
-            this.id_Prod.Visible = false;
-            // 
-            // cod
-            // 
-            this.cod.HeaderText = "Codigo ";
-            this.cod.Name = "cod";
-            this.cod.ReadOnly = true;
-            // 
-            // nombre
-            // 
-            this.nombre.HeaderText = "Nombre";
-            this.nombre.Name = "nombre";
-            this.nombre.ReadOnly = true;
-            // 
-            // descripcion
-            // 
-            this.descripcion.HeaderText = "Descripción";
-            this.descripcion.Name = "descripcion";
-            this.descripcion.ReadOnly = true;
-            // 
-            // stock
-            // 
-            this.stock.HeaderText = "Stock";
-            this.stock.Name = "stock";
-            this.stock.ReadOnly = true;
-            // 
-            // Precio
-            // 
-            this.Precio.HeaderText = "Precio";
-            this.Precio.Name = "Precio";
-            this.Precio.ReadOnly = true;
-            this.Precio.Visible = false;
-            // 
-            // Id_Categ
-            // 
-            this.Id_Categ.HeaderText = "Id_categ";
-            this.Id_Categ.Name = "Id_Categ";
-            this.Id_Categ.ReadOnly = true;
-            this.Id_Categ.Visible = false;
-            // 
-            // categoria
-            // 
-            this.categoria.HeaderText = "Categoría";
-            this.categoria.Name = "categoria";
-            this.categoria.ReadOnly = true;
-            // 
-            // Estado
-            // 
-            this.Estado.HeaderText = "Estado";
-            this.Estado.Name = "Estado";
-            this.Estado.ReadOnly = true;
+            this.panelBuscador.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscador.Controls.Add(this.btnBuscar);
+            this.panelBuscador.Controls.Add(this.textBox1);
+            this.panelBuscador.Controls.Add(this.txtBusqueda);
+            this.panelBuscador.Controls.Add(this.cboBusqueda);
+            this.panelBuscador.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelBuscador.Location = new System.Drawing.Point(0, 0);
+            this.panelBuscador.Name = "panelBuscador";
+            this.panelBuscador.Size = new System.Drawing.Size(425, 107);
+            this.panelBuscador.TabIndex = 26;
             // 
             // btnBuscar
             // 
@@ -398,138 +142,286 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-           
-            this.btnBuscar.Location = new System.Drawing.Point(542, 17);
+            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.busqueda;
+            this.btnBuscar.Location = new System.Drawing.Point(397, 48);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(25, 22);
-            this.btnBuscar.TabIndex = 32;
+            this.btnBuscar.TabIndex = 25;
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnBuscar.UseVisualStyleBackColor = false;
             // 
-            // BEliminar
+            // textBox1
             // 
-            this.BEliminar.BackColor = System.Drawing.Color.Silver;
-            this.BEliminar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEliminar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BEliminar.FlatAppearance.BorderSize = 0;
-            this.BEliminar.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.BEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEliminar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            
-            this.BEliminar.Location = new System.Drawing.Point(20, 495);
-            this.BEliminar.Name = "BEliminar";
-            this.BEliminar.Size = new System.Drawing.Size(216, 39);
-            this.BEliminar.TabIndex = 21;
-            this.BEliminar.Text = "Eliminar";
-            this.BEliminar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BEliminar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEliminar.UseVisualStyleBackColor = false;
+            this.textBox1.BackColor = System.Drawing.Color.LightGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(11, 40);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(106, 26);
+            this.textBox1.TabIndex = 25;
+            this.textBox1.Text = "Buscar por :";
             // 
-            // BEditar
+            // txtBusqueda
             // 
-            this.BEditar.BackColor = System.Drawing.Color.Silver;
-            this.BEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BEditar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BEditar.FlatAppearance.BorderSize = 0;
-            this.BEditar.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BEditar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BEditar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.BEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BEditar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-           
-            this.BEditar.Location = new System.Drawing.Point(20, 452);
-            this.BEditar.Name = "BEditar";
-            this.BEditar.Size = new System.Drawing.Size(216, 37);
-            this.BEditar.TabIndex = 20;
-            this.BEditar.Text = "Editar";
-            this.BEditar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BEditar.UseVisualStyleBackColor = false;
+            this.txtBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(247, 45);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(144, 25);
+            this.txtBusqueda.TabIndex = 28;
             // 
-            // BGuardar
+            // cboBusqueda
             // 
-            this.BGuardar.BackColor = System.Drawing.Color.Silver;
-            this.BGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.BGuardar.FlatAppearance.BorderSize = 0;
-            this.BGuardar.FlatAppearance.CheckedBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.BGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BGuardar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BGuardar.ForeColor = System.Drawing.Color.Black;
-            
-            this.BGuardar.Location = new System.Drawing.Point(21, 410);
-            this.BGuardar.Name = "BGuardar";
-            this.BGuardar.Size = new System.Drawing.Size(216, 36);
-            this.BGuardar.TabIndex = 19;
-            this.BGuardar.Text = "Guardar";
-            this.BGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.BGuardar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BGuardar.UseVisualStyleBackColor = false;
+            this.cboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboBusqueda.FormattingEnabled = true;
+            this.cboBusqueda.Location = new System.Drawing.Point(123, 45);
+            this.cboBusqueda.Name = "cboBusqueda";
+            this.cboBusqueda.Size = new System.Drawing.Size(118, 25);
+            this.cboBusqueda.TabIndex = 27;
+            // 
+            // panelRigtUsuario
+            // 
+            this.panelRigtUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.panelRigtUsuario.Controls.Add(this.btnAltaProd);
+            this.panelRigtUsuario.Controls.Add(this.btnBajaUsuario);
+            this.panelRigtUsuario.Controls.Add(this.btnEditarProd);
+            this.panelRigtUsuario.Controls.Add(this.btnAgregarProd);
+            this.panelRigtUsuario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRigtUsuario.Location = new System.Drawing.Point(921, 107);
+            this.panelRigtUsuario.Name = "panelRigtUsuario";
+            this.panelRigtUsuario.Size = new System.Drawing.Size(203, 404);
+            this.panelRigtUsuario.TabIndex = 2;
+            // 
+            // btnAltaProd
+            // 
+            this.btnAltaProd.BackColor = System.Drawing.Color.LightGray;
+            this.btnAltaProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAltaProd.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAltaProd.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAltaProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnAltaProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAltaProd.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAltaProd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAltaProd.Image = global::CapaPresentacion.Properties.Resources.checkbox_ckeck_icon_143039;
+            this.btnAltaProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAltaProd.Location = new System.Drawing.Point(19, 239);
+            this.btnAltaProd.Name = "btnAltaProd";
+            this.btnAltaProd.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAltaProd.Size = new System.Drawing.Size(166, 49);
+            this.btnAltaProd.TabIndex = 7;
+            this.btnAltaProd.Text = "Alta Producto";
+            this.btnAltaProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAltaProd.UseVisualStyleBackColor = false;
+            // 
+            // btnBajaUsuario
+            // 
+            this.btnBajaUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.btnBajaUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBajaUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnBajaUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnBajaUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnBajaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaUsuario.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBajaUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBajaUsuario.Image = global::CapaPresentacion.Properties.Resources.papelera_xmark;
+            this.btnBajaUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBajaUsuario.Location = new System.Drawing.Point(19, 173);
+            this.btnBajaUsuario.Name = "btnBajaUsuario";
+            this.btnBajaUsuario.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnBajaUsuario.Size = new System.Drawing.Size(166, 49);
+            this.btnBajaUsuario.TabIndex = 5;
+            this.btnBajaUsuario.Text = "Baja Producto";
+            this.btnBajaUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBajaUsuario.UseVisualStyleBackColor = false;
+            // 
+            // btnEditarProd
+            // 
+            this.btnEditarProd.BackColor = System.Drawing.Color.LightGray;
+            this.btnEditarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnEditarProd.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnEditarProd.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnEditarProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnEditarProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnEditarProd.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditarProd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnEditarProd.Image = global::CapaPresentacion.Properties.Resources.editar;
+            this.btnEditarProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnEditarProd.Location = new System.Drawing.Point(19, 102);
+            this.btnEditarProd.Name = "btnEditarProd";
+            this.btnEditarProd.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnEditarProd.Size = new System.Drawing.Size(167, 49);
+            this.btnEditarProd.TabIndex = 6;
+            this.btnEditarProd.Text = "Editar Producto";
+            this.btnEditarProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditarProd.UseVisualStyleBackColor = false;
+            this.btnEditarProd.Click += new System.EventHandler(this.btnEditarProd_Click);
+            // 
+            // btnAgregarProd
+            // 
+            this.btnAgregarProd.BackColor = System.Drawing.Color.LightGray;
+            this.btnAgregarProd.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnAgregarProd.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnAgregarProd.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnAgregarProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnAgregarProd.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAgregarProd.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAgregarProd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnAgregarProd.Image = global::CapaPresentacion.Properties.Resources.anadir;
+            this.btnAgregarProd.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAgregarProd.Location = new System.Drawing.Point(19, 36);
+            this.btnAgregarProd.Name = "btnAgregarProd";
+            this.btnAgregarProd.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnAgregarProd.Size = new System.Drawing.Size(167, 49);
+            this.btnAgregarProd.TabIndex = 4;
+            this.btnAgregarProd.Text = "Añadir Producto";
+            this.btnAgregarProd.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAgregarProd.UseVisualStyleBackColor = false;
+            this.btnAgregarProd.Click += new System.EventHandler(this.btnAgregarProd_Click);
+            // 
+            // dataGridUsuario
+            // 
+            this.dataGridUsuario.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dataGridUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnSeleccionar,
+            this.idProd,
+            this.codProd,
+            this.nombre,
+            this.descripcion,
+            this.idCateg,
+            this.Stock,
+            this.Precio,
+            this.Estado});
+            this.dataGridUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dataGridUsuario.Location = new System.Drawing.Point(0, 107);
+            this.dataGridUsuario.MultiSelect = false;
+            this.dataGridUsuario.Name = "dataGridUsuario";
+            this.dataGridUsuario.ReadOnly = true;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridUsuario.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            this.dataGridUsuario.RowTemplate.Height = 28;
+            this.dataGridUsuario.Size = new System.Drawing.Size(921, 404);
+            this.dataGridUsuario.TabIndex = 26;
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            this.btnSeleccionar.ReadOnly = true;
+            this.btnSeleccionar.Width = 88;
+            // 
+            // idProd
+            // 
+            this.idProd.HeaderText = "idProd";
+            this.idProd.Name = "idProd";
+            this.idProd.ReadOnly = true;
+            this.idProd.Visible = false;
+            // 
+            // codProd
+            // 
+            this.codProd.HeaderText = "Codigo Producto";
+            this.codProd.Name = "codProd";
+            this.codProd.ReadOnly = true;
+            this.codProd.Width = 88;
+            // 
+            // nombre
+            // 
+            this.nombre.HeaderText = "Nombre";
+            this.nombre.Name = "nombre";
+            this.nombre.ReadOnly = true;
+            this.nombre.Width = 87;
+            // 
+            // descripcion
+            // 
+            this.descripcion.HeaderText = "Descripcion";
+            this.descripcion.Name = "descripcion";
+            this.descripcion.ReadOnly = true;
+            this.descripcion.Width = 88;
+            // 
+            // idCateg
+            // 
+            this.idCateg.HeaderText = "idCateg";
+            this.idCateg.Name = "idCateg";
+            this.idCateg.ReadOnly = true;
+            this.idCateg.Visible = false;
+            // 
+            // Stock
+            // 
+            this.Stock.HeaderText = "Stock";
+            this.Stock.Name = "Stock";
+            this.Stock.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            this.Precio.HeaderText = "precioVenta";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Estado
+            // 
+            this.Estado.HeaderText = "Estado";
+            this.Estado.Name = "Estado";
+            this.Estado.ReadOnly = true;
+            this.Estado.Width = 88;
             // 
             // FormProducto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1017, 592);
-            this.Controls.Add(this.btnBuscar);
-            this.Controls.Add(this.txtBusqueda);
-            this.Controls.Add(this.cboBusqueda);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.dataGridProducto);
-            this.Controls.Add(this.PFormUsuario);
-            this.Controls.Add(this.LProducto);
+            this.ClientSize = new System.Drawing.Size(1124, 511);
+            this.Controls.Add(this.dataGridUsuario);
+            this.Controls.Add(this.panelRigtUsuario);
+            this.Controls.Add(this.panelTopProd);
             this.Name = "FormProducto";
             this.Text = "FormProducto";
-            this.PFormUsuario.ResumeLayout(false);
-            this.PFormUsuario.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridProducto)).EndInit();
+            this.panelTopProd.ResumeLayout(false);
+            this.panelLogoTit.ResumeLayout(false);
+            this.panelLogoTit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
+            this.panelBuscador.ResumeLayout(false);
+            this.panelBuscador.PerformLayout();
+            this.panelRigtUsuario.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuario)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label LProducto;
-        private System.Windows.Forms.Panel PFormUsuario;
-        private System.Windows.Forms.TextBox TIdProducto;
-        private System.Windows.Forms.Label LTitulo;
-        private System.Windows.Forms.Button BEliminar;
-        private System.Windows.Forms.Label LCodProduct;
-        private System.Windows.Forms.Button BEditar;
-        private System.Windows.Forms.TextBox TBdni;
-        private System.Windows.Forms.Button BGuardar;
-        private System.Windows.Forms.Label LNombree;
-        private System.Windows.Forms.ComboBox CBestado;
-        private System.Windows.Forms.TextBox TBNombree;
-        private System.Windows.Forms.Label Lestado;
-        private System.Windows.Forms.Label LDescripcion;
-        private System.Windows.Forms.ComboBox CBRol;
-        private System.Windows.Forms.Label LCategoria;
-        private System.Windows.Forms.TextBox TBapellido;
-        private System.Windows.Forms.Label LStock;
-        private System.Windows.Forms.TextBox TBusuario;
-        private System.Windows.Forms.TextBox TBcontrasena;
-        private System.Windows.Forms.Label LPrecio;
-        private System.Windows.Forms.DataGridView dataGridProducto;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox cboBusqueda;
-        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.Panel panelTopProd;
+        private System.Windows.Forms.Panel panelLogoTit;
+        private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Label lblTituloProd;
+        private System.Windows.Forms.PictureBox picUsuario;
+        private System.Windows.Forms.Panel panelBuscador;
         private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.ComboBox cboBusqueda;
+        private System.Windows.Forms.Panel panelRigtUsuario;
+        public System.Windows.Forms.Button btnAltaProd;
+        public System.Windows.Forms.Button btnBajaUsuario;
+        public System.Windows.Forms.Button btnEditarProd;
+        public System.Windows.Forms.Button btnAgregarProd;
+        public System.Windows.Forms.DataGridView dataGridUsuario;
         private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_Prod;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cod;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn codProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn nombre;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stock;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCateg;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Stock;
         private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Categ;
-        private System.Windows.Forms.DataGridViewTextBoxColumn categoria;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
     }
 }

@@ -32,8 +32,9 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTopUsuario = new System.Windows.Forms.Panel();
             this.panelLogoTit = new System.Windows.Forms.Panel();
-            this.lblTituloCli = new System.Windows.Forms.Label();
+            this.btnRefresh = new System.Windows.Forms.Button();
             this.picUsuario = new System.Windows.Forms.PictureBox();
+            this.lblTituloCli = new System.Windows.Forms.Label();
             this.panelBuscador = new System.Windows.Forms.Panel();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
@@ -52,10 +53,6 @@
             this.telefono = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Domicilio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.usuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Contrasena = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Id_Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Rol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTopUsuario.SuspendLayout();
@@ -80,31 +77,46 @@
             // 
             // panelLogoTit
             // 
-            this.panelLogoTit.Controls.Add(this.lblTituloCli);
+            this.panelLogoTit.Controls.Add(this.btnRefresh);
             this.panelLogoTit.Controls.Add(this.picUsuario);
+            this.panelLogoTit.Controls.Add(this.lblTituloCli);
             this.panelLogoTit.Dock = System.Windows.Forms.DockStyle.Right;
             this.panelLogoTit.Location = new System.Drawing.Point(523, 0);
             this.panelLogoTit.Name = "panelLogoTit";
             this.panelLogoTit.Size = new System.Drawing.Size(277, 107);
             this.panelLogoTit.TabIndex = 27;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = global::CapaPresentacion.Properties.Resources.recargar;
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.Location = new System.Drawing.Point(109, 33);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 38);
+            this.btnRefresh.TabIndex = 8;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            // 
+            // picUsuario
+            // 
+            this.picUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.rosq;
+            this.picUsuario.Location = new System.Drawing.Point(157, 12);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.picUsuario.Size = new System.Drawing.Size(89, 89);
+            this.picUsuario.TabIndex = 2;
+            this.picUsuario.TabStop = false;
+            // 
             // lblTituloCli
             // 
             this.lblTituloCli.AutoSize = true;
-            this.lblTituloCli.Location = new System.Drawing.Point(35, 41);
+            this.lblTituloCli.Location = new System.Drawing.Point(16, 41);
             this.lblTituloCli.Name = "lblTituloCli";
             this.lblTituloCli.Size = new System.Drawing.Size(79, 25);
             this.lblTituloCli.TabIndex = 1;
             this.lblTituloCli.Text = "Clientes";
-            // 
-            // picUsuario
-            // 
-            //this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.mujer;
-            this.picUsuario.Location = new System.Drawing.Point(164, 3);
-            this.picUsuario.Name = "picUsuario";
-            this.picUsuario.Size = new System.Drawing.Size(110, 101);
-            this.picUsuario.TabIndex = 0;
-            this.picUsuario.TabStop = false;
             // 
             // panelBuscador
             // 
@@ -130,7 +142,7 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-        
+            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.busqueda;
             this.btnBuscar.Location = new System.Drawing.Point(397, 43);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(25, 22);
@@ -187,15 +199,17 @@
             this.btnEditarCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditarCliente.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            
+            this.btnEditarCliente.Image = global::CapaPresentacion.Properties.Resources.editar;
             this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnEditarCliente.Location = new System.Drawing.Point(19, 215);
+            this.btnEditarCliente.Location = new System.Drawing.Point(32, 170);
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnEditarCliente.Size = new System.Drawing.Size(163, 49);
+            this.btnEditarCliente.Size = new System.Drawing.Size(144, 49);
             this.btnEditarCliente.TabIndex = 6;
             this.btnEditarCliente.Text = "Editar Cliente";
+            this.btnEditarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarCliente.UseVisualStyleBackColor = false;
+            this.btnEditarCliente.Click += new System.EventHandler(this.btnEditarCliente_Click);
             // 
             // btnBajaUsuario
             // 
@@ -207,14 +221,15 @@
             this.btnBajaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBajaUsuario.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBajaUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-           
+            this.btnBajaUsuario.Image = global::CapaPresentacion.Properties.Resources.papelera_xmark;
             this.btnBajaUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBajaUsuario.Location = new System.Drawing.Point(19, 160);
+            this.btnBajaUsuario.Location = new System.Drawing.Point(32, 236);
             this.btnBajaUsuario.Name = "btnBajaUsuario";
             this.btnBajaUsuario.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnBajaUsuario.Size = new System.Drawing.Size(163, 49);
+            this.btnBajaUsuario.Size = new System.Drawing.Size(144, 49);
             this.btnBajaUsuario.TabIndex = 5;
             this.btnBajaUsuario.Text = "Baja Cliente";
+            this.btnBajaUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBajaUsuario.UseVisualStyleBackColor = false;
             // 
             // btnAltaCliente
@@ -227,15 +242,17 @@
             this.btnAltaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltaCliente.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-           
+            this.btnAltaCliente.Image = global::CapaPresentacion.Properties.Resources.altaClienteUsuario;
             this.btnAltaCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAltaCliente.Location = new System.Drawing.Point(19, 105);
+            this.btnAltaCliente.Location = new System.Drawing.Point(32, 105);
             this.btnAltaCliente.Name = "btnAltaCliente";
             this.btnAltaCliente.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnAltaCliente.Size = new System.Drawing.Size(163, 49);
+            this.btnAltaCliente.Size = new System.Drawing.Size(144, 49);
             this.btnAltaCliente.TabIndex = 4;
             this.btnAltaCliente.Text = "Alta clientes";
+            this.btnAltaCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAltaCliente.UseVisualStyleBackColor = false;
+            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
             // 
             // dataGridUsuario
             // 
@@ -259,10 +276,6 @@
             this.telefono,
             this.Domicilio,
             this.Correo,
-            this.usuario,
-            this.Contrasena,
-            this.Id_Rol,
-            this.Rol,
             this.cod_estado,
             this.Estado});
             this.dataGridUsuario.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -327,32 +340,6 @@
             this.Correo.Name = "Correo";
             this.Correo.ReadOnly = true;
             // 
-            // usuario
-            // 
-            this.usuario.HeaderText = "Usuario";
-            this.usuario.Name = "usuario";
-            this.usuario.ReadOnly = true;
-            // 
-            // Contrasena
-            // 
-            this.Contrasena.HeaderText = "Contraseña";
-            this.Contrasena.Name = "Contrasena";
-            this.Contrasena.ReadOnly = true;
-            this.Contrasena.Visible = false;
-            // 
-            // Id_Rol
-            // 
-            this.Id_Rol.HeaderText = "Id_Rol";
-            this.Id_Rol.Name = "Id_Rol";
-            this.Id_Rol.ReadOnly = true;
-            this.Id_Rol.Visible = false;
-            // 
-            // Rol
-            // 
-            this.Rol.HeaderText = "Rol";
-            this.Rol.Name = "Rol";
-            this.Rol.ReadOnly = true;
-            // 
             // cod_estado
             // 
             this.cod_estado.HeaderText = "cod_estado";
@@ -377,6 +364,7 @@
             this.Controls.Add(this.panelTopUsuario);
             this.Name = "FormClientes";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.FormClientes_Load);
             this.panelTopUsuario.ResumeLayout(false);
             this.panelLogoTit.ResumeLayout(false);
             this.panelLogoTit.PerformLayout();
@@ -394,7 +382,6 @@
         private System.Windows.Forms.Panel panelTopUsuario;
         private System.Windows.Forms.Panel panelLogoTit;
         private System.Windows.Forms.Label lblTituloCli;
-        private System.Windows.Forms.PictureBox picUsuario;
         private System.Windows.Forms.Panel panelBuscador;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox textBox1;
@@ -413,11 +400,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn telefono;
         private System.Windows.Forms.DataGridViewTextBoxColumn Domicilio;
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
-        private System.Windows.Forms.DataGridViewTextBoxColumn usuario;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Contrasena;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Id_Rol;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Rol;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
+        private System.Windows.Forms.PictureBox picUsuario;
+        private System.Windows.Forms.Button btnRefresh;
     }
 }

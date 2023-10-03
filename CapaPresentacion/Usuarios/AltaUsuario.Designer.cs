@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.LTitulo = new System.Windows.Forms.Label();
+            this.components = new System.ComponentModel.Container();
             this.LDni = new System.Windows.Forms.Label();
             this.TBdni = new System.Windows.Forms.TextBox();
             this.LNombree = new System.Windows.Forms.Label();
@@ -47,31 +47,18 @@
             this.txtDomicilio = new System.Windows.Forms.TextBox();
             this.lblDomicilio = new System.Windows.Forms.Label();
             this.lblCorreo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.textCorreo = new System.Windows.Forms.TextBox();
             this.CBEstado = new System.Windows.Forms.ComboBox();
-            this.picImagenUsuario = new System.Windows.Forms.PictureBox();
-            this.btnFoto = new System.Windows.Forms.Button();
-            this.BtnGuardar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
             this.panelBotonCerrar = new System.Windows.Forms.Panel();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.picCerrar = new System.Windows.Forms.PictureBox();
-            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
-            ((System.ComponentModel.ISupportInitialize)(this.picImagenUsuario)).BeginInit();
+            this.LTitulo = new System.Windows.Forms.Label();
+            this.btnCancelar = new System.Windows.Forms.Button();
+            this.BtnGuardar = new System.Windows.Forms.Button();
             this.panelBotonCerrar.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
             this.SuspendLayout();
-            // 
-            // LTitulo
-            // 
-            this.LTitulo.AutoSize = true;
-            this.LTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTitulo.ForeColor = System.Drawing.Color.Black;
-            this.LTitulo.Location = new System.Drawing.Point(3, 7);
-            this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(131, 21);
-            this.LTitulo.TabIndex = 22;
-            this.LTitulo.Text = "Alta  de Usuario";
             // 
             // LDni
             // 
@@ -92,6 +79,7 @@
             this.TBdni.Name = "TBdni";
             this.TBdni.Size = new System.Drawing.Size(185, 20);
             this.TBdni.TabIndex = 7;
+            this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBdni_KeyPress);
             // 
             // LNombree
             // 
@@ -112,6 +100,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(185, 20);
             this.txtNombre.TabIndex = 8;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // Lestado
             // 
@@ -166,6 +155,7 @@
             this.TBapellido.Name = "TBapellido";
             this.TBapellido.Size = new System.Drawing.Size(185, 20);
             this.TBapellido.TabIndex = 9;
+            this.TBapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBapellido_KeyPress);
             // 
             // LUsuario
             // 
@@ -186,6 +176,7 @@
             this.TBusuario.Name = "TBusuario";
             this.TBusuario.Size = new System.Drawing.Size(185, 20);
             this.TBusuario.TabIndex = 10;
+            this.TBusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBusuario_KeyPress);
             // 
             // TBcontrasena
             // 
@@ -194,6 +185,7 @@
             this.TBcontrasena.Name = "TBcontrasena";
             this.TBcontrasena.Size = new System.Drawing.Size(185, 20);
             this.TBcontrasena.TabIndex = 11;
+            this.TBcontrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBcontrasena_KeyPress);
             // 
             // LContrasena
             // 
@@ -226,6 +218,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(185, 20);
             this.txtTelefono.TabIndex = 24;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // txtDomicilio
             // 
@@ -259,13 +252,14 @@
             this.lblCorreo.TabIndex = 27;
             this.lblCorreo.Text = "Correo:";
             // 
-            // textBox1
+            // textCorreo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(191, 211);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 28;
+            this.textCorreo.BackColor = System.Drawing.Color.White;
+            this.textCorreo.Location = new System.Drawing.Point(191, 211);
+            this.textCorreo.Name = "textCorreo";
+            this.textCorreo.Size = new System.Drawing.Size(185, 20);
+            this.textCorreo.TabIndex = 28;
+            this.textCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCorreo_KeyPress);
             // 
             // CBEstado
             // 
@@ -276,72 +270,6 @@
             this.CBEstado.Name = "CBEstado";
             this.CBEstado.Size = new System.Drawing.Size(185, 21);
             this.CBEstado.TabIndex = 29;
-            // 
-            // picImagenUsuario
-            // 
-            this.picImagenUsuario.Location = new System.Drawing.Point(431, 106);
-            this.picImagenUsuario.Name = "picImagenUsuario";
-            this.picImagenUsuario.Size = new System.Drawing.Size(117, 125);
-            this.picImagenUsuario.TabIndex = 30;
-            this.picImagenUsuario.TabStop = false;
-            // 
-            // btnFoto
-            // 
-            this.btnFoto.BackColor = System.Drawing.Color.LightGray;
-            this.btnFoto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnFoto.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnFoto.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnFoto.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.btnFoto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnFoto.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnFoto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnFoto.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnFoto.Location = new System.Drawing.Point(422, 243);
-            this.btnFoto.Name = "btnFoto";
-            this.btnFoto.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnFoto.Size = new System.Drawing.Size(135, 31);
-            this.btnFoto.TabIndex = 31;
-            this.btnFoto.Text = "Foto";
-            this.btnFoto.UseVisualStyleBackColor = false;
-            this.btnFoto.Click += new System.EventHandler(this.btnFoto_Click);
-            // 
-            // BtnGuardar
-            // 
-            this.BtnGuardar.BackColor = System.Drawing.Color.LightGray;
-            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.BtnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtnGuardar.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(131, 397);
-            this.BtnGuardar.Name = "BtnGuardar";
-            this.BtnGuardar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.BtnGuardar.Size = new System.Drawing.Size(135, 31);
-            this.BtnGuardar.TabIndex = 32;
-            this.BtnGuardar.Text = "Guardar";
-            this.BtnGuardar.UseVisualStyleBackColor = false;
-            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.BackColor = System.Drawing.Color.LightGray;
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
-            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(302, 397);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(135, 31);
-            this.btnCancelar.TabIndex = 33;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = false;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // panelBotonCerrar
             // 
@@ -354,11 +282,16 @@
             this.panelBotonCerrar.Size = new System.Drawing.Size(576, 35);
             this.panelBotonCerrar.TabIndex = 34;
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // picCerrar
             // 
             this.picCerrar.BackColor = System.Drawing.Color.LightGray;
             this.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.picCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picCerrar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
             this.picCerrar.Location = new System.Drawing.Point(539, 3);
             this.picCerrar.Name = "picCerrar";
             this.picCerrar.Size = new System.Drawing.Size(25, 25);
@@ -366,9 +299,61 @@
             this.picCerrar.TabStop = false;
             this.picCerrar.Click += new System.EventHandler(this.picCerrar_Click);
             // 
-            // openFileDialog1
+            // LTitulo
             // 
-            this.openFileDialog1.FileName = "openFileDialog1";
+            this.LTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTitulo.ForeColor = System.Drawing.Color.Black;
+            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.altaClienteUsuario;
+            this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LTitulo.Location = new System.Drawing.Point(3, 3);
+            this.LTitulo.Name = "LTitulo";
+            this.LTitulo.Size = new System.Drawing.Size(192, 28);
+            this.LTitulo.TabIndex = 22;
+            this.LTitulo.Text = "Agregar  de Usuario";
+            this.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.BackColor = System.Drawing.Color.LightGray;
+            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
+            this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCancelar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
+            this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCancelar.Location = new System.Drawing.Point(429, 275);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(108, 31);
+            this.btnCancelar.TabIndex = 33;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // BtnGuardar
+            // 
+            this.BtnGuardar.BackColor = System.Drawing.Color.LightGray;
+            this.BtnGuardar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.BtnGuardar.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.BtnGuardar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.BtnGuardar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.BtnGuardar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtnGuardar.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.BtnGuardar.Image = global::CapaPresentacion.Properties.Resources.flecha_de_circulo_de_disquete_a_la_derecha;
+            this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGuardar.Location = new System.Drawing.Point(429, 207);
+            this.BtnGuardar.Name = "BtnGuardar";
+            this.BtnGuardar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.BtnGuardar.Size = new System.Drawing.Size(108, 31);
+            this.BtnGuardar.TabIndex = 32;
+            this.BtnGuardar.Text = "Guardar";
+            this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // AltaUsuario
             // 
@@ -379,10 +364,8 @@
             this.Controls.Add(this.panelBotonCerrar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.btnFoto);
-            this.Controls.Add(this.picImagenUsuario);
             this.Controls.Add(this.CBEstado);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.textCorreo);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.lblDomicilio);
             this.Controls.Add(this.txtDomicilio);
@@ -406,9 +389,8 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaUsuario";
             this.Load += new System.EventHandler(this.AltaUsuario_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picImagenUsuario)).EndInit();
             this.panelBotonCerrar.ResumeLayout(false);
-            this.panelBotonCerrar.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -435,14 +417,12 @@
         private System.Windows.Forms.TextBox txtDomicilio;
         private System.Windows.Forms.Label lblDomicilio;
         private System.Windows.Forms.Label lblCorreo;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox textCorreo;
         private System.Windows.Forms.ComboBox CBEstado;
-        private System.Windows.Forms.PictureBox picImagenUsuario;
-        public System.Windows.Forms.Button btnFoto;
         public System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Panel panelBotonCerrar;
         private System.Windows.Forms.PictureBox picCerrar;
-        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

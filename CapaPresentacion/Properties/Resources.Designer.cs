@@ -73,9 +73,39 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap altaClienteUsuario {
+            get {
+                object obj = ResourceManager.GetObject("altaClienteUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap anadir {
+            get {
+                object obj = ResourceManager.GetObject("anadir", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatarUsuario {
             get {
                 object obj = ResourceManager.GetObject("avatarUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap busqueda {
+            get {
+                object obj = ResourceManager.GetObject("busqueda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -106,6 +136,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap chat_flecha_crecer {
             get {
                 object obj = ResourceManager.GetObject("chat-flecha-crecer", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap checkbox_ckeck_icon_143039 {
+            get {
+                object obj = ResourceManager.GetObject("checkbox_ckeck_icon_143039", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -153,9 +193,59 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap edit_user_icon_195392 {
+            get {
+                object obj = ResourceManager.GetObject("edit_user_icon_195392", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Edit_User_icon_icons_com_55920 {
+            get {
+                object obj = ResourceManager.GetObject("Edit_User_icon-icons.com_55920", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap editar {
+            get {
+                object obj = ResourceManager.GetObject("editar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap flecha_de_circulo_de_disquete_a_la_derecha {
+            get {
+                object obj = ResourceManager.GetObject("flecha-de-circulo-de-disquete-a-la-derecha", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap ingresar {
             get {
                 object obj = ResourceManager.GetObject("ingresar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lista {
+            get {
+                object obj = ResourceManager.GetObject("lista", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -213,6 +303,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap papelera_xmark {
+            get {
+                object obj = ResourceManager.GetObject("papelera-xmark", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap paraArticulos {
             get {
                 object obj = ResourceManager.GetObject("paraArticulos", resourceCulture);
@@ -233,6 +333,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap print_black_printer_tool_symbol_icon_icons_com_54467 {
+            get {
+                object obj = ResourceManager.GetObject("print-black-printer-tool-symbol_icon-icons.com_54467", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap products_filled_icon_142867 {
+            get {
+                object obj = ResourceManager.GetObject("products_filled_icon_142867", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap recargar {
             get {
                 object obj = ResourceManager.GetObject("recargar", resourceCulture);
@@ -246,6 +366,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap rosq {
             get {
                 object obj = ResourceManager.GetObject("rosq", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap sales_store_ecommerce_shopping_and_commerce_shop_online_icon_255549 {
+            get {
+                object obj = ResourceManager.GetObject("sales_store_ecommerce_shopping_and_commerce_shop_online_icon_255549", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -276,6 +406,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap user_girl_female_follow_icon_2507451 {
             get {
                 object obj = ResourceManager.GetObject("user_girl_female_follow_icon_2507451", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap users_gear_icon_198627 {
+            get {
+                object obj = ResourceManager.GetObject("users_gear_icon_198627", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -323,6 +463,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap usuarios_alt1 {
+            get {
+                object obj = ResourceManager.GetObject("usuarios-alt1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap VE {
             get {
                 object obj = ResourceManager.GetObject("VE", resourceCulture);
@@ -356,6 +506,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap VENTAS1 {
             get {
                 object obj = ResourceManager.GetObject("VENTAS1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap wishlist_product_list_order_cart_icon_225172 {
+            get {
+                object obj = ResourceManager.GetObject("wishlist_product_list_order_cart_icon_225172", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

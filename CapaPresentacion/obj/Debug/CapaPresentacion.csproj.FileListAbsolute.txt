@@ -150,6 +150,11 @@ C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion
 C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Usuarios.FormUsu.resources
 C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Usuarios.EditarUsuario.resources
 C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.FormRegistrarVentas.resources
-C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Form1.resources
 C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Ventas.formDetalleVent.resources
 C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Properties.Resources.resources
+C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Clientes.AltaCliente.resources
+C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Seguridad.FormSeguridad.resources
+C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Clientes.EditarCliente.resources
+C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Prod_Categ.AltaProd.resources
+C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Prod_Categ.EditarProd.resources
+C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Prod_Categ.AltaCateg.resources
