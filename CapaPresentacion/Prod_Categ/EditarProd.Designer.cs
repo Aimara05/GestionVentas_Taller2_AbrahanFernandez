@@ -29,12 +29,15 @@
         private void InitializeComponent()
         {
             this.panelBotonCerrar = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picCerrar = new System.Windows.Forms.PictureBox();
+            this.LTitulo = new System.Windows.Forms.Label();
             this.CBEstado = new System.Windows.Forms.ComboBox();
             this.lblDomicilio = new System.Windows.Forms.Label();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
             this.lblTel = new System.Windows.Forms.Label();
-            this.TBdni = new System.Windows.Forms.TextBox();
+            this.txtCod = new System.Windows.Forms.TextBox();
             this.LDni = new System.Windows.Forms.Label();
             this.LNombree = new System.Windows.Forms.Label();
             this.Lestado = new System.Windows.Forms.Label();
@@ -42,12 +45,9 @@
             this.CBRol = new System.Windows.Forms.ComboBox();
             this.LApellido = new System.Windows.Forms.Label();
             this.LRol = new System.Windows.Forms.Label();
-            this.TBapellido = new System.Windows.Forms.TextBox();
+            this.TBdescr = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.picCerrar = new System.Windows.Forms.PictureBox();
-            this.LTitulo = new System.Windows.Forms.Label();
             this.panelBotonCerrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
@@ -64,6 +64,45 @@
             this.panelBotonCerrar.Name = "panelBotonCerrar";
             this.panelBotonCerrar.Size = new System.Drawing.Size(560, 35);
             this.panelBotonCerrar.TabIndex = 36;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.LightGray;
+            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
+            this.pictureBox1.Location = new System.Drawing.Point(523, 6);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
+            this.pictureBox1.TabIndex = 36;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            // 
+            // picCerrar
+            // 
+            this.picCerrar.BackColor = System.Drawing.Color.LightGray;
+            this.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picCerrar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
+            this.picCerrar.Location = new System.Drawing.Point(767, 3);
+            this.picCerrar.Name = "picCerrar";
+            this.picCerrar.Size = new System.Drawing.Size(33, 22);
+            this.picCerrar.TabIndex = 35;
+            this.picCerrar.TabStop = false;
+            // 
+            // LTitulo
+            // 
+            this.LTitulo.BackColor = System.Drawing.Color.Transparent;
+            this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LTitulo.ForeColor = System.Drawing.Color.Black;
+            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.editar;
+            this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.LTitulo.Location = new System.Drawing.Point(3, 0);
+            this.LTitulo.Name = "LTitulo";
+            this.LTitulo.Size = new System.Drawing.Size(170, 31);
+            this.LTitulo.TabIndex = 22;
+            this.LTitulo.Text = "Editar  Producto";
+            this.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // CBEstado
             // 
@@ -87,21 +126,23 @@
             this.lblDomicilio.TabIndex = 70;
             this.lblDomicilio.Text = "Precio:";
             // 
-            // txtDomicilio
+            // txtPrecio
             // 
-            this.txtDomicilio.BackColor = System.Drawing.Color.White;
-            this.txtDomicilio.Location = new System.Drawing.Point(194, 206);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(185, 20);
-            this.txtDomicilio.TabIndex = 69;
+            this.txtPrecio.BackColor = System.Drawing.Color.White;
+            this.txtPrecio.Location = new System.Drawing.Point(194, 206);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(185, 20);
+            this.txtPrecio.TabIndex = 69;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
-            // txtTelefono
+            // txtStock
             // 
-            this.txtTelefono.BackColor = System.Drawing.Color.White;
-            this.txtTelefono.Location = new System.Drawing.Point(194, 180);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(185, 20);
-            this.txtTelefono.TabIndex = 68;
+            this.txtStock.BackColor = System.Drawing.Color.White;
+            this.txtStock.Location = new System.Drawing.Point(194, 180);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(185, 20);
+            this.txtStock.TabIndex = 68;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // lblTel
             // 
@@ -115,13 +156,15 @@
             this.lblTel.TabIndex = 67;
             this.lblTel.Text = "Stock:";
             // 
-            // TBdni
+            // txtCod
             // 
-            this.TBdni.BackColor = System.Drawing.Color.White;
-            this.TBdni.Location = new System.Drawing.Point(194, 99);
-            this.TBdni.Name = "TBdni";
-            this.TBdni.Size = new System.Drawing.Size(185, 20);
-            this.TBdni.TabIndex = 61;
+            this.txtCod.BackColor = System.Drawing.Color.White;
+            this.txtCod.Location = new System.Drawing.Point(194, 99);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(185, 20);
+            this.txtCod.TabIndex = 61;
+            this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
+            this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             // 
             // LDni
             // 
@@ -166,6 +209,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(185, 20);
             this.txtNombre.TabIndex = 62;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // CBRol
             // 
@@ -201,13 +245,14 @@
             this.LRol.TabIndex = 65;
             this.LRol.Text = "Categoría";
             // 
-            // TBapellido
+            // TBdescr
             // 
-            this.TBapellido.BackColor = System.Drawing.Color.White;
-            this.TBapellido.Location = new System.Drawing.Point(194, 154);
-            this.TBapellido.Name = "TBapellido";
-            this.TBapellido.Size = new System.Drawing.Size(185, 20);
-            this.TBapellido.TabIndex = 63;
+            this.TBdescr.BackColor = System.Drawing.Color.White;
+            this.TBdescr.Location = new System.Drawing.Point(194, 154);
+            this.TBdescr.Name = "TBdescr";
+            this.TBdescr.Size = new System.Drawing.Size(185, 20);
+            this.TBdescr.TabIndex = 63;
+            this.TBdescr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBdescr_KeyPress);
             // 
             // btnCancelar
             // 
@@ -249,45 +294,7 @@
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.UseVisualStyleBackColor = false;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
-            this.pictureBox1.Location = new System.Drawing.Point(523, 6);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
-            // 
-            // picCerrar
-            // 
-            this.picCerrar.BackColor = System.Drawing.Color.LightGray;
-            this.picCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.picCerrar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
-            this.picCerrar.Location = new System.Drawing.Point(767, 3);
-            this.picCerrar.Name = "picCerrar";
-            this.picCerrar.Size = new System.Drawing.Size(33, 22);
-            this.picCerrar.TabIndex = 35;
-            this.picCerrar.TabStop = false;
-            // 
-            // LTitulo
-            // 
-            this.LTitulo.BackColor = System.Drawing.Color.Transparent;
-            this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LTitulo.ForeColor = System.Drawing.Color.Black;
-            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.editar;
-            this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LTitulo.Location = new System.Drawing.Point(3, 0);
-            this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(170, 31);
-            this.LTitulo.TabIndex = 22;
-            this.LTitulo.Text = "Editar  Producto";
-            this.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // EditarProd
             // 
@@ -299,10 +306,10 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.CBEstado);
             this.Controls.Add(this.lblDomicilio);
-            this.Controls.Add(this.txtDomicilio);
-            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtStock);
             this.Controls.Add(this.lblTel);
-            this.Controls.Add(this.TBdni);
+            this.Controls.Add(this.txtCod);
             this.Controls.Add(this.LDni);
             this.Controls.Add(this.LNombree);
             this.Controls.Add(this.Lestado);
@@ -310,7 +317,7 @@
             this.Controls.Add(this.CBRol);
             this.Controls.Add(this.LApellido);
             this.Controls.Add(this.LRol);
-            this.Controls.Add(this.TBapellido);
+            this.Controls.Add(this.TBdescr);
             this.Controls.Add(this.panelBotonCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarProd";
@@ -334,10 +341,10 @@
         public System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.ComboBox CBEstado;
         private System.Windows.Forms.Label lblDomicilio;
-        private System.Windows.Forms.TextBox txtDomicilio;
-        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label lblTel;
-        private System.Windows.Forms.TextBox TBdni;
+        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label LDni;
         private System.Windows.Forms.Label LNombree;
         private System.Windows.Forms.Label Lestado;
@@ -345,6 +352,6 @@
         private System.Windows.Forms.ComboBox CBRol;
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LRol;
-        private System.Windows.Forms.TextBox TBapellido;
+        private System.Windows.Forms.TextBox TBdescr;
     }
 }

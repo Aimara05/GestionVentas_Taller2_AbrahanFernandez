@@ -17,6 +17,7 @@ namespace CapaPresentacion.Prod_Categ
             InitializeComponent();
         }
 
+        //metodo para cancelar form
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult ask = MessageBox.Show("Seguro que desea cerrar el formulario de alta?"
@@ -28,6 +29,8 @@ namespace CapaPresentacion.Prod_Categ
             }
         }
 
+
+      
         private void pictureBox1_Click(object sender, EventArgs e)
         {
             DialogResult ask = MessageBox.Show("Seguro que desea cerrar el formulario de alta?"
@@ -37,6 +40,73 @@ namespace CapaPresentacion.Prod_Categ
             {
                 this.Close();
             }
+        }
+
+        //VALIDACIONES
+        private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solamente se pueden ingresar números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solamente se pueden letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        private void TBdescr_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+        }
+
+        private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solamente se pueden ingresar números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+
+        private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
+            {
+                MessageBox.Show("Solamente se pueden ingresar números", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                e.Handled = true;
+                return;
+            }
+        }
+
+        //metodo del btn guardar
+        private void BtnGuardar_Click(object sender, EventArgs e)
+        {
+            string mensaje = string.Empty;
+
+            if (string.IsNullOrWhiteSpace(txtCod.Text) || string.IsNullOrWhiteSpace(txtNombre.Text) ||
+               string.IsNullOrWhiteSpace(TBdescr.Text) || string.IsNullOrWhiteSpace(txtStock.Text) ||
+               string.IsNullOrWhiteSpace(txtPrecio.Text)) // para validar valores null y espacios vacíos.
+            {
+                MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void txtCod_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

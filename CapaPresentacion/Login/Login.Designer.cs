@@ -129,9 +129,9 @@
             this.lblContraseña.AutoSize = true;
             this.lblContraseña.Location = new System.Drawing.Point(34, 141);
             this.lblContraseña.Name = "lblContraseña";
-            this.lblContraseña.Size = new System.Drawing.Size(151, 20);
+            this.lblContraseña.Size = new System.Drawing.Size(153, 20);
             this.lblContraseña.TabIndex = 11;
-            this.lblContraseña.Text = "Ingrese su contraseña";
+            this.lblContraseña.Text = "Ingrese su Contraseña";
             // 
             // txtUsuario
             // 

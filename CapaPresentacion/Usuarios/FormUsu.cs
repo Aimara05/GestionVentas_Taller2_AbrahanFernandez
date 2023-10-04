@@ -28,14 +28,37 @@ namespace CapaPresentacion.Usuarios
         public FormUsu()
         {
             InitializeComponent();
+            dataGridUsuario.CellFormatting += dataGridUsuario_CellFormatting;
+
         }
-        
+
         //Métodos para abrir formulario.
         private void abrirFormularios(Form formulario)
         {
             formulario.Show();
 
         }
+
+        //Método para darle color a los usuarios "no actvos"
+        private void dataGridUsuario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+          
+            if (dataGridUsuario.Columns[e.ColumnIndex].Name == "Estado")
+            {
+                // Verifica si el valor de la celda es "No activo"
+                if (e.Value != null && e.Value.ToString() == "No activo")
+                {
+                    // Establece el color de fondo de toda la fila en rosa
+                    dataGridUsuario.Rows[e.RowIndex].DefaultCellStyle.BackColor = Color.Pink;
+                }
+                else
+                {
+                    // Restablece el color de fondo predeterminado para otras filas
+                    dataGridUsuario.Rows[e.RowIndex].DefaultCellStyle.BackColor = SystemColors.Window;
+                }
+            }
+        }
+
 
         //Método cuando carga el formulario.
         private void FormUsu_Load(object sender, EventArgs e)
@@ -55,6 +78,8 @@ namespace CapaPresentacion.Usuarios
 
 
             }
+
+            //para que mueste en el cbBusqueda la cabecera del datagrid
 
             foreach (DataGridViewColumn columna in dataGridUsuario.Columns)
             {
@@ -102,34 +127,43 @@ namespace CapaPresentacion.Usuarios
                 edit.textCorreo.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["Correo"].Value.ToString();
                 edit.TBusuario.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["usuario"].Value.ToString();
                 edit.TBcontrasena.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["clave"].Value.ToString();
+                int index = Convert.ToInt32(dataGridUsuario.Rows[filaSeleccionada].Cells["idRol"].Value);
+                string estadostr = dataGridUsuario.Rows[filaSeleccionada].Cells["Estado"].Value.ToString();
 
 
+
+                edit.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
+                edit.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
+
+                edit.comboBox1.DisplayMember = "Texto";
+                edit.comboBox1.ValueMember = "Valor";
+
+                if (estadostr == "Activo")
+                {
+                    edit.comboBox1.SelectedIndex = 0;
+
+                }
+                else
+                {
+                    edit.comboBox1.SelectedIndex = 1;
+                }
                 
+                List<ROL> listaRol = new CN_Rol().Listar();
 
-                  foreach (ComboBoxOpc oc in edit.CBRol.Items)
-                  {
-                      if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dataGridUsuario.Rows[filaSeleccionada].Cells["idRol"].Value))
-                      {
-                          int indice_combo = edit.CBRol.Items.IndexOf(oc);
-                          edit.CBRol.SelectedIndex = indice_combo;
-                          break;
-                      }
+                foreach (ROL item in listaRol)
+                {
+                    edit.CBRol.Items.Add(new ComboBoxOpc() { Valor = item.idRol, Texto = item.descripcion });
 
-                  }
-                  foreach (ComboBoxOpc oc in edit.comboBox1.Items)
-                  {
-                      if (Convert.ToInt32(oc.Valor) == Convert.ToInt32(dataGridUsuario.Rows[filaSeleccionada].Cells["Estado"].Value))
-                      {
-                          int indice_combo = edit.comboBox1.Items.IndexOf(oc);
-                          edit.comboBox1.SelectedIndex = indice_combo;
-                          break;
-                      }
+                }
 
-                  }
+                edit.CBRol.DisplayMember = "Texto";
+                edit.CBRol.ValueMember = "Valor";
+                edit.CBRol.SelectedIndex = index - 1;
 
 
 
                 abrirFormularios(edit);
+
             }
             else
             {
@@ -159,9 +193,6 @@ namespace CapaPresentacion.Usuarios
                 item.oRol.descripcion
             }); 
             
-
-
-
                 // Actualizo el datagrid
                 dataGridUsuario.Refresh();
                  }
@@ -200,10 +231,6 @@ namespace CapaPresentacion.Usuarios
                 {
                     MessageBox.Show("El usuario ya fue dado de baja anteriormente");
                 }
-
-               
-
-
             }
             else
             {
@@ -244,11 +271,42 @@ namespace CapaPresentacion.Usuarios
                 }
 
                 
-
+                
             }
             else
             {
                 MessageBox.Show("Por favor, seleccione un usuario antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        //Método para buscar
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro= ((ComboBoxOpc)cboBusqueda.SelectedItem).Valor.ToString();
+            if (dataGridUsuario.Rows.Count > 0 )
+            {
+                foreach (DataGridViewRow row in dataGridUsuario.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.  //trim: espacion al final o al inicio
+                        Text.Trim().ToUpper ()))                                                          //toupper: convertir en mayuscula
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible=false;
+                    }
+                }
+            }
+        }
+
+        //Metodo para limpiar el datagrid,despues de la busqueda
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBusqueda.Text = "";
+            foreach (DataGridViewRow row in dataGridUsuario.Rows)
+            {
+                row.Visible=true;
             }
         }
     }

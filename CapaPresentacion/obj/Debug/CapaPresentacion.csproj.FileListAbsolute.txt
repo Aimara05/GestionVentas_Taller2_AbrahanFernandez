@@ -158,3 +158,4 @@ C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion
 C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Prod_Categ.AltaProd.resources
 C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Prod_Categ.EditarProd.resources
 C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Prod_Categ.AltaCateg.resources
+C:\Users\Usuario\source\repos\PROYECTO-Taller2-FernandezAbrahan\CapaPresentacion\obj\Debug\CapaPresentacion.Prod_Categ.EditarCateg.resources

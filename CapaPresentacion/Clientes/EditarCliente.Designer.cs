@@ -28,13 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.panelBotonCerrar = new System.Windows.Forms.Panel();
             this.picCerrar = new System.Windows.Forms.PictureBox();
             this.LTitulo = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.textCorreo = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblDomicilio = new System.Windows.Forms.Label();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
@@ -53,8 +54,10 @@
             this.TBusuario = new System.Windows.Forms.TextBox();
             this.TBcontrasena = new System.Windows.Forms.TextBox();
             this.LContrasena = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBotonCerrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBotonCerrar
@@ -135,6 +138,7 @@
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // comboBox1
             // 
@@ -146,13 +150,14 @@
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
             this.comboBox1.TabIndex = 79;
             // 
-            // textCorreo
+            // txtCorreo
             // 
-            this.textCorreo.BackColor = System.Drawing.Color.White;
-            this.textCorreo.Location = new System.Drawing.Point(191, 212);
-            this.textCorreo.Name = "textCorreo";
-            this.textCorreo.Size = new System.Drawing.Size(185, 20);
-            this.textCorreo.TabIndex = 78;
+            this.txtCorreo.BackColor = System.Drawing.Color.White;
+            this.txtCorreo.Location = new System.Drawing.Point(191, 212);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(185, 20);
+            this.txtCorreo.TabIndex = 78;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textCorreo_KeyPress);
             // 
             // lblCorreo
             // 
@@ -193,6 +198,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(185, 20);
             this.txtTelefono.TabIndex = 74;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblTel
             // 
@@ -213,6 +219,7 @@
             this.TBdni.Name = "TBdni";
             this.TBdni.Size = new System.Drawing.Size(185, 20);
             this.TBdni.TabIndex = 65;
+            this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBdni_KeyPress);
             // 
             // LDni
             // 
@@ -257,6 +264,7 @@
             this.TBNombree.Name = "TBNombree";
             this.TBNombree.Size = new System.Drawing.Size(185, 20);
             this.TBNombree.TabIndex = 66;
+            this.TBNombree.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBNombree_KeyPress);
             // 
             // CBRol
             // 
@@ -299,6 +307,7 @@
             this.TBapellido.Name = "TBapellido";
             this.TBapellido.Size = new System.Drawing.Size(185, 20);
             this.TBapellido.TabIndex = 67;
+            this.TBapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBapellido_KeyPress);
             // 
             // LUsuario
             // 
@@ -319,6 +328,7 @@
             this.TBusuario.Name = "TBusuario";
             this.TBusuario.Size = new System.Drawing.Size(185, 20);
             this.TBusuario.TabIndex = 68;
+            this.TBusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBusuario_KeyPress);
             // 
             // TBcontrasena
             // 
@@ -327,6 +337,7 @@
             this.TBcontrasena.Name = "TBcontrasena";
             this.TBcontrasena.Size = new System.Drawing.Size(185, 20);
             this.TBcontrasena.TabIndex = 69;
+            this.TBcontrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBcontrasena_KeyPress);
             // 
             // LContrasena
             // 
@@ -340,6 +351,10 @@
             this.LContrasena.TabIndex = 64;
             this.LContrasena.Text = "Contraseña:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // EditarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -349,7 +364,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textCorreo);
+            this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.lblDomicilio);
             this.Controls.Add(this.txtDomicilio);
@@ -375,6 +390,7 @@
             this.Text = "EditarCliente";
             this.panelBotonCerrar.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -388,7 +404,7 @@
         private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button BtnGuardar;
         public System.Windows.Forms.ComboBox comboBox1;
-        public System.Windows.Forms.TextBox textCorreo;
+        public System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblDomicilio;
         public System.Windows.Forms.TextBox txtDomicilio;
@@ -407,5 +423,6 @@
         public System.Windows.Forms.TextBox TBusuario;
         public System.Windows.Forms.TextBox TBcontrasena;
         private System.Windows.Forms.Label LContrasena;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

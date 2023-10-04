@@ -312,6 +312,7 @@
             this.dataGridUsuario.RowTemplate.Height = 28;
             this.dataGridUsuario.Size = new System.Drawing.Size(921, 404);
             this.dataGridUsuario.TabIndex = 26;
+            this.dataGridUsuario.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridUsuario_CellContentClick);
             // 
             // btnSeleccionar
             // 

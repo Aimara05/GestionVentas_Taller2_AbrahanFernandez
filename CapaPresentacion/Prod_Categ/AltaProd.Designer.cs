@@ -36,10 +36,10 @@
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.CBEstado = new System.Windows.Forms.ComboBox();
             this.lblDomicilio = new System.Windows.Forms.Label();
-            this.txtDomicilio = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtStock = new System.Windows.Forms.TextBox();
             this.lblTel = new System.Windows.Forms.Label();
-            this.TBdni = new System.Windows.Forms.TextBox();
+            this.txtCod = new System.Windows.Forms.TextBox();
             this.LDni = new System.Windows.Forms.Label();
             this.LNombree = new System.Windows.Forms.Label();
             this.Lestado = new System.Windows.Forms.Label();
@@ -47,7 +47,7 @@
             this.CBRol = new System.Windows.Forms.ComboBox();
             this.LApellido = new System.Windows.Forms.Label();
             this.LRol = new System.Windows.Forms.Label();
-            this.TBapellido = new System.Windows.Forms.TextBox();
+            this.txtDescr = new System.Windows.Forms.TextBox();
             this.panelBotonCerrar.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
@@ -95,13 +95,13 @@
             this.LTitulo.BackColor = System.Drawing.Color.Transparent;
             this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTitulo.ForeColor = System.Drawing.Color.Black;
-            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.anadir;
+            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.anadir___Copia;
             this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LTitulo.Location = new System.Drawing.Point(3, 0);
             this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(197, 31);
+            this.LTitulo.Size = new System.Drawing.Size(176, 31);
             this.LTitulo.TabIndex = 22;
-            this.LTitulo.Text = "Agregar  de Producto";
+            this.LTitulo.Text = "Agregar   Producto";
             this.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnCancelar
@@ -151,7 +151,7 @@
             this.CBEstado.BackColor = System.Drawing.Color.White;
             this.CBEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBEstado.FormattingEnabled = true;
-            this.CBEstado.Location = new System.Drawing.Point(196, 286);
+            this.CBEstado.Location = new System.Drawing.Point(196, 275);
             this.CBEstado.Name = "CBEstado";
             this.CBEstado.Size = new System.Drawing.Size(185, 21);
             this.CBEstado.TabIndex = 55;
@@ -168,21 +168,23 @@
             this.lblDomicilio.TabIndex = 52;
             this.lblDomicilio.Text = "Precio:";
             // 
-            // txtDomicilio
+            // txtPrecio
             // 
-            this.txtDomicilio.BackColor = System.Drawing.Color.White;
-            this.txtDomicilio.Location = new System.Drawing.Point(196, 192);
-            this.txtDomicilio.Name = "txtDomicilio";
-            this.txtDomicilio.Size = new System.Drawing.Size(185, 20);
-            this.txtDomicilio.TabIndex = 51;
+            this.txtPrecio.BackColor = System.Drawing.Color.White;
+            this.txtPrecio.Location = new System.Drawing.Point(196, 192);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(185, 20);
+            this.txtPrecio.TabIndex = 51;
+            this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
-            // txtTelefono
+            // txtStock
             // 
-            this.txtTelefono.BackColor = System.Drawing.Color.White;
-            this.txtTelefono.Location = new System.Drawing.Point(196, 166);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(185, 20);
-            this.txtTelefono.TabIndex = 50;
+            this.txtStock.BackColor = System.Drawing.Color.White;
+            this.txtStock.Location = new System.Drawing.Point(196, 166);
+            this.txtStock.Name = "txtStock";
+            this.txtStock.Size = new System.Drawing.Size(185, 20);
+            this.txtStock.TabIndex = 50;
+            this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
             // lblTel
             // 
@@ -196,13 +198,15 @@
             this.lblTel.TabIndex = 49;
             this.lblTel.Text = "Stock:";
             // 
-            // TBdni
+            // txtCod
             // 
-            this.TBdni.BackColor = System.Drawing.Color.White;
-            this.TBdni.Location = new System.Drawing.Point(196, 85);
-            this.TBdni.Name = "TBdni";
-            this.TBdni.Size = new System.Drawing.Size(185, 20);
-            this.TBdni.TabIndex = 41;
+            this.txtCod.BackColor = System.Drawing.Color.White;
+            this.txtCod.Location = new System.Drawing.Point(196, 85);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(185, 20);
+            this.txtCod.TabIndex = 41;
+            this.txtCod.TextChanged += new System.EventHandler(this.txtCod_TextChanged);
+            this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             // 
             // LDni
             // 
@@ -234,7 +238,7 @@
             this.Lestado.BackColor = System.Drawing.Color.Black;
             this.Lestado.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lestado.ForeColor = System.Drawing.Color.White;
-            this.Lestado.Location = new System.Drawing.Point(57, 294);
+            this.Lestado.Location = new System.Drawing.Point(57, 279);
             this.Lestado.Name = "Lestado";
             this.Lestado.Size = new System.Drawing.Size(51, 17);
             this.Lestado.TabIndex = 48;
@@ -247,17 +251,17 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(185, 20);
             this.txtNombre.TabIndex = 42;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // CBRol
             // 
             this.CBRol.BackColor = System.Drawing.Color.White;
             this.CBRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBRol.FormattingEnabled = true;
-            this.CBRol.Location = new System.Drawing.Point(196, 255);
+            this.CBRol.Location = new System.Drawing.Point(196, 236);
             this.CBRol.Name = "CBRol";
             this.CBRol.Size = new System.Drawing.Size(185, 21);
             this.CBRol.TabIndex = 46;
-            this.CBRol.SelectedIndexChanged += new System.EventHandler(this.CBRol_SelectedIndexChanged);
             // 
             // LApellido
             // 
@@ -277,19 +281,20 @@
             this.LRol.BackColor = System.Drawing.Color.Black;
             this.LRol.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRol.ForeColor = System.Drawing.Color.White;
-            this.LRol.Location = new System.Drawing.Point(52, 259);
+            this.LRol.Location = new System.Drawing.Point(57, 240);
             this.LRol.Name = "LRol";
             this.LRol.Size = new System.Drawing.Size(65, 17);
             this.LRol.TabIndex = 47;
             this.LRol.Text = "Categoría";
             // 
-            // TBapellido
+            // txtDescr
             // 
-            this.TBapellido.BackColor = System.Drawing.Color.White;
-            this.TBapellido.Location = new System.Drawing.Point(196, 140);
-            this.TBapellido.Name = "TBapellido";
-            this.TBapellido.Size = new System.Drawing.Size(185, 20);
-            this.TBapellido.TabIndex = 43;
+            this.txtDescr.BackColor = System.Drawing.Color.White;
+            this.txtDescr.Location = new System.Drawing.Point(196, 140);
+            this.txtDescr.Name = "txtDescr";
+            this.txtDescr.Size = new System.Drawing.Size(185, 20);
+            this.txtDescr.TabIndex = 43;
+            this.txtDescr.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescr_KeyPress);
             // 
             // AltaProd
             // 
@@ -301,10 +306,10 @@
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.CBEstado);
             this.Controls.Add(this.lblDomicilio);
-            this.Controls.Add(this.txtDomicilio);
-            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.txtStock);
             this.Controls.Add(this.lblTel);
-            this.Controls.Add(this.TBdni);
+            this.Controls.Add(this.txtCod);
             this.Controls.Add(this.LDni);
             this.Controls.Add(this.LNombree);
             this.Controls.Add(this.Lestado);
@@ -312,7 +317,7 @@
             this.Controls.Add(this.CBRol);
             this.Controls.Add(this.LApellido);
             this.Controls.Add(this.LRol);
-            this.Controls.Add(this.TBapellido);
+            this.Controls.Add(this.txtDescr);
             this.Controls.Add(this.panelBotonCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaProd";
@@ -335,10 +340,10 @@
         public System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.ComboBox CBEstado;
         private System.Windows.Forms.Label lblDomicilio;
-        private System.Windows.Forms.TextBox txtDomicilio;
-        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtStock;
         private System.Windows.Forms.Label lblTel;
-        private System.Windows.Forms.TextBox TBdni;
+        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label LDni;
         private System.Windows.Forms.Label LNombree;
         private System.Windows.Forms.Label Lestado;
@@ -346,7 +351,7 @@
         private System.Windows.Forms.ComboBox CBRol;
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LRol;
-        private System.Windows.Forms.TextBox TBapellido;
+        private System.Windows.Forms.TextBox txtDescr;
         private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -1,4 +1,6 @@
-﻿using CapaEntidad;
+﻿
+//Form Inicio
+using CapaEntidad;
 using CapaNegocios;
 using CapaPresentacion.Ventas;
 using System;
@@ -83,8 +85,6 @@ namespace CapaPresentacion
 
         }
 
-        //Fín de los metodos de menú desplegable.
-
         
         //Métodos para los Botones de cerrar, minimizar y maximizar del form Inicio
         private void picCerrar_Click_1(object sender, EventArgs e)
@@ -167,6 +167,11 @@ namespace CapaPresentacion
 
         //Metodo del botón Articulos.
 
+        private void btnArticulos_Click(object sender, EventArgs e)
+        {
+            mostrarSubmenuArt(panelDesplegableArt);
+        }
+
         //Metodo del botón Productos.
         private void BProductos_Click(object sender, EventArgs e)
         {
@@ -204,9 +209,6 @@ namespace CapaPresentacion
                  
               }
               abrirFormularios((Button)sender, formClientes);
-
-
-
         }
 
 
@@ -217,6 +219,14 @@ namespace CapaPresentacion
             abrirFormularios((Button)sender, new Usuarios.FormUsu());
         }
 
+        //Método del bnt Ventas.
+        private void btnVentas_Click(object sender, EventArgs e)
+        {
+            mostrarSubmenuVenta(panelDesplegableVent);
+        }
+
+
+        //Método del Registrar venta.
         private void btnRegistrarVent_Click(object sender, EventArgs e)
         {
             abrirFormularios((Button)sender, new FormRegistrarVentas());
@@ -224,6 +234,7 @@ namespace CapaPresentacion
             ocultarSubmenu();
         }
 
+        //Método de detalleVenta.
         private void btnDetalleVent_Click(object sender, EventArgs e)
         {
             formDetalleVent detalle = new formDetalleVent();
@@ -236,27 +247,23 @@ namespace CapaPresentacion
             ocultarSubmenu();
         }
 
-        private void btnVentas_Click(object sender, EventArgs e)
-        {
-            mostrarSubmenuVenta(panelDesplegableVent);
-        }
-
-        private void btnArticulos_Click(object sender, EventArgs e)
-        {
-            mostrarSubmenuArt(panelDesplegableArt);
-        }
-
+        //Método btn Seguridad
         private void btnSeguridad_Click(object sender, EventArgs e)
         {
             abrirFormularios((Button)sender, new Seguridad.FormSeguridad());
         }
         
-        private void panelContenedorForms_Paint(object sender, PaintEventArgs e)
+        //Método btn Salir
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            DialogResult ask = MessageBox.Show("Seguro que quiere apagar el sístema?"
+          , "Confirmar Cancelar",
+               MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (ask == DialogResult.Yes)
             {
-          
+                this.Close();
+            }
         }
-
-       
     }
 }
     

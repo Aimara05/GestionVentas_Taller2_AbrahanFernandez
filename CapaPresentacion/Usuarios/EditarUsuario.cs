@@ -23,31 +23,13 @@ namespace CapaPresentacion.Usuarios
         {
             InitializeComponent();
         }
-
+        
+        
 
         //metodo para cuando carga el form editar
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            comboBox1.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
-            comboBox1.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
-
-            comboBox1.DisplayMember = "Texto";
-            comboBox1.ValueMember = "Valor";
-            comboBox1.SelectedIndex = 0;
-
             
-
-            List<ROL> listaRol = new CN_Rol().Listar();
-
-            foreach (ROL item in listaRol)
-            {
-                CBRol.Items.Add(new ComboBoxOpc() { Valor = item.idRol, Texto = item.descripcion });
-
-            }
-
-            CBRol.DisplayMember = "Texto";
-            CBRol.ValueMember = "Valor";
-            CBRol.SelectedIndex = 0; 
         }
 
         //metodo para cancelar 
@@ -226,6 +208,11 @@ namespace CapaPresentacion.Usuarios
         }
 
         private void panelBotonCerrar_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void TBdni_TextChanged(object sender, EventArgs e)
         {
 
         }

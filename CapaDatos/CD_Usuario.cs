@@ -14,7 +14,10 @@ namespace CapaDatos
 {
     public class CD_Usuario
     {
-        public List<USUARIO> Listar()  //metodo que va ser llamado en la cama de negocio
+
+
+       // Método Listar
+        public List<USUARIO> Listar()  //metodo que va ser llamado en la capa de negocio
         {
 
             List<USUARIO> lista = new List<USUARIO>();
@@ -114,6 +117,8 @@ namespace CapaDatos
              return idusuariogenerado;
          }
 
+
+        //Método editar
          public bool Editar(USUARIO obj, out string mensaje)
          {
              bool respuesta = false;
@@ -165,7 +170,7 @@ namespace CapaDatos
          }
 
 
-
+        //Método Eliminar
          public bool Eliminar(USUARIO obj, out string mensaje)
          {
              bool respuesta = false;
@@ -208,6 +213,7 @@ namespace CapaDatos
 
              }
 
+        //Método Alta Usuario
         public bool Alta(USUARIO obj, out string mensaje)
         {
             bool respuesta = false;

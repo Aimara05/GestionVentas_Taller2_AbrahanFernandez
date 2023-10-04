@@ -273,6 +273,7 @@
             this.btnEditarCateg.Text = "Editar Categoría";
             this.btnEditarCateg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnEditarCateg.UseVisualStyleBackColor = false;
+            this.btnEditarCateg.Click += new System.EventHandler(this.btnEditarCateg_Click);
             // 
             // btnAltaCateg
             // 
@@ -294,6 +295,7 @@
             this.btnAltaCateg.Text = "Añadir Categoría";
             this.btnAltaCateg.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAltaCateg.UseVisualStyleBackColor = false;
+            this.btnAltaCateg.Click += new System.EventHandler(this.btnAltaCateg_Click);
             // 
             // btnRefresh
             // 

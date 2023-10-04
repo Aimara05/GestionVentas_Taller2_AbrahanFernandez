@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaUsuario));
             this.LDni = new System.Windows.Forms.Label();
             this.TBdni = new System.Windows.Forms.TextBox();
             this.LNombree = new System.Windows.Forms.Label();
@@ -50,14 +51,14 @@
             this.textCorreo = new System.Windows.Forms.TextBox();
             this.CBEstado = new System.Windows.Forms.ComboBox();
             this.panelBotonCerrar = new System.Windows.Forms.Panel();
-            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.picCerrar = new System.Windows.Forms.PictureBox();
             this.LTitulo = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.panelBotonCerrar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // LDni
@@ -79,6 +80,7 @@
             this.TBdni.Name = "TBdni";
             this.TBdni.Size = new System.Drawing.Size(185, 20);
             this.TBdni.TabIndex = 7;
+            this.TBdni.TextChanged += new System.EventHandler(this.TBdni_TextChanged);
             this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBdni_KeyPress);
             // 
             // LNombree
@@ -282,10 +284,6 @@
             this.panelBotonCerrar.Size = new System.Drawing.Size(576, 35);
             this.panelBotonCerrar.TabIndex = 34;
             // 
-            // errorProvider1
-            // 
-            this.errorProvider1.ContainerControl = this;
-            // 
             // picCerrar
             // 
             this.picCerrar.BackColor = System.Drawing.Color.LightGray;
@@ -304,7 +302,7 @@
             this.LTitulo.BackColor = System.Drawing.Color.Transparent;
             this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTitulo.ForeColor = System.Drawing.Color.Black;
-            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.altaClienteUsuario;
+            this.LTitulo.Image = ((System.Drawing.Image)(resources.GetObject("LTitulo.Image")));
             this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LTitulo.Location = new System.Drawing.Point(3, 3);
             this.LTitulo.Name = "LTitulo";
@@ -312,6 +310,10 @@
             this.LTitulo.TabIndex = 22;
             this.LTitulo.Text = "Agregar  de Usuario";
             this.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
             // 
             // btnCancelar
             // 
@@ -390,8 +392,8 @@
             this.Text = "AltaUsuario";
             this.Load += new System.EventHandler(this.AltaUsuario_Load);
             this.panelBotonCerrar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

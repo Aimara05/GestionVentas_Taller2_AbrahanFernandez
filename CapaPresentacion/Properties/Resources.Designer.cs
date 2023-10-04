@@ -93,6 +93,26 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap anadir___Copia {
+            get {
+                object obj = ResourceManager.GetObject("anadir - Copia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap apagado {
+            get {
+                object obj = ResourceManager.GetObject("apagado", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap avatarUsuario {
             get {
                 object obj = ResourceManager.GetObject("avatarUsuario", resourceCulture);
@@ -236,6 +256,16 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap ingresar {
             get {
                 object obj = ResourceManager.GetObject("ingresar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap limpieza_de_datos {
+            get {
+                object obj = ResourceManager.GetObject("limpieza-de-datos", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

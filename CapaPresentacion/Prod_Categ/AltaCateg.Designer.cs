@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             this.panelBotonCerrar = new System.Windows.Forms.Panel();
-            this.CBEstado = new System.Windows.Forms.ComboBox();
-            this.TBdni = new System.Windows.Forms.TextBox();
+            this.CBestado = new System.Windows.Forms.ComboBox();
+            this.txtCod = new System.Windows.Forms.TextBox();
             this.LDni = new System.Windows.Forms.Label();
             this.Lestado = new System.Windows.Forms.Label();
             this.LApellido = new System.Windows.Forms.Label();
-            this.TBapellido = new System.Windows.Forms.TextBox();
+            this.txtDescrip = new System.Windows.Forms.TextBox();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -57,23 +57,24 @@
             this.panelBotonCerrar.Size = new System.Drawing.Size(560, 35);
             this.panelBotonCerrar.TabIndex = 36;
             // 
-            // CBEstado
+            // CBestado
             // 
-            this.CBEstado.BackColor = System.Drawing.Color.White;
-            this.CBEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CBEstado.FormattingEnabled = true;
-            this.CBEstado.Location = new System.Drawing.Point(186, 251);
-            this.CBEstado.Name = "CBEstado";
-            this.CBEstado.Size = new System.Drawing.Size(185, 21);
-            this.CBEstado.TabIndex = 71;
+            this.CBestado.BackColor = System.Drawing.Color.White;
+            this.CBestado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.CBestado.FormattingEnabled = true;
+            this.CBestado.Location = new System.Drawing.Point(224, 212);
+            this.CBestado.Name = "CBestado";
+            this.CBestado.Size = new System.Drawing.Size(185, 21);
+            this.CBestado.TabIndex = 71;
             // 
-            // TBdni
+            // txtCod
             // 
-            this.TBdni.BackColor = System.Drawing.Color.White;
-            this.TBdni.Location = new System.Drawing.Point(186, 148);
-            this.TBdni.Name = "TBdni";
-            this.TBdni.Size = new System.Drawing.Size(185, 20);
-            this.TBdni.TabIndex = 61;
+            this.txtCod.BackColor = System.Drawing.Color.White;
+            this.txtCod.Location = new System.Drawing.Point(224, 136);
+            this.txtCod.Name = "txtCod";
+            this.txtCod.Size = new System.Drawing.Size(185, 20);
+            this.txtCod.TabIndex = 61;
+            this.txtCod.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCod_KeyPress);
             // 
             // LDni
             // 
@@ -81,7 +82,7 @@
             this.LDni.BackColor = System.Drawing.Color.Black;
             this.LDni.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDni.ForeColor = System.Drawing.Color.White;
-            this.LDni.Location = new System.Drawing.Point(47, 151);
+            this.LDni.Location = new System.Drawing.Point(138, 136);
             this.LDni.Name = "LDni";
             this.LDni.Size = new System.Drawing.Size(55, 17);
             this.LDni.TabIndex = 58;
@@ -93,7 +94,7 @@
             this.Lestado.BackColor = System.Drawing.Color.Black;
             this.Lestado.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lestado.ForeColor = System.Drawing.Color.White;
-            this.Lestado.Location = new System.Drawing.Point(47, 251);
+            this.Lestado.Location = new System.Drawing.Point(142, 216);
             this.Lestado.Name = "Lestado";
             this.Lestado.Size = new System.Drawing.Size(51, 17);
             this.Lestado.TabIndex = 66;
@@ -105,19 +106,20 @@
             this.LApellido.BackColor = System.Drawing.Color.Black;
             this.LApellido.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellido.ForeColor = System.Drawing.Color.White;
-            this.LApellido.Location = new System.Drawing.Point(47, 206);
+            this.LApellido.Location = new System.Drawing.Point(138, 174);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(79, 17);
             this.LApellido.TabIndex = 60;
             this.LApellido.Text = "Descripción:";
             // 
-            // TBapellido
+            // txtDescrip
             // 
-            this.TBapellido.BackColor = System.Drawing.Color.White;
-            this.TBapellido.Location = new System.Drawing.Point(186, 203);
-            this.TBapellido.Name = "TBapellido";
-            this.TBapellido.Size = new System.Drawing.Size(185, 20);
-            this.TBapellido.TabIndex = 63;
+            this.txtDescrip.BackColor = System.Drawing.Color.White;
+            this.txtDescrip.Location = new System.Drawing.Point(224, 174);
+            this.txtDescrip.Name = "txtDescrip";
+            this.txtDescrip.Size = new System.Drawing.Size(185, 20);
+            this.txtDescrip.TabIndex = 63;
+            this.txtDescrip.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDescrip_KeyPress);
             // 
             // btnCancelar
             // 
@@ -130,13 +132,14 @@
             this.btnCancelar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(413, 237);
+            this.btnCancelar.Location = new System.Drawing.Point(301, 281);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 31);
             this.btnCancelar.TabIndex = 73;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnCancelar.UseVisualStyleBackColor = false;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // BtnGuardar
             // 
@@ -150,7 +153,7 @@
             this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnGuardar.Image = global::CapaPresentacion.Properties.Resources.flecha_de_circulo_de_disquete_a_la_derecha;
             this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(413, 160);
+            this.BtnGuardar.Location = new System.Drawing.Point(141, 281);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.BtnGuardar.Size = new System.Drawing.Size(108, 31);
@@ -158,6 +161,7 @@
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // pictureBox1
             // 
@@ -170,6 +174,7 @@
             this.pictureBox1.Size = new System.Drawing.Size(25, 25);
             this.pictureBox1.TabIndex = 36;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // picCerrar
             // 
@@ -188,7 +193,7 @@
             this.LTitulo.BackColor = System.Drawing.Color.Transparent;
             this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTitulo.ForeColor = System.Drawing.Color.Black;
-            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.anadir;
+            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.anadir___Copia;
             this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LTitulo.Location = new System.Drawing.Point(3, 0);
             this.LTitulo.Name = "LTitulo";
@@ -205,12 +210,12 @@
             this.ClientSize = new System.Drawing.Size(560, 418);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.BtnGuardar);
-            this.Controls.Add(this.CBEstado);
-            this.Controls.Add(this.TBdni);
+            this.Controls.Add(this.CBestado);
+            this.Controls.Add(this.txtCod);
             this.Controls.Add(this.LDni);
             this.Controls.Add(this.Lestado);
             this.Controls.Add(this.LApellido);
-            this.Controls.Add(this.TBapellido);
+            this.Controls.Add(this.txtDescrip);
             this.Controls.Add(this.panelBotonCerrar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "AltaCateg";
@@ -232,11 +237,11 @@
         private System.Windows.Forms.Label LTitulo;
         private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button BtnGuardar;
-        private System.Windows.Forms.ComboBox CBEstado;
-        private System.Windows.Forms.TextBox TBdni;
+        private System.Windows.Forms.ComboBox CBestado;
+        private System.Windows.Forms.TextBox txtCod;
         private System.Windows.Forms.Label LDni;
         private System.Windows.Forms.Label Lestado;
         private System.Windows.Forms.Label LApellido;
-        private System.Windows.Forms.TextBox TBapellido;
+        private System.Windows.Forms.TextBox txtDescrip;
     }
 }

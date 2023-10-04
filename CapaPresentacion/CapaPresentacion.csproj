@@ -355,6 +355,9 @@
     <EmbeddedResource Include="Prod_Categ\AltaProd.resx">
       <DependentUpon>AltaProd.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Prod_Categ\EditarCateg.resx">
+      <DependentUpon>EditarCateg.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Prod_Categ\EditarProd.resx">
       <DependentUpon>EditarProd.cs</DependentUpon>
     </EmbeddedResource>
@@ -557,6 +560,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\print-black-printer-tool-symbol_icon-icons.com_54467.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\apagado.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\limpieza-de-datos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\anadir - Copia.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="packages\Fody.4.0.2\build\Fody.targets" Condition="Exists('packages\Fody.4.0.2\build\Fody.targets')" />

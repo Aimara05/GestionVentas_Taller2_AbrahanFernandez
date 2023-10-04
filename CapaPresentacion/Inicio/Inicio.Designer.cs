@@ -30,31 +30,32 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Inicio));
             this.panelBotones = new System.Windows.Forms.Panel();
-            this.btnSeguridad = new System.Windows.Forms.Button();
-            this.btnReportes = new System.Windows.Forms.Button();
             this.panelDesplegableVent = new System.Windows.Forms.Panel();
             this.btnDetalleVent = new System.Windows.Forms.Button();
             this.btnRegistrarVent = new System.Windows.Forms.Button();
-            this.btnVentas = new System.Windows.Forms.Button();
             this.panelDesplegableArt = new System.Windows.Forms.Panel();
             this.btnCategorias = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
-            this.btnArticulos = new System.Windows.Forms.Button();
-            this.btnClientes = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.panelAvatarUsuar = new System.Windows.Forms.Panel();
             this.lblUsuario = new System.Windows.Forms.Label();
             this.lblRol = new System.Windows.Forms.Label();
-            this.picAvatar = new System.Windows.Forms.PictureBox();
             this.panelTitulo = new System.Windows.Forms.Panel();
-            this.picLogo = new System.Windows.Forms.PictureBox();
             this.panelMostrarFormu = new System.Windows.Forms.Panel();
             this.lblTitulo = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panelContenedorForms = new System.Windows.Forms.Panel();
             this.panelBotonesCerrar = new System.Windows.Forms.Panel();
             this.panelBotonesForm = new System.Windows.Forms.Panel();
+            this.picLogo = new System.Windows.Forms.PictureBox();
+            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnSeguridad = new System.Windows.Forms.Button();
+            this.btnReportes = new System.Windows.Forms.Button();
+            this.btnVentas = new System.Windows.Forms.Button();
+            this.btnArticulos = new System.Windows.Forms.Button();
+            this.btnClientes = new System.Windows.Forms.Button();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.picAvatar = new System.Windows.Forms.PictureBox();
             this.picMaximizar = new System.Windows.Forms.PictureBox();
             this.picRestaurar = new System.Windows.Forms.PictureBox();
             this.picCerrar = new System.Windows.Forms.PictureBox();
@@ -63,12 +64,12 @@
             this.panelDesplegableVent.SuspendLayout();
             this.panelDesplegableArt.SuspendLayout();
             this.panelAvatarUsuar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             this.panelTitulo.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
             this.panel2.SuspendLayout();
             this.panelBotonesCerrar.SuspendLayout();
             this.panelBotonesForm.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMaximizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRestaurar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
@@ -79,6 +80,7 @@
             // 
             this.panelBotones.BackColor = System.Drawing.Color.LightGray;
             this.panelBotones.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.panelBotones.Controls.Add(this.btnSalir);
             this.panelBotones.Controls.Add(this.btnSeguridad);
             this.panelBotones.Controls.Add(this.btnReportes);
             this.panelBotones.Controls.Add(this.panelDesplegableVent);
@@ -90,48 +92,11 @@
             this.panelBotones.Controls.Add(this.btnUsuarios);
             this.panelBotones.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBotones.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelBotones.Location = new System.Drawing.Point(0, 170);
+            this.panelBotones.Location = new System.Drawing.Point(0, 168);
             this.panelBotones.Name = "panelBotones";
             this.panelBotones.Padding = new System.Windows.Forms.Padding(0, 10, 0, 0);
-            this.panelBotones.Size = new System.Drawing.Size(151, 538);
+            this.panelBotones.Size = new System.Drawing.Size(151, 540);
             this.panelBotones.TabIndex = 1;
-            // 
-            // btnSeguridad
-            // 
-            this.btnSeguridad.BackColor = System.Drawing.Color.LightGray;
-            this.btnSeguridad.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnSeguridad.FlatAppearance.BorderSize = 0;
-            this.btnSeguridad.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnSeguridad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.btnSeguridad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSeguridad.Image = global::CapaPresentacion.Properties.Resources.SEGU;
-            this.btnSeguridad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSeguridad.Location = new System.Drawing.Point(0, 352);
-            this.btnSeguridad.Name = "btnSeguridad";
-            this.btnSeguridad.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnSeguridad.Size = new System.Drawing.Size(149, 40);
-            this.btnSeguridad.TabIndex = 13;
-            this.btnSeguridad.Text = "Seguridad";
-            this.btnSeguridad.UseVisualStyleBackColor = false;
-            this.btnSeguridad.Click += new System.EventHandler(this.btnSeguridad_Click);
-            // 
-            // btnReportes
-            // 
-            this.btnReportes.BackColor = System.Drawing.Color.LightGray;
-            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnReportes.FlatAppearance.BorderSize = 0;
-            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnReportes.Image = global::CapaPresentacion.Properties.Resources.chat_flecha_crecer;
-            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(0, 312);
-            this.btnReportes.Name = "btnReportes";
-            this.btnReportes.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnReportes.Size = new System.Drawing.Size(149, 40);
-            this.btnReportes.TabIndex = 12;
-            this.btnReportes.Text = "Reportes";
-            this.btnReportes.UseVisualStyleBackColor = false;
             // 
             // panelDesplegableVent
             // 
@@ -184,25 +149,6 @@
             this.btnRegistrarVent.UseVisualStyleBackColor = false;
             this.btnRegistrarVent.Click += new System.EventHandler(this.btnRegistrarVent_Click);
             // 
-            // btnVentas
-            // 
-            this.btnVentas.BackColor = System.Drawing.Color.LightGray;
-            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnVentas.FlatAppearance.BorderSize = 0;
-            this.btnVentas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnVentas.Image = global::CapaPresentacion.Properties.Resources.carrito_de_compras;
-            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnVentas.Location = new System.Drawing.Point(0, 200);
-            this.btnVentas.Name = "btnVentas";
-            this.btnVentas.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnVentas.Size = new System.Drawing.Size(149, 40);
-            this.btnVentas.TabIndex = 5;
-            this.btnVentas.Text = "Ventas";
-            this.btnVentas.UseVisualStyleBackColor = false;
-            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
-            // 
             // panelDesplegableArt
             // 
             this.panelDesplegableArt.BackColor = System.Drawing.Color.DarkGray;
@@ -254,6 +200,214 @@
             this.btnProductos.UseVisualStyleBackColor = false;
             this.btnProductos.Click += new System.EventHandler(this.BProductos_Click);
             // 
+            // panel1
+            // 
+            this.panel1.AutoSize = true;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 50);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(149, 0);
+            this.panel1.TabIndex = 10;
+            // 
+            // panelAvatarUsuar
+            // 
+            this.panelAvatarUsuar.AutoSize = true;
+            this.panelAvatarUsuar.BackColor = System.Drawing.Color.Black;
+            this.panelAvatarUsuar.Controls.Add(this.lblUsuario);
+            this.panelAvatarUsuar.Controls.Add(this.lblRol);
+            this.panelAvatarUsuar.Controls.Add(this.picAvatar);
+            this.panelAvatarUsuar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelAvatarUsuar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelAvatarUsuar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
+            this.panelAvatarUsuar.Location = new System.Drawing.Point(0, 0);
+            this.panelAvatarUsuar.Name = "panelAvatarUsuar";
+            this.panelAvatarUsuar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
+            this.panelAvatarUsuar.Size = new System.Drawing.Size(151, 168);
+            this.panelAvatarUsuar.TabIndex = 0;
+            // 
+            // lblUsuario
+            // 
+            this.lblUsuario.AutoSize = true;
+            this.lblUsuario.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblUsuario.ForeColor = System.Drawing.Color.DimGray;
+            this.lblUsuario.Location = new System.Drawing.Point(47, 23);
+            this.lblUsuario.Name = "lblUsuario";
+            this.lblUsuario.Size = new System.Drawing.Size(67, 17);
+            this.lblUsuario.TabIndex = 3;
+            this.lblUsuario.Text = "Usuario08";
+            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // lblRol
+            // 
+            this.lblRol.AutoSize = true;
+            this.lblRol.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRol.ForeColor = System.Drawing.Color.DimGray;
+            this.lblRol.Location = new System.Drawing.Point(26, 141);
+            this.lblRol.Name = "lblRol";
+            this.lblRol.Size = new System.Drawing.Size(66, 17);
+            this.lblRol.TabIndex = 2;
+            this.lblRol.Text = "Vendedor";
+            this.lblRol.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            // 
+            // panelTitulo
+            // 
+            this.panelTitulo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.panelTitulo.Controls.Add(this.picLogo);
+            this.panelTitulo.Controls.Add(this.panelMostrarFormu);
+            this.panelTitulo.Controls.Add(this.lblTitulo);
+            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTitulo.Location = new System.Drawing.Point(151, 35);
+            this.panelTitulo.Name = "panelTitulo";
+            this.panelTitulo.Size = new System.Drawing.Size(1149, 96);
+            this.panelTitulo.TabIndex = 1;
+            // 
+            // panelMostrarFormu
+            // 
+            this.panelMostrarFormu.Location = new System.Drawing.Point(3, 106);
+            this.panelMostrarFormu.Name = "panelMostrarFormu";
+            this.panelMostrarFormu.Size = new System.Drawing.Size(907, 556);
+            this.panelMostrarFormu.TabIndex = 2;
+            // 
+            // lblTitulo
+            // 
+            this.lblTitulo.AutoSize = true;
+            this.lblTitulo.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
+            this.lblTitulo.Location = new System.Drawing.Point(34, 43);
+            this.lblTitulo.Name = "lblTitulo";
+            this.lblTitulo.Size = new System.Drawing.Size(280, 25);
+            this.lblTitulo.TabIndex = 1;
+            this.lblTitulo.Text = "Gestión de Sistemas de Ventas";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Black;
+            this.panel2.Controls.Add(this.panelBotones);
+            this.panel2.Controls.Add(this.panelAvatarUsuar);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 35);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(151, 708);
+            this.panel2.TabIndex = 4;
+            // 
+            // panelContenedorForms
+            // 
+            this.panelContenedorForms.BackColor = System.Drawing.Color.DarkGray;
+            this.panelContenedorForms.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedorForms.Location = new System.Drawing.Point(151, 131);
+            this.panelContenedorForms.Name = "panelContenedorForms";
+            this.panelContenedorForms.Size = new System.Drawing.Size(1149, 612);
+           
+            // 
+            // panelBotonesCerrar
+           
+            // 
+            this.panelBotonesCerrar.BackColor = System.Drawing.Color.LightGray;
+            this.panelBotonesCerrar.Controls.Add(this.panelBotonesForm);
+            this.panelBotonesCerrar.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelBotonesCerrar.Location = new System.Drawing.Point(0, 0);
+            this.panelBotonesCerrar.Name = "panelBotonesCerrar";
+            this.panelBotonesCerrar.Size = new System.Drawing.Size(1300, 35);
+            this.panelBotonesCerrar.TabIndex = 3;
+            // 
+            // panelBotonesForm
+            // 
+            this.panelBotonesForm.BackColor = System.Drawing.Color.LightGray;
+            this.panelBotonesForm.Controls.Add(this.picMaximizar);
+            this.panelBotonesForm.Controls.Add(this.picRestaurar);
+            this.panelBotonesForm.Controls.Add(this.picCerrar);
+            this.panelBotonesForm.Controls.Add(this.picMinimizar);
+            this.panelBotonesForm.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelBotonesForm.Location = new System.Drawing.Point(1153, 0);
+            this.panelBotonesForm.Name = "panelBotonesForm";
+            this.panelBotonesForm.Size = new System.Drawing.Size(147, 35);
+            this.panelBotonesForm.TabIndex = 0;
+            // 
+            // picLogo
+            // 
+            this.picLogo.Dock = System.Windows.Forms.DockStyle.Right;
+            this.picLogo.Image = global::CapaPresentacion.Properties.Resources.logo;
+            this.picLogo.Location = new System.Drawing.Point(1046, 0);
+            this.picLogo.Name = "picLogo";
+            this.picLogo.Size = new System.Drawing.Size(103, 96);
+            this.picLogo.TabIndex = 3;
+            this.picLogo.TabStop = false;
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.BackColor = System.Drawing.Color.LightGray;
+            this.btnSalir.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.btnSalir.FlatAppearance.BorderSize = 0;
+            this.btnSalir.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSalir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnSalir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSalir.Image = global::CapaPresentacion.Properties.Resources.apagado;
+            this.btnSalir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSalir.Location = new System.Drawing.Point(0, 498);
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnSalir.Size = new System.Drawing.Size(149, 40);
+            this.btnSalir.TabIndex = 14;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = false;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnSeguridad
+            // 
+            this.btnSeguridad.BackColor = System.Drawing.Color.LightGray;
+            this.btnSeguridad.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnSeguridad.FlatAppearance.BorderSize = 0;
+            this.btnSeguridad.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnSeguridad.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnSeguridad.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSeguridad.Image = global::CapaPresentacion.Properties.Resources.SEGU;
+            this.btnSeguridad.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSeguridad.Location = new System.Drawing.Point(0, 352);
+            this.btnSeguridad.Name = "btnSeguridad";
+            this.btnSeguridad.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnSeguridad.Size = new System.Drawing.Size(149, 40);
+            this.btnSeguridad.TabIndex = 13;
+            this.btnSeguridad.Text = "Seguridad";
+            this.btnSeguridad.UseVisualStyleBackColor = false;
+            this.btnSeguridad.Click += new System.EventHandler(this.btnSeguridad_Click);
+            // 
+            // btnReportes
+            // 
+            this.btnReportes.BackColor = System.Drawing.Color.LightGray;
+            this.btnReportes.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnReportes.FlatAppearance.BorderSize = 0;
+            this.btnReportes.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnReportes.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnReportes.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnReportes.Image = global::CapaPresentacion.Properties.Resources.chat_flecha_crecer;
+            this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnReportes.Location = new System.Drawing.Point(0, 312);
+            this.btnReportes.Name = "btnReportes";
+            this.btnReportes.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnReportes.Size = new System.Drawing.Size(149, 40);
+            this.btnReportes.TabIndex = 12;
+            this.btnReportes.Text = "Reportes";
+            this.btnReportes.UseVisualStyleBackColor = false;
+            // 
+            // btnVentas
+            // 
+            this.btnVentas.BackColor = System.Drawing.Color.LightGray;
+            this.btnVentas.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnVentas.FlatAppearance.BorderSize = 0;
+            this.btnVentas.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnVentas.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnVentas.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnVentas.Image = global::CapaPresentacion.Properties.Resources.carrito_de_compras;
+            this.btnVentas.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnVentas.Location = new System.Drawing.Point(0, 200);
+            this.btnVentas.Name = "btnVentas";
+            this.btnVentas.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnVentas.Size = new System.Drawing.Size(149, 40);
+            this.btnVentas.TabIndex = 5;
+            this.btnVentas.Text = "Ventas";
+            this.btnVentas.UseVisualStyleBackColor = false;
+            this.btnVentas.Click += new System.EventHandler(this.btnVentas_Click);
+            // 
             // btnArticulos
             // 
             this.btnArticulos.BackColor = System.Drawing.Color.LightGray;
@@ -292,15 +446,6 @@
             this.btnClientes.UseVisualStyleBackColor = false;
             this.btnClientes.Click += new System.EventHandler(this.BClientes_Click);
             // 
-            // panel1
-            // 
-            this.panel1.AutoSize = true;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 50);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(149, 0);
-            this.panel1.TabIndex = 10;
-            // 
             // btnUsuarios
             // 
             this.btnUsuarios.BackColor = System.Drawing.Color.LightGray;
@@ -324,46 +469,6 @@
             this.btnUsuarios.UseVisualStyleBackColor = false;
             this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
             // 
-            // panelAvatarUsuar
-            // 
-            this.panelAvatarUsuar.AutoSize = true;
-            this.panelAvatarUsuar.BackColor = System.Drawing.Color.Black;
-            this.panelAvatarUsuar.Controls.Add(this.lblUsuario);
-            this.panelAvatarUsuar.Controls.Add(this.lblRol);
-            this.panelAvatarUsuar.Controls.Add(this.picAvatar);
-            this.panelAvatarUsuar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelAvatarUsuar.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panelAvatarUsuar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(39)))), ((int)(((byte)(39)))));
-            this.panelAvatarUsuar.Location = new System.Drawing.Point(0, 0);
-            this.panelAvatarUsuar.Name = "panelAvatarUsuar";
-            this.panelAvatarUsuar.Padding = new System.Windows.Forms.Padding(0, 0, 0, 10);
-            this.panelAvatarUsuar.Size = new System.Drawing.Size(151, 170);
-            this.panelAvatarUsuar.TabIndex = 0;
-            // 
-            // lblUsuario
-            // 
-            this.lblUsuario.AutoSize = true;
-            this.lblUsuario.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUsuario.ForeColor = System.Drawing.Color.DimGray;
-            this.lblUsuario.Location = new System.Drawing.Point(42, 23);
-            this.lblUsuario.Name = "lblUsuario";
-            this.lblUsuario.Size = new System.Drawing.Size(67, 17);
-            this.lblUsuario.TabIndex = 3;
-            this.lblUsuario.Text = "Usuario08";
-            this.lblUsuario.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
-            // lblRol
-            // 
-            this.lblRol.AutoSize = true;
-            this.lblRol.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRol.ForeColor = System.Drawing.Color.DimGray;
-            this.lblRol.Location = new System.Drawing.Point(26, 143);
-            this.lblRol.Name = "lblRol";
-            this.lblRol.Size = new System.Drawing.Size(66, 17);
-            this.lblRol.TabIndex = 2;
-            this.lblRol.Text = "Vendedor";
-            this.lblRol.TextAlign = System.Drawing.ContentAlignment.TopCenter;
-            // 
             // picAvatar
             // 
             this.picAvatar.Image = global::CapaPresentacion.Properties.Resources.pqueño;
@@ -372,90 +477,6 @@
             this.picAvatar.Size = new System.Drawing.Size(100, 95);
             this.picAvatar.TabIndex = 4;
             this.picAvatar.TabStop = false;
-            // 
-            // panelTitulo
-            // 
-            this.panelTitulo.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.panelTitulo.Controls.Add(this.picLogo);
-            this.panelTitulo.Controls.Add(this.panelMostrarFormu);
-            this.panelTitulo.Controls.Add(this.lblTitulo);
-            this.panelTitulo.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTitulo.Location = new System.Drawing.Point(151, 35);
-            this.panelTitulo.Name = "panelTitulo";
-            this.panelTitulo.Size = new System.Drawing.Size(1149, 96);
-            this.panelTitulo.TabIndex = 1;
-            // 
-            // picLogo
-            // 
-            this.picLogo.Dock = System.Windows.Forms.DockStyle.Right;
-            this.picLogo.Image = global::CapaPresentacion.Properties.Resources.logo;
-            this.picLogo.Location = new System.Drawing.Point(1046, 0);
-            this.picLogo.Name = "picLogo";
-            this.picLogo.Size = new System.Drawing.Size(103, 96);
-            this.picLogo.TabIndex = 3;
-            this.picLogo.TabStop = false;
-            // 
-            // panelMostrarFormu
-            // 
-            this.panelMostrarFormu.Location = new System.Drawing.Point(3, 106);
-            this.panelMostrarFormu.Name = "panelMostrarFormu";
-            this.panelMostrarFormu.Size = new System.Drawing.Size(907, 556);
-            this.panelMostrarFormu.TabIndex = 2;
-            // 
-            // lblTitulo
-            // 
-            this.lblTitulo.AutoSize = true;
-            this.lblTitulo.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTitulo.ForeColor = System.Drawing.SystemColors.ControlLight;
-            this.lblTitulo.Location = new System.Drawing.Point(34, 43);
-            this.lblTitulo.Name = "lblTitulo";
-            this.lblTitulo.Size = new System.Drawing.Size(280, 25);
-            this.lblTitulo.TabIndex = 1;
-            this.lblTitulo.Text = "Gestión de Sistemas de Ventas";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Black;
-            this.panel2.Controls.Add(this.panelBotones);
-            this.panel2.Controls.Add(this.panelAvatarUsuar);
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 35);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(151, 708);
-            this.panel2.TabIndex = 4;
-            // 
-            // panelContenedorForms
-            // 
-            this.panelContenedorForms.BackColor = System.Drawing.Color.DarkGray;
-            this.panelContenedorForms.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelContenedorForms.Location = new System.Drawing.Point(151, 131);
-            this.panelContenedorForms.Name = "panelContenedorForms";
-            this.panelContenedorForms.Size = new System.Drawing.Size(1149, 612);
-            this.panelContenedorForms.TabIndex = 5;
-            this.panelContenedorForms.Paint += new System.Windows.Forms.PaintEventHandler(this.panelContenedorForms_Paint);
-            // 
-            // panelBotonesCerrar
-            // 
-            this.panelBotonesCerrar.BackColor = System.Drawing.Color.LightGray;
-            this.panelBotonesCerrar.Controls.Add(this.panelBotonesForm);
-            this.panelBotonesCerrar.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBotonesCerrar.Location = new System.Drawing.Point(0, 0);
-            this.panelBotonesCerrar.Name = "panelBotonesCerrar";
-            this.panelBotonesCerrar.Size = new System.Drawing.Size(1300, 35);
-            this.panelBotonesCerrar.TabIndex = 3;
-            // 
-            // panelBotonesForm
-            // 
-            this.panelBotonesForm.BackColor = System.Drawing.Color.LightGray;
-            this.panelBotonesForm.Controls.Add(this.picMaximizar);
-            this.panelBotonesForm.Controls.Add(this.picRestaurar);
-            this.panelBotonesForm.Controls.Add(this.picCerrar);
-            this.panelBotonesForm.Controls.Add(this.picMinimizar);
-            this.panelBotonesForm.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelBotonesForm.Location = new System.Drawing.Point(1153, 0);
-            this.panelBotonesForm.Name = "panelBotonesForm";
-            this.panelBotonesForm.Size = new System.Drawing.Size(147, 35);
-            this.panelBotonesForm.TabIndex = 0;
             // 
             // picMaximizar
             // 
@@ -521,14 +542,14 @@
             this.panelDesplegableArt.ResumeLayout(false);
             this.panelAvatarUsuar.ResumeLayout(false);
             this.panelAvatarUsuar.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             this.panelTitulo.ResumeLayout(false);
             this.panelTitulo.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelBotonesCerrar.ResumeLayout(false);
             this.panelBotonesForm.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.picLogo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picAvatar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picMaximizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picRestaurar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).EndInit();
@@ -568,5 +589,6 @@
         private System.Windows.Forms.PictureBox picCerrar;
         private System.Windows.Forms.PictureBox picMinimizar;
         private System.Windows.Forms.PictureBox picLogo;
+        public System.Windows.Forms.Button btnSalir;
     }
 }

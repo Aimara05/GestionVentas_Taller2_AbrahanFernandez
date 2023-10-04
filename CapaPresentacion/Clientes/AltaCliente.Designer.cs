@@ -28,14 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AltaCliente));
             this.panelBotonCerrar = new System.Windows.Forms.Panel();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.picSalir = new System.Windows.Forms.PictureBox();
             this.picCerrar = new System.Windows.Forms.PictureBox();
             this.LTitulo = new System.Windows.Forms.Label();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.BtnGuardar = new System.Windows.Forms.Button();
             this.CBEstado = new System.Windows.Forms.ComboBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtCorreo = new System.Windows.Forms.TextBox();
             this.lblCorreo = new System.Windows.Forms.Label();
             this.lblDomicilio = new System.Windows.Forms.Label();
             this.txtDomicilio = new System.Windows.Forms.TextBox();
@@ -54,15 +56,17 @@
             this.TBusuario = new System.Windows.Forms.TextBox();
             this.TBcontrasena = new System.Windows.Forms.TextBox();
             this.LContrasena = new System.Windows.Forms.Label();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.panelBotonCerrar.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalir)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // panelBotonCerrar
             // 
             this.panelBotonCerrar.BackColor = System.Drawing.Color.DarkGray;
-            this.panelBotonCerrar.Controls.Add(this.pictureBox1);
+            this.panelBotonCerrar.Controls.Add(this.picSalir);
             this.panelBotonCerrar.Controls.Add(this.picCerrar);
             this.panelBotonCerrar.Controls.Add(this.LTitulo);
             this.panelBotonCerrar.Dock = System.Windows.Forms.DockStyle.Top;
@@ -71,18 +75,18 @@
             this.panelBotonCerrar.Size = new System.Drawing.Size(560, 35);
             this.panelBotonCerrar.TabIndex = 35;
             // 
-            // pictureBox1
+            // picSalir
             // 
-            this.pictureBox1.BackColor = System.Drawing.Color.LightGray;
-            this.pictureBox1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.pictureBox1.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
-            this.pictureBox1.Location = new System.Drawing.Point(523, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(25, 25);
-            this.pictureBox1.TabIndex = 36;
-            this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
+            this.picSalir.BackColor = System.Drawing.Color.LightGray;
+            this.picSalir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.picSalir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.picSalir.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
+            this.picSalir.Location = new System.Drawing.Point(523, 7);
+            this.picSalir.Name = "picSalir";
+            this.picSalir.Size = new System.Drawing.Size(25, 25);
+            this.picSalir.TabIndex = 36;
+            this.picSalir.TabStop = false;
+            this.picSalir.Click += new System.EventHandler(this.picSalir_Click);
             // 
             // picCerrar
             // 
@@ -101,13 +105,14 @@
             this.LTitulo.BackColor = System.Drawing.Color.Transparent;
             this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTitulo.ForeColor = System.Drawing.Color.Black;
-            this.LTitulo.Image = global::CapaPresentacion.Properties.Resources.altaClienteUsuario;
+            this.LTitulo.Image = ((System.Drawing.Image)(resources.GetObject("LTitulo.Image")));
             this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.LTitulo.Location = new System.Drawing.Point(3, 0);
             this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(186, 35);
+            this.LTitulo.Size = new System.Drawing.Size(186, 32);
             this.LTitulo.TabIndex = 22;
             this.LTitulo.Text = "Agregar  Clientes";
+            this.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // btnCancelar
             // 
@@ -120,7 +125,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(418, 273);
+            this.btnCancelar.Location = new System.Drawing.Point(406, 241);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(108, 31);
             this.btnCancelar.TabIndex = 57;
@@ -141,7 +146,7 @@
             this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnGuardar.Image = global::CapaPresentacion.Properties.Resources.flecha_de_circulo_de_disquete_a_la_derecha;
             this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(418, 205);
+            this.BtnGuardar.Location = new System.Drawing.Point(406, 179);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.BtnGuardar.Size = new System.Drawing.Size(108, 31);
@@ -149,6 +154,7 @@
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.BtnGuardar.UseVisualStyleBackColor = false;
+            this.BtnGuardar.Click += new System.EventHandler(this.BtnGuardar_Click);
             // 
             // CBEstado
             // 
@@ -160,13 +166,14 @@
             this.CBEstado.Size = new System.Drawing.Size(185, 21);
             this.CBEstado.TabIndex = 55;
             // 
-            // textBox1
+            // txtCorreo
             // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Location = new System.Drawing.Point(180, 209);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(185, 20);
-            this.textBox1.TabIndex = 54;
+            this.txtCorreo.BackColor = System.Drawing.Color.White;
+            this.txtCorreo.Location = new System.Drawing.Point(180, 209);
+            this.txtCorreo.Name = "txtCorreo";
+            this.txtCorreo.Size = new System.Drawing.Size(185, 20);
+            this.txtCorreo.TabIndex = 54;
+            this.txtCorreo.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCorreo_KeyPress);
             // 
             // lblCorreo
             // 
@@ -207,6 +214,7 @@
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(185, 20);
             this.txtTelefono.TabIndex = 50;
+            this.txtTelefono.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtTelefono_KeyPress);
             // 
             // lblTel
             // 
@@ -227,6 +235,7 @@
             this.TBdni.Name = "TBdni";
             this.TBdni.Size = new System.Drawing.Size(185, 20);
             this.TBdni.TabIndex = 41;
+            this.TBdni.TextChanged += new System.EventHandler(this.TBdni_TextChanged);
             this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBdni_KeyPress);
             // 
             // LDni
@@ -272,6 +281,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(185, 20);
             this.txtNombre.TabIndex = 42;
+            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // CBRol
             // 
@@ -314,6 +324,7 @@
             this.TBapellido.Name = "TBapellido";
             this.TBapellido.Size = new System.Drawing.Size(185, 20);
             this.TBapellido.TabIndex = 43;
+            this.TBapellido.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBapellido_KeyPress);
             // 
             // LUsuario
             // 
@@ -334,6 +345,7 @@
             this.TBusuario.Name = "TBusuario";
             this.TBusuario.Size = new System.Drawing.Size(185, 20);
             this.TBusuario.TabIndex = 44;
+            this.TBusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBusuario_KeyPress);
             // 
             // TBcontrasena
             // 
@@ -342,6 +354,7 @@
             this.TBcontrasena.Name = "TBcontrasena";
             this.TBcontrasena.Size = new System.Drawing.Size(185, 20);
             this.TBcontrasena.TabIndex = 45;
+            this.TBcontrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBcontrasena_KeyPress);
             // 
             // LContrasena
             // 
@@ -355,6 +368,10 @@
             this.LContrasena.TabIndex = 40;
             this.LContrasena.Text = "Contraseña:";
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // AltaCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -364,7 +381,7 @@
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.BtnGuardar);
             this.Controls.Add(this.CBEstado);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtCorreo);
             this.Controls.Add(this.lblCorreo);
             this.Controls.Add(this.lblDomicilio);
             this.Controls.Add(this.txtDomicilio);
@@ -389,8 +406,9 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AltaCliente";
             this.panelBotonCerrar.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.picSalir)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -404,7 +422,7 @@
         private System.Windows.Forms.Button btnCancelar;
         public System.Windows.Forms.Button BtnGuardar;
         private System.Windows.Forms.ComboBox CBEstado;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCorreo;
         private System.Windows.Forms.Label lblCorreo;
         private System.Windows.Forms.Label lblDomicilio;
         private System.Windows.Forms.TextBox txtDomicilio;
@@ -423,6 +441,7 @@
         private System.Windows.Forms.TextBox TBusuario;
         private System.Windows.Forms.TextBox TBcontrasena;
         private System.Windows.Forms.Label LContrasena;
-        private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.PictureBox picSalir;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

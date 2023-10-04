@@ -31,14 +31,10 @@ namespace CapaPresentacion.Usuarios
 
         private void abrirFormularios(Form formulario)
         {
-
-
-
-
             formulario.Show();
-
-
         }
+
+        //Método para cuando carga el form alta
 
         private void AltaUsuario_Load(object sender, EventArgs e)
         {
@@ -62,6 +58,7 @@ namespace CapaPresentacion.Usuarios
             CBRol.SelectedIndex = 0;
 
         }
+
         //cerrar formulario
         private void picCerrar_Click(object sender, EventArgs e)
         {
@@ -85,15 +82,7 @@ namespace CapaPresentacion.Usuarios
                 this.Close();
             }
         }
-
-
-
-
-
-
-
-
-
+        
         //Metodo para el btn Guardar
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
@@ -224,6 +213,11 @@ namespace CapaPresentacion.Usuarios
             {
                 e.Handled = true; // Bloquear la entrada de caracteres adicionales.
             }
+        }
+
+        private void TBdni_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -35,5 +35,10 @@ namespace CapaPresentacion
             Prod_Categ.EditarProd editarprod = new Prod_Categ.EditarProd();
             abrirFormularios(editarprod);
         }
+
+        private void dataGridUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

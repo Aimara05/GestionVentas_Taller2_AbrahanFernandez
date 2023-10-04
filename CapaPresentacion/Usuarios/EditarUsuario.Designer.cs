@@ -223,6 +223,7 @@
             this.TBdni.Name = "TBdni";
             this.TBdni.Size = new System.Drawing.Size(185, 20);
             this.TBdni.TabIndex = 41;
+            this.TBdni.TextChanged += new System.EventHandler(this.TBdni_TextChanged);
             this.TBdni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBdni_KeyPress);
             // 
             // LDni

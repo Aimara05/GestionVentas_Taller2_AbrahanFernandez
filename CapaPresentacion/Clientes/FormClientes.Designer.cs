@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTopUsuario = new System.Windows.Forms.Panel();
             this.panelLogoTit = new System.Windows.Forms.Panel();
             this.btnRefresh = new System.Windows.Forms.Button();
@@ -55,6 +56,7 @@
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.panelTopUsuario.SuspendLayout();
             this.panelLogoTit.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
@@ -90,7 +92,7 @@
             // 
             this.btnRefresh.FlatAppearance.BorderSize = 0;
             this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Image = global::CapaPresentacion.Properties.Resources.recargar;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
             this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnRefresh.Location = new System.Drawing.Point(109, 33);
             this.btnRefresh.Name = "btnRefresh";
@@ -101,7 +103,7 @@
             // picUsuario
             // 
             this.picUsuario.BackColor = System.Drawing.Color.LightGray;
-            this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.rosq;
+            this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
             this.picUsuario.Location = new System.Drawing.Point(157, 12);
             this.picUsuario.Name = "picUsuario";
             this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
@@ -121,6 +123,7 @@
             // panelBuscador
             // 
             this.panelBuscador.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscador.Controls.Add(this.btnLimpiar);
             this.panelBuscador.Controls.Add(this.btnBuscar);
             this.panelBuscador.Controls.Add(this.textBox1);
             this.panelBuscador.Controls.Add(this.txtBusqueda);
@@ -128,7 +131,7 @@
             this.panelBuscador.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBuscador.Location = new System.Drawing.Point(0, 0);
             this.panelBuscador.Name = "panelBuscador";
-            this.panelBuscador.Size = new System.Drawing.Size(425, 107);
+            this.panelBuscador.Size = new System.Drawing.Size(485, 107);
             this.panelBuscador.TabIndex = 26;
             // 
             // btnBuscar
@@ -142,8 +145,8 @@
             this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBuscar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.busqueda;
-            this.btnBuscar.Location = new System.Drawing.Point(397, 43);
+            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
+            this.btnBuscar.Location = new System.Drawing.Point(397, 45);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(25, 22);
             this.btnBuscar.TabIndex = 25;
@@ -155,7 +158,7 @@
             // 
             this.textBox1.BackColor = System.Drawing.Color.LightGray;
             this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Location = new System.Drawing.Point(11, 40);
+            this.textBox1.Location = new System.Drawing.Point(11, 45);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(106, 26);
             this.textBox1.TabIndex = 25;
@@ -163,18 +166,20 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(247, 37);
+            this.txtBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(247, 42);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(144, 33);
+            this.txtBusqueda.Size = new System.Drawing.Size(144, 25);
             this.txtBusqueda.TabIndex = 28;
             // 
             // cboBusqueda
             // 
             this.cboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cboBusqueda.FormattingEnabled = true;
-            this.cboBusqueda.Location = new System.Drawing.Point(123, 37);
+            this.cboBusqueda.Location = new System.Drawing.Point(123, 43);
             this.cboBusqueda.Name = "cboBusqueda";
-            this.cboBusqueda.Size = new System.Drawing.Size(118, 33);
+            this.cboBusqueda.Size = new System.Drawing.Size(118, 25);
             this.cboBusqueda.TabIndex = 27;
             // 
             // panelRigtUsuario
@@ -221,7 +226,7 @@
             this.btnBajaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnBajaUsuario.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBajaUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBajaUsuario.Image = global::CapaPresentacion.Properties.Resources.papelera_xmark;
+            this.btnBajaUsuario.Image = ((System.Drawing.Image)(resources.GetObject("btnBajaUsuario.Image")));
             this.btnBajaUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBajaUsuario.Location = new System.Drawing.Point(32, 236);
             this.btnBajaUsuario.Name = "btnBajaUsuario";
@@ -242,7 +247,7 @@
             this.btnAltaCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnAltaCliente.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAltaCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAltaCliente.Image = global::CapaPresentacion.Properties.Resources.altaClienteUsuario;
+            this.btnAltaCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnAltaCliente.Image")));
             this.btnAltaCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAltaCliente.Location = new System.Drawing.Point(32, 105);
             this.btnAltaCliente.Name = "btnAltaCliente";
@@ -257,15 +262,15 @@
             // dataGridUsuario
             // 
             this.dataGridUsuario.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(2);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataGridUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridUsuario.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataGridUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridUsuario.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.btnSeleccionar,
@@ -283,12 +288,13 @@
             this.dataGridUsuario.MultiSelect = false;
             this.dataGridUsuario.Name = "dataGridUsuario";
             this.dataGridUsuario.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridUsuario.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridUsuario.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dataGridUsuario.RowTemplate.Height = 28;
             this.dataGridUsuario.Size = new System.Drawing.Size(600, 343);
             this.dataGridUsuario.TabIndex = 26;
+          
             // 
             // btnSeleccionar
             // 
@@ -354,6 +360,26 @@
             this.Estado.ReadOnly = true;
             this.Estado.Width = 50;
             // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.Silver;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnLimpiar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnLimpiar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.Image = global::CapaPresentacion.Properties.Resources.limpieza_de_datos;
+            this.btnLimpiar.Location = new System.Drawing.Point(428, 46);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(25, 22);
+            this.btnLimpiar.TabIndex = 30;
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            // 
             // FormClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -404,5 +430,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.PictureBox picUsuario;
         private System.Windows.Forms.Button btnRefresh;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }
