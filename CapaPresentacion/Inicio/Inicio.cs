@@ -1,7 +1,9 @@
 ﻿
 //Form Inicio
+using Bunifu.UI.WinForms.Extensions;
 using CapaEntidad;
 using CapaNegocios;
+using CapaPresentacion.Clientes;
 using CapaPresentacion.Ventas;
 using System;
 using System.Collections.Generic;
@@ -14,6 +16,7 @@ using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+
 
 namespace CapaPresentacion
 {
@@ -95,6 +98,7 @@ namespace CapaPresentacion
             if (ask == DialogResult.Yes)
             {
                 this.Close();
+
             }
         }
 
@@ -217,6 +221,7 @@ namespace CapaPresentacion
         {
 
             abrirFormularios((Button)sender, new Usuarios.FormUsu());
+            
         }
 
         //Método del bnt Ventas.
@@ -263,6 +268,11 @@ namespace CapaPresentacion
             {
                 this.Close();
             }
+        }
+
+        private void panelBotonesCerrar_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

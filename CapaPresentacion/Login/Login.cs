@@ -29,11 +29,16 @@ namespace CapaPresentacion
         //Método para 
         private void frm_clossing(object sender, FormClosingEventArgs e) //recibe un obj y un evento
         {
-            {
-                txtUsuario.Clear();
-                txtContrasena.Clear();
-                this.Show(); //muestra el formulario login que se oculto
-            }
+
+     
+
+
+
+
+                 txtUsuario.Clear();
+                 txtContrasena.Clear();
+                 this.Show(); //muestra el formulario login que se oculto
+
         }
 
         //Método para el btn "cancelar"
@@ -74,10 +79,11 @@ namespace CapaPresentacion
                         form.btnSeguridad.Visible = false;
 
                         form.Show(); //se muestre el formulario
+
                         this.Hide();    //que se oculte el login
 
                         form.FormClosing += frm_clossing; //cuando estamos cerrando el formulario tome el evento
-
+                            
                     } 
                     else if (ousuario.oRol.idRol == 2) //superAdmin
                     {

@@ -95,20 +95,26 @@ namespace CapaPresentacion.Usuarios
         }
 
         //
-        private void dataGridUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (dataGridUsuario.Columns[e.ColumnIndex].Name == "btnSeleccionar")
-            {
-                filaSeleccionada = e.RowIndex;                             
-            } 
-        } 
 
+        
+
+
+         private void dataGridUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+         {
+             if (dataGridUsuario.Columns[e.ColumnIndex].Name == "btnSeleccionar")
+             {
+                 filaSeleccionada = e.RowIndex;                             
+             } 
+         } 
+        
 
         //Método para btn Usuarios
         private void btnAltausuario_Click(object sender, EventArgs e)
         {
+
             Usuarios.AltaUsuario altauser = new Usuarios.AltaUsuario();
             abrirFormularios(altauser);
+            
         }
 
 

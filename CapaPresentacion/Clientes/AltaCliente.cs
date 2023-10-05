@@ -87,23 +87,9 @@ namespace CapaPresentacion.Clientes
             }
         }
 
-        private void TBusuario_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir que el usuario edite el campo de texto.
-            if (TBusuario.Text.Length >= 8 && e.KeyChar != '\b') // '\b' representa la tecla de retroceso (Backspace).
-            {
-                e.Handled = true; // Bloquear la entrada de caracteres adicionales.
-            }
-        }
+  
 
-        private void TBcontrasena_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Permitir que el usuario edite el campo de texto.
-            if (TBcontrasena.Text.Length >= 8 && e.KeyChar != '\b') // '\b' representa la tecla de retroceso (Backspace).
-            {
-                e.Handled = true; // Bloquear la entrada de caracteres adicionales.
-            }
-        }
+
 
 
         //Metodo para cancelar form
@@ -127,8 +113,7 @@ namespace CapaPresentacion.Clientes
 
             if (string.IsNullOrWhiteSpace(TBdni.Text) || string.IsNullOrWhiteSpace(txtNombre.Text) ||
                 string.IsNullOrWhiteSpace(TBapellido.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text) ||
-                string.IsNullOrWhiteSpace(txtDomicilio.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text)
-                || string.IsNullOrWhiteSpace(TBusuario.Text) || string.IsNullOrWhiteSpace(TBcontrasena.Text)) // para validar valores null y espacios vacíos.
+                string.IsNullOrWhiteSpace(txtDomicilio.Text) || string.IsNullOrWhiteSpace(txtCorreo.Text) || CBEstado.SelectedItem == null) // para validar valores null y espacios vacíos.
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }

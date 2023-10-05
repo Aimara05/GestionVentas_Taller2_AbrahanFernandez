@@ -98,7 +98,8 @@ namespace CapaPresentacion.Prod_Categ
 
             if (string.IsNullOrWhiteSpace(txtCod.Text) || string.IsNullOrWhiteSpace(txtNombre.Text) ||
                string.IsNullOrWhiteSpace(TBdescr.Text) || string.IsNullOrWhiteSpace(txtStock.Text) ||
-               string.IsNullOrWhiteSpace(txtPrecio.Text)) // para validar valores null y espacios vacíos.
+               string.IsNullOrWhiteSpace(txtPrecio.Text) || CBRol.SelectedItem == null || // Validar ComboBox cbRol
+        CBEstado.SelectedItem == null) // para validar valores null y espacios vacíos.
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
