@@ -90,5 +90,15 @@ namespace CapaPresentacion
                 row.Visible = true;
             }
         }
+
+        private void btnBajaUsuario_Click(object sender, EventArgs e)
+        {
+            // Verificar si no se ha seleccionado ninguna fila en el DataGridView
+            if (dataGridUsuario.SelectedRows.Count == 0)
+            {
+                MessageBox.Show("Debe seleccionar al menos un cliente antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return; // No continúes con la operación si no se ha seleccionado nada.
+            }
+        }
     }
 }

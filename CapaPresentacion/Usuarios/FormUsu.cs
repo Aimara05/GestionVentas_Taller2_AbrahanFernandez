@@ -25,6 +25,8 @@ namespace CapaPresentacion.Usuarios
     public partial class FormUsu : Form
     {
         private int filaSeleccionada = -1; // variable para mantener el indice de mi fila seleccionada en mi dgv
+        private DataGridViewButtonCell botonSeleccionado = null;
+
         public FormUsu()
         {
             InitializeComponent();
@@ -101,11 +103,15 @@ namespace CapaPresentacion.Usuarios
 
          private void dataGridUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
          {
-             if (dataGridUsuario.Columns[e.ColumnIndex].Name == "btnSeleccionar")
-             {
-                 filaSeleccionada = e.RowIndex;                             
-             } 
-         } 
+            if (e.ColumnIndex == dataGridUsuario.Columns["btnSeleccionar"].Index && e.RowIndex >= 0)
+            {
+
+                filaSeleccionada = e.RowIndex;
+
+                dataGridUsuario.Invalidate(); // Esto dispara el evento CellPainting
+
+            }
+        } 
         
 
         //Método para btn Usuarios
@@ -313,6 +319,35 @@ namespace CapaPresentacion.Usuarios
             foreach (DataGridViewRow row in dataGridUsuario.Rows)
             {
                 row.Visible=true;
+            }
+        }
+
+        private void dataGridUsuario_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.RowIndex < 0)
+            {
+                return;   // si se encuentra en la primer columna que no devuelva nada
+            }
+
+            if (e.ColumnIndex == dataGridUsuario.Columns["btnSeleccionar"].Index)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                // Verifica si esta celda es la que está seleccionada
+                if (e.RowIndex == filaSeleccionada)
+                {
+                    var w = Properties.Resources.checkbox_ckeck_icon_143039.Width; //obtengo el ancho de mi icono
+                    var h = Properties.Resources.checkbox_ckeck_icon_143039.Height; //obtengo el alto de mi icono
+
+                    //posicionamiento de la imagen
+                    var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2; //pone nuestra imagen en el medio (eje x)
+                    var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2; // pone nuestra imagen en el medio del eje y
+
+                    // Establece la imagen en el botón
+                    e.Graphics.DrawImage(Properties.Resources.checkbox_ckeck_icon_143039, new Rectangle(x, y, w, h));
+                }
+
+                e.Handled = true;
             }
         }
     }

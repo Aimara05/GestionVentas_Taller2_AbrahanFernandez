@@ -33,10 +33,12 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.lblFecha = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
             this.textBox5 = new System.Windows.Forms.TextBox();
+            this.button2 = new System.Windows.Forms.Button();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
@@ -45,6 +47,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.GbxCliente = new System.Windows.Forms.GroupBox();
+            this.button3 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.lblNombreyApe = new System.Windows.Forms.Label();
             this.textBox7 = new System.Windows.Forms.TextBox();
@@ -57,31 +60,28 @@
             this.label8 = new System.Windows.Forms.Label();
             this.panelTopUsuario = new System.Windows.Forms.Panel();
             this.panelLogoTit = new System.Windows.Forms.Panel();
+            this.picUsuario = new System.Windows.Forms.PictureBox();
             this.lblTituloCli = new System.Windows.Forms.Label();
             this.panelBuscador = new System.Windows.Forms.Panel();
             this.panelRigtUsuario = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.btnBajaUsuario = new System.Windows.Forms.Button();
             this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.button4 = new System.Windows.Forms.Button();
-            this.btnBajaUsuario = new System.Windows.Forms.Button();
             this.btnRefresh = new System.Windows.Forms.Button();
-            this.picUsuario = new System.Windows.Forms.PictureBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
             this.GbxInfoVent.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
             this.GbxCliente.SuspendLayout();
             this.panelTopUsuario.SuspendLayout();
             this.panelLogoTit.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             this.panelRigtUsuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             this.SuspendLayout();
             // 
             // lblRegistrar
@@ -148,12 +148,33 @@
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Información del producto";
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Silver;
+            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.Color.Black;
+            this.button1.Image = global::CapaPresentacion.Properties.Resources.busqueda;
+            this.button1.Location = new System.Drawing.Point(319, 57);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(25, 22);
+            this.button1.TabIndex = 31;
+            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            // 
             // textBox9
             // 
             this.textBox9.Location = new System.Drawing.Point(460, 56);
             this.textBox9.Name = "textBox9";
             this.textBox9.Size = new System.Drawing.Size(51, 25);
             this.textBox9.TabIndex = 30;
+            this.textBox9.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox9_KeyPress);
             // 
             // label1
             // 
@@ -184,6 +205,26 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(79, 25);
             this.textBox5.TabIndex = 10;
+            this.textBox5.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox5_KeyPress);
+            // 
+            // button2
+            // 
+            this.button2.BackColor = System.Drawing.Color.Silver;
+            this.button2.FlatAppearance.BorderSize = 0;
+            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button2.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Image = global::CapaPresentacion.Properties.Resources.anadir;
+            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.button2.Location = new System.Drawing.Point(680, 36);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(61, 45);
+            this.button2.TabIndex = 28;
+            this.button2.Text = "Agregar";
+            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.button2.UseVisualStyleBackColor = false;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox4
             // 
@@ -198,6 +239,7 @@
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(84, 25);
             this.textBox3.TabIndex = 8;
+            this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox2
             // 
@@ -263,6 +305,26 @@
             this.GbxCliente.TabStop = false;
             this.GbxCliente.Text = "Información de Cliente";
             // 
+            // button3
+            // 
+            this.button3.BackColor = System.Drawing.Color.Silver;
+            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button3.ForeColor = System.Drawing.Color.Black;
+            this.button3.Image = global::CapaPresentacion.Properties.Resources.busqueda;
+            this.button3.Location = new System.Drawing.Point(211, 49);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(25, 22);
+            this.button3.TabIndex = 25;
+            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button3.UseVisualStyleBackColor = false;
+            // 
             // textBox8
             // 
             this.textBox8.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
@@ -288,6 +350,7 @@
             this.textBox7.Name = "textBox7";
             this.textBox7.Size = new System.Drawing.Size(167, 25);
             this.textBox7.TabIndex = 2;
+            this.textBox7.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox7_KeyPress);
             // 
             // lblDni
             // 
@@ -370,6 +433,17 @@
             this.panelLogoTit.Size = new System.Drawing.Size(378, 103);
             this.panelLogoTit.TabIndex = 27;
             // 
+            // picUsuario
+            // 
+            this.picUsuario.BackColor = System.Drawing.Color.DarkGray;
+            this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.sales_store_ecommerce_shopping_and_commerce_shop_online_icon_255549;
+            this.picUsuario.Location = new System.Drawing.Point(240, 27);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.picUsuario.Size = new System.Drawing.Size(69, 73);
+            this.picUsuario.TabIndex = 2;
+            this.picUsuario.TabStop = false;
+            // 
             // lblTituloCli
             // 
             this.lblTituloCli.AutoSize = true;
@@ -404,6 +478,50 @@
             this.panelRigtUsuario.Name = "panelRigtUsuario";
             this.panelRigtUsuario.Size = new System.Drawing.Size(255, 445);
             this.panelRigtUsuario.TabIndex = 43;
+            // 
+            // button4
+            // 
+            this.button4.BackColor = System.Drawing.Color.LightGray;
+            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button4.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.button4.Image = global::CapaPresentacion.Properties.Resources.print_black_printer_tool_symbol_icon_icons_com_54467;
+            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.button4.Location = new System.Drawing.Point(60, 372);
+            this.button4.Name = "button4";
+            this.button4.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.button4.Size = new System.Drawing.Size(169, 39);
+            this.button4.TabIndex = 42;
+            this.button4.Text = "Imprimir Factura";
+            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button4.UseVisualStyleBackColor = false;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // btnBajaUsuario
+            // 
+            this.btnBajaUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.btnBajaUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBajaUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnBajaUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnBajaUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnBajaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnBajaUsuario.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBajaUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnBajaUsuario.Image = global::CapaPresentacion.Properties.Resources.checkbox_ckeck_icon_143039;
+            this.btnBajaUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnBajaUsuario.Location = new System.Drawing.Point(60, 320);
+            this.btnBajaUsuario.Name = "btnBajaUsuario";
+            this.btnBajaUsuario.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnBajaUsuario.Size = new System.Drawing.Size(169, 39);
+            this.btnBajaUsuario.TabIndex = 5;
+            this.btnBajaUsuario.Text = "Realizar Venta";
+            this.btnBajaUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBajaUsuario.UseVisualStyleBackColor = false;
+            this.btnBajaUsuario.Click += new System.EventHandler(this.btnBajaUsuario_Click);
             // 
             // subtotal
             // 
@@ -445,48 +563,6 @@
             this.dataGridView1.Size = new System.Drawing.Size(638, 187);
             this.dataGridView1.TabIndex = 33;
             // 
-            // button4
-            // 
-            this.button4.BackColor = System.Drawing.Color.LightGray;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Image = global::CapaPresentacion.Properties.Resources.print_black_printer_tool_symbol_icon_icons_com_54467;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(60, 372);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(169, 39);
-            this.button4.TabIndex = 42;
-            this.button4.Text = "Imprimir Factura";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
-            // 
-            // btnBajaUsuario
-            // 
-            this.btnBajaUsuario.BackColor = System.Drawing.Color.LightGray;
-            this.btnBajaUsuario.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBajaUsuario.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.btnBajaUsuario.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnBajaUsuario.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.btnBajaUsuario.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBajaUsuario.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBajaUsuario.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnBajaUsuario.Image = global::CapaPresentacion.Properties.Resources.checkbox_ckeck_icon_143039;
-            this.btnBajaUsuario.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnBajaUsuario.Location = new System.Drawing.Point(60, 320);
-            this.btnBajaUsuario.Name = "btnBajaUsuario";
-            this.btnBajaUsuario.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.btnBajaUsuario.Size = new System.Drawing.Size(169, 39);
-            this.btnBajaUsuario.TabIndex = 5;
-            this.btnBajaUsuario.Text = "Realizar Venta";
-            this.btnBajaUsuario.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBajaUsuario.UseVisualStyleBackColor = false;
-            // 
             // btnRefresh
             // 
             this.btnRefresh.FlatAppearance.BorderSize = 0;
@@ -498,75 +574,6 @@
             this.btnRefresh.Size = new System.Drawing.Size(34, 38);
             this.btnRefresh.TabIndex = 8;
             this.btnRefresh.UseVisualStyleBackColor = true;
-            // 
-            // picUsuario
-            // 
-            this.picUsuario.BackColor = System.Drawing.Color.DarkGray;
-            this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.sales_store_ecommerce_shopping_and_commerce_shop_online_icon_255549;
-            this.picUsuario.Location = new System.Drawing.Point(240, 27);
-            this.picUsuario.Name = "picUsuario";
-            this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
-            this.picUsuario.Size = new System.Drawing.Size(69, 73);
-            this.picUsuario.TabIndex = 2;
-            this.picUsuario.TabStop = false;
-            // 
-            // button3
-            // 
-            this.button3.BackColor = System.Drawing.Color.Silver;
-            this.button3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button3.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button3.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.Black;
-            this.button3.Image = global::CapaPresentacion.Properties.Resources.busqueda;
-            this.button3.Location = new System.Drawing.Point(211, 49);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(25, 22);
-            this.button3.TabIndex = 25;
-            this.button3.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button3.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button3.UseVisualStyleBackColor = false;
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.Silver;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Black;
-            this.button1.Image = global::CapaPresentacion.Properties.Resources.busqueda;
-            this.button1.Location = new System.Drawing.Point(319, 57);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 22);
-            this.button1.TabIndex = 31;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // button2
-            // 
-            this.button2.BackColor = System.Drawing.Color.Silver;
-            this.button2.FlatAppearance.BorderSize = 0;
-            this.button2.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button2.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.button2.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button2.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Image = global::CapaPresentacion.Properties.Resources.anadir;
-            this.button2.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.button2.Location = new System.Drawing.Point(680, 36);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(61, 45);
-            this.button2.TabIndex = 28;
-            this.button2.Text = "Agregar";
-            this.button2.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.button2.UseVisualStyleBackColor = false;
             // 
             // FormRegistrarVentas
             // 
@@ -584,7 +591,6 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Name = "FormRegistrarVentas";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
-            this.Text = "FormRegistrarVentas";
             this.GbxInfoVent.ResumeLayout(false);
             this.GbxInfoVent.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -595,10 +601,10 @@
             this.panelTopUsuario.ResumeLayout(false);
             this.panelLogoTit.ResumeLayout(false);
             this.panelLogoTit.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             this.panelRigtUsuario.ResumeLayout(false);
             this.panelRigtUsuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             this.ResumeLayout(false);
 
         }

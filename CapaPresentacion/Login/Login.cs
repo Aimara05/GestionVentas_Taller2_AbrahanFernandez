@@ -24,22 +24,21 @@ namespace CapaPresentacion
             InitializeComponent();
         }
 
-        
+
 
         //Método para 
-        private void frm_clossing(object sender, FormClosingEventArgs e) //recibe un obj y un evento
+        private void frm_clossing(object sender, FormClosingEventArgs e)
         {
+            txtUsuario.Clear();
+            txtContrasena.Clear();
 
-     
-
-
-
-
-                 txtUsuario.Clear();
-                 txtContrasena.Clear();
-                 this.Show(); //muestra el formulario login que se oculto
-
+            if (Application.OpenForms.OfType<Login>().Any()) // Comprueba si el formulario de inicio aún está abierto
+            {
+                Login loginForm = Application.OpenForms.OfType<Login>().First();
+                loginForm.Show(); // Muestra el formulario de inicio
+            }
         }
+
 
         //Método para el btn "cancelar"
         private void btnCancelar_Click(object sender, EventArgs e)

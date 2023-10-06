@@ -88,19 +88,36 @@ namespace CapaPresentacion
 
         }
 
-        
+
         //Métodos para los Botones de cerrar, minimizar y maximizar del form Inicio
         private void picCerrar_Click_1(object sender, EventArgs e)
         {
-            DialogResult ask = MessageBox.Show("Seguro que desea cerrar session?"
-                                 , "Confirmar Cancelar",
-                                      MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            DialogResult ask = MessageBox.Show("Seguro que desea cerrar sesión?",
+                                              "Confirmar Cancelar",
+                                              MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+
             if (ask == DialogResult.Yes)
             {
-                this.Close();
+                List<Form> formsToClose = new List<Form>();
 
+                // Identificar los formularios a cerrar (excluyendo el formulario de inicio de sesión)
+                foreach (Form form in Application.OpenForms)
+                {
+                    if (form.GetType() != typeof(Login)) // Evita cerrar el formulario de inicio de sesión
+                    {
+                        formsToClose.Add(form);
+                    }
+                }
+
+                // Cerrar los formularios identificados
+                foreach (Form form in formsToClose)
+                {
+                    form.Close();
+                }
             }
         }
+
+
 
         private void picRestaurar_Click(object sender, EventArgs e)
         {

@@ -178,6 +178,7 @@
             this.TBusuario.Name = "TBusuario";
             this.TBusuario.Size = new System.Drawing.Size(185, 20);
             this.TBusuario.TabIndex = 10;
+            this.TBusuario.TextChanged += new System.EventHandler(this.TBusuario_TextChanged);
             this.TBusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBusuario_KeyPress);
             // 
             // TBcontrasena

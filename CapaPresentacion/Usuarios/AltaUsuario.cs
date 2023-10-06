@@ -43,7 +43,7 @@ namespace CapaPresentacion.Usuarios
 
             CBEstado.DisplayMember = "Texto";
             CBEstado.ValueMember = "Valor";
-            CBEstado.SelectedIndex = 0;
+            CBEstado.SelectedIndex = -1;
 
             List<ROL> listaRol = new CN_Rol().Listar();
 
@@ -55,7 +55,7 @@ namespace CapaPresentacion.Usuarios
 
             CBRol.DisplayMember = "Texto";
             CBRol.ValueMember = "Valor";
-            CBRol.SelectedIndex = 0;
+            CBRol.SelectedIndex = -1;
 
         }
 
@@ -92,7 +92,7 @@ namespace CapaPresentacion.Usuarios
             if (string.IsNullOrWhiteSpace(TBdni.Text) || string.IsNullOrWhiteSpace(txtNombre.Text) || 
                 string.IsNullOrWhiteSpace(TBapellido.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text) || 
                 string.IsNullOrWhiteSpace(txtDomicilio.Text) || string.IsNullOrWhiteSpace(textCorreo.Text)
-                || string.IsNullOrWhiteSpace(TBusuario.Text) || string.IsNullOrWhiteSpace(TBcontrasena.Text)) // para validar valores null y espacios vacíos.
+                || string.IsNullOrWhiteSpace(TBusuario.Text) || string.IsNullOrWhiteSpace(TBcontrasena.Text) || CBRol.SelectedItem==null || CBEstado.SelectedItem==null )// para validar valores null y espacios vacíos.
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -216,6 +216,11 @@ namespace CapaPresentacion.Usuarios
         }
 
         private void TBdni_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void TBusuario_TextChanged(object sender, EventArgs e)
         {
 
         }

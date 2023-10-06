@@ -32,20 +32,20 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dataGridVenta = new System.Windows.Forms.DataGridView();
             this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.GbxCliente = new System.Windows.Forms.GroupBox();
             this.button3 = new System.Windows.Forms.Button();
             this.textBox8 = new System.Windows.Forms.TextBox();
             this.lblNombreyApe = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtDni = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.GbxUsuario = new System.Windows.Forms.GroupBox();
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtDniUsu = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelTopUsuario = new System.Windows.Forms.Panel();
             this.panelLogoTit = new System.Windows.Forms.Panel();
@@ -53,10 +53,25 @@
             this.lblTituloCli = new System.Windows.Forms.Label();
             this.panelBuscador = new System.Windows.Forms.Panel();
             this.panelRigtUsuario = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnImprimir = new System.Windows.Forms.Button();
+            this.btnSeleccionar = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idUsuario = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCliente = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.nomClient = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.total = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fecha = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idDetalle = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.idVentaa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.TotalVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Fechaa = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.GbxInfoVent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVenta)).BeginInit();
             this.GbxCliente.SuspendLayout();
             this.GbxUsuario.SuspendLayout();
             this.panelTopUsuario.SuspendLayout();
@@ -70,13 +85,13 @@
             this.GbxInfoVent.Controls.Add(this.label5);
             this.GbxInfoVent.Controls.Add(this.label4);
             this.GbxInfoVent.Controls.Add(this.dataGridView2);
-            this.GbxInfoVent.Controls.Add(this.dataGridView1);
+            this.GbxInfoVent.Controls.Add(this.dataGridVenta);
             this.GbxInfoVent.Controls.Add(this.dateTimePicker2);
             this.GbxInfoVent.Controls.Add(this.dateTimePicker1);
             this.GbxInfoVent.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxInfoVent.Location = new System.Drawing.Point(6, 267);
             this.GbxInfoVent.Name = "GbxInfoVent";
-            this.GbxInfoVent.Size = new System.Drawing.Size(822, 348);
+            this.GbxInfoVent.Size = new System.Drawing.Size(1027, 348);
             this.GbxInfoVent.TabIndex = 28;
             this.GbxInfoVent.TabStop = false;
             this.GbxInfoVent.Text = "Información de Venta";
@@ -104,18 +119,34 @@
             // dataGridView2
             // 
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.Location = new System.Drawing.Point(421, 68);
+            this.dataGridView2.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.idDetalle,
+            this.idVentaa,
+            this.idProd,
+            this.TotalVenta,
+            this.Cantidad,
+            this.Subtotal,
+            this.Fechaa});
+            this.dataGridView2.Location = new System.Drawing.Point(498, 68);
             this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.Size = new System.Drawing.Size(381, 249);
+            this.dataGridView2.Size = new System.Drawing.Size(470, 249);
             this.dataGridView2.TabIndex = 40;
             // 
-            // dataGridView1
+            // dataGridVenta
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(18, 68);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(387, 249);
-            this.dataGridView1.TabIndex = 39;
+            this.dataGridVenta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridVenta.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.btnSeleccionar,
+            this.idVenta,
+            this.idUsuario,
+            this.idCliente,
+            this.nomClient,
+            this.total,
+            this.fecha});
+            this.dataGridVenta.Location = new System.Drawing.Point(7, 68);
+            this.dataGridVenta.Name = "dataGridVenta";
+            this.dataGridVenta.Size = new System.Drawing.Size(470, 249);
+            this.dataGridVenta.TabIndex = 39;
             // 
             // dateTimePicker2
             // 
@@ -138,7 +169,7 @@
             this.GbxCliente.Controls.Add(this.button3);
             this.GbxCliente.Controls.Add(this.textBox8);
             this.GbxCliente.Controls.Add(this.lblNombreyApe);
-            this.GbxCliente.Controls.Add(this.textBox2);
+            this.GbxCliente.Controls.Add(this.txtDni);
             this.GbxCliente.Controls.Add(this.label1);
             this.GbxCliente.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxCliente.Location = new System.Drawing.Point(12, 127);
@@ -186,13 +217,14 @@
             this.lblNombreyApe.TabIndex = 3;
             this.lblNombreyApe.Text = "Nombre y Apellido";
             // 
-            // textBox2
+            // txtDni
             // 
-            this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox2.Location = new System.Drawing.Point(38, 49);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(151, 25);
-            this.textBox2.TabIndex = 2;
+            this.txtDni.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDni.Location = new System.Drawing.Point(38, 49);
+            this.txtDni.Name = "txtDni";
+            this.txtDni.Size = new System.Drawing.Size(151, 25);
+            this.txtDni.TabIndex = 2;
+            this.txtDni.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDni_KeyPress);
             // 
             // label1
             // 
@@ -209,7 +241,7 @@
             this.GbxUsuario.Controls.Add(this.button1);
             this.GbxUsuario.Controls.Add(this.textBox1);
             this.GbxUsuario.Controls.Add(this.label2);
-            this.GbxUsuario.Controls.Add(this.textBox3);
+            this.GbxUsuario.Controls.Add(this.txtDniUsu);
             this.GbxUsuario.Controls.Add(this.label3);
             this.GbxUsuario.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.GbxUsuario.Location = new System.Drawing.Point(503, 127);
@@ -257,13 +289,14 @@
             this.label2.TabIndex = 3;
             this.label2.Text = "Nombre y Apellido";
             // 
-            // textBox3
+            // txtDniUsu
             // 
-            this.textBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox3.Location = new System.Drawing.Point(38, 49);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(151, 25);
-            this.textBox3.TabIndex = 2;
+            this.txtDniUsu.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtDniUsu.Location = new System.Drawing.Point(38, 49);
+            this.txtDniUsu.Name = "txtDniUsu";
+            this.txtDniUsu.Size = new System.Drawing.Size(151, 25);
+            this.txtDniUsu.TabIndex = 2;
+            this.txtDniUsu.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtDniUsu_KeyPress);
             // 
             // label3
             // 
@@ -329,33 +362,124 @@
             // panelRigtUsuario
             // 
             this.panelRigtUsuario.BackColor = System.Drawing.Color.DarkGray;
-            this.panelRigtUsuario.Controls.Add(this.button4);
+            this.panelRigtUsuario.Controls.Add(this.btnImprimir);
             this.panelRigtUsuario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRigtUsuario.Location = new System.Drawing.Point(1039, 103);
+            this.panelRigtUsuario.Location = new System.Drawing.Point(1079, 103);
             this.panelRigtUsuario.Name = "panelRigtUsuario";
-            this.panelRigtUsuario.Size = new System.Drawing.Size(194, 503);
+            this.panelRigtUsuario.Size = new System.Drawing.Size(154, 503);
             this.panelRigtUsuario.TabIndex = 44;
             // 
-            // button4
+            // btnImprimir
             // 
-            this.button4.BackColor = System.Drawing.Color.LightGray;
-            this.button4.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button4.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button4.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button4.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button4.Image = global::CapaPresentacion.Properties.Resources.print_black_printer_tool_symbol_icon_icons_com_54467;
-            this.button4.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button4.Location = new System.Drawing.Point(39, 442);
-            this.button4.Name = "button4";
-            this.button4.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button4.Size = new System.Drawing.Size(130, 39);
-            this.button4.TabIndex = 42;
-            this.button4.Text = "Imprimir ";
-            this.button4.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnImprimir.BackColor = System.Drawing.Color.LightGray;
+            this.btnImprimir.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnImprimir.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
+            this.btnImprimir.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnImprimir.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnImprimir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnImprimir.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnImprimir.Image = global::CapaPresentacion.Properties.Resources.print_black_printer_tool_symbol_icon_icons_com_54467;
+            this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnImprimir.Location = new System.Drawing.Point(16, 442);
+            this.btnImprimir.Name = "btnImprimir";
+            this.btnImprimir.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
+            this.btnImprimir.Size = new System.Drawing.Size(130, 39);
+            this.btnImprimir.TabIndex = 42;
+            this.btnImprimir.Text = "Imprimir ";
+            this.btnImprimir.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnImprimir.UseVisualStyleBackColor = false;
+            this.btnImprimir.Click += new System.EventHandler(this.btnImprimir_Click);
+            // 
+            // btnSeleccionar
+            // 
+            this.btnSeleccionar.HeaderText = "Seleccionar";
+            this.btnSeleccionar.Name = "btnSeleccionar";
+            // 
+            // idVenta
+            // 
+            this.idVenta.HeaderText = "idVenta";
+            this.idVenta.Name = "idVenta";
+            this.idVenta.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idVenta.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.idVenta.Visible = false;
+            // 
+            // idUsuario
+            // 
+            this.idUsuario.HeaderText = "idUsuario";
+            this.idUsuario.Name = "idUsuario";
+            this.idUsuario.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.idUsuario.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            this.idUsuario.Visible = false;
+            // 
+            // idCliente
+            // 
+            this.idCliente.HeaderText = "idCliente";
+            this.idCliente.Name = "idCliente";
+            this.idCliente.Visible = false;
+            // 
+            // nomClient
+            // 
+            this.nomClient.HeaderText = "Cliente";
+            this.nomClient.Name = "nomClient";
+            this.nomClient.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.nomClient.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // total
+            // 
+            this.total.HeaderText = "total";
+            this.total.Name = "total";
+            this.total.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.total.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // fecha
+            // 
+            this.fecha.HeaderText = "fecha";
+            this.fecha.Name = "fecha";
+            this.fecha.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.fecha.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable;
+            // 
+            // idDetalle
+            // 
+            this.idDetalle.HeaderText = "idDetalle";
+            this.idDetalle.Name = "idDetalle";
+            this.idDetalle.Visible = false;
+            // 
+            // idVentaa
+            // 
+            this.idVentaa.HeaderText = "idVentaa";
+            this.idVentaa.Name = "idVentaa";
+            this.idVentaa.Visible = false;
+            // 
+            // idProd
+            // 
+            this.idProd.HeaderText = "idProd";
+            this.idProd.Name = "idProd";
+            this.idProd.Visible = false;
+            // 
+            // TotalVenta
+            // 
+            this.TotalVenta.HeaderText = "Total";
+            this.TotalVenta.Name = "TotalVenta";
+            // 
+            // Cantidad
+            // 
+            this.Cantidad.HeaderText = "Cantidad";
+            this.Cantidad.Name = "Cantidad";
+            // 
+            // Subtotal
+            // 
+            this.Subtotal.HeaderText = "Subtotal";
+            this.Subtotal.Name = "Subtotal";
+            // 
+            // Fechaa
+            // 
+            this.Fechaa.HeaderText = "Fecha";
+            this.Fechaa.Name = "Fechaa";
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.FileName = "openFileDialog1";
             // 
             // formDetalleVent
             // 
@@ -374,7 +498,7 @@
             this.GbxInfoVent.ResumeLayout(false);
             this.GbxInfoVent.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridVenta)).EndInit();
             this.GbxCliente.ResumeLayout(false);
             this.GbxCliente.PerformLayout();
             this.GbxUsuario.ResumeLayout(false);
@@ -393,15 +517,15 @@
         private System.Windows.Forms.GroupBox GbxCliente;
         private System.Windows.Forms.TextBox textBox8;
         private System.Windows.Forms.Label lblNombreyApe;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtDni;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dataGridVenta;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtDniUsu;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.GroupBox GbxUsuario;
         private System.Windows.Forms.Panel panelTopUsuario;
@@ -410,10 +534,25 @@
         private System.Windows.Forms.Label lblTituloCli;
         private System.Windows.Forms.Panel panelBuscador;
         private System.Windows.Forms.Panel panelRigtUsuario;
-        public System.Windows.Forms.Button button4;
+        public System.Windows.Forms.Button btnImprimir;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.DataGridViewButtonColumn idDetalle;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVentaa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idProd;
+        private System.Windows.Forms.DataGridViewTextBoxColumn TotalVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Fechaa;
+        private System.Windows.Forms.DataGridViewButtonColumn btnSeleccionar;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idVenta;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idUsuario;
+        private System.Windows.Forms.DataGridViewButtonColumn idCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nomClient;
+        private System.Windows.Forms.DataGridViewTextBoxColumn total;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fecha;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }
