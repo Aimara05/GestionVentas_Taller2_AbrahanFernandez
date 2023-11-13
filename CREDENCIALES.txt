@@ -1,0 +1,14 @@
+CREDENCIALES PARA ALGUNOS USUARIOS:
+
+
+Usuario: Aimara05
+contraseña: 11223344
+Rol: "ADMINISTRADOR"
+
+Usuario: Ulises05
+contraseña: 11223344
+Rol: "SUPERADMINISTRADOR"
+
+Usuario: Yenhy05
+contraseña: 11223344
+Rol: "VENDEDOR"
