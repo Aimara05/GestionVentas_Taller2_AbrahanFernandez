@@ -24,8 +24,9 @@ namespace CapaPresentacion.Clientes
         }
 
 
-        //Método para cancelar el form
-        private void btnCancelar_Click(object sender, EventArgs e)
+        
+            //Método para cancelar el form
+            private void btnCancelar_Click(object sender, EventArgs e)
         {
             DialogResult ask = MessageBox.Show("Seguro que quiere cancelar editar cliente?"
         , "Confirmar Cancelar",
@@ -146,17 +147,23 @@ namespace CapaPresentacion.Clientes
             }
         }
          
+
         //Metodo para cerrar el formulario editar cliente
-        private void picCerrar_Click_1(object sender, EventArgs e)
+        private void picCerrar_Click(object sender, EventArgs e)
         {
             DialogResult ask = MessageBox.Show("Seguro que desea cerrar el formulario de Editar Cliente?"
-                                 , "Confirmar Cancelar",
-                                      MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+                                             , "Confirmar Cancelar",
+                                                  MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
             if (ask == DialogResult.Yes)
             {
                 this.Close();
             }
 
+        }
+
+        private void EditarCliente_Load_1(object sender, EventArgs e)
+        {
+            this.AcceptButton = BtnGuardar;
         }
     }
 }

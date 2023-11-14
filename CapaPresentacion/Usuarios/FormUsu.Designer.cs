@@ -33,15 +33,16 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTopUsuario = new System.Windows.Forms.Panel();
             this.panelLogoTit = new System.Windows.Forms.Panel();
-            this.btnRefresh = new System.Windows.Forms.Button();
-            this.picUsuario = new System.Windows.Forms.PictureBox();
             this.panelBuscador = new System.Windows.Forms.Panel();
             this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
             this.cboBusqueda = new System.Windows.Forms.ComboBox();
+            this.btnRefresh = new System.Windows.Forms.Button();
+            this.picUsuario = new System.Windows.Forms.PictureBox();
             this.panelRigtUsuario = new System.Windows.Forms.Panel();
+            this.lblTituloCli = new System.Windows.Forms.Label();
             this.btnEditarUsuario = new System.Windows.Forms.Button();
             this.btnAltausuario = new System.Windows.Forms.Button();
             this.panelContenedorUsu = new System.Windows.Forms.Panel();
@@ -59,10 +60,9 @@
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idRol = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.descripcion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lblTituloCli = new System.Windows.Forms.Label();
             this.panelTopUsuario.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             this.panelBuscador.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
             this.panelRigtUsuario.SuspendLayout();
             this.panelContenedorUsu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridUsuario)).BeginInit();
@@ -87,31 +87,6 @@
             this.panelLogoTit.Name = "panelLogoTit";
             this.panelLogoTit.Size = new System.Drawing.Size(277, 107);
             this.panelLogoTit.TabIndex = 27;
-            // 
-            // btnRefresh
-            // 
-            this.btnRefresh.FlatAppearance.BorderSize = 0;
-            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
-            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnRefresh.Location = new System.Drawing.Point(17, 151);
-            this.btnRefresh.Name = "btnRefresh";
-            this.btnRefresh.Size = new System.Drawing.Size(34, 38);
-            this.btnRefresh.TabIndex = 7;
-            this.btnRefresh.TabStop = false;
-            this.btnRefresh.UseVisualStyleBackColor = true;
-            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click);
-            // 
-            // picUsuario
-            // 
-            this.picUsuario.BackColor = System.Drawing.Color.LightGray;
-            this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
-            this.picUsuario.Location = new System.Drawing.Point(64, 42);
-            this.picUsuario.Name = "picUsuario";
-            this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 40, 0);
-            this.picUsuario.Size = new System.Drawing.Size(89, 89);
-            this.picUsuario.TabIndex = 0;
-            this.picUsuario.TabStop = false;
             // 
             // panelBuscador
             // 
@@ -197,6 +172,31 @@
             this.cboBusqueda.TabIndex = 27;
             this.cboBusqueda.TabStop = false;
             // 
+            // btnRefresh
+            // 
+            this.btnRefresh.FlatAppearance.BorderSize = 0;
+            this.btnRefresh.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnRefresh.Image = ((System.Drawing.Image)(resources.GetObject("btnRefresh.Image")));
+            this.btnRefresh.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRefresh.Location = new System.Drawing.Point(17, 151);
+            this.btnRefresh.Name = "btnRefresh";
+            this.btnRefresh.Size = new System.Drawing.Size(34, 38);
+            this.btnRefresh.TabIndex = 7;
+            this.btnRefresh.TabStop = false;
+            this.btnRefresh.UseVisualStyleBackColor = true;
+            this.btnRefresh.Click += new System.EventHandler(this.btnRefresh_Click_1);
+            // 
+            // picUsuario
+            // 
+            this.picUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
+            this.picUsuario.Location = new System.Drawing.Point(64, 42);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 40, 0);
+            this.picUsuario.Size = new System.Drawing.Size(89, 89);
+            this.picUsuario.TabIndex = 0;
+            this.picUsuario.TabStop = false;
+            // 
             // panelRigtUsuario
             // 
             this.panelRigtUsuario.BackColor = System.Drawing.Color.LightGray;
@@ -210,6 +210,16 @@
             this.panelRigtUsuario.Name = "panelRigtUsuario";
             this.panelRigtUsuario.Size = new System.Drawing.Size(203, 404);
             this.panelRigtUsuario.TabIndex = 1;
+            // 
+            // lblTituloCli
+            // 
+            this.lblTituloCli.AutoSize = true;
+            this.lblTituloCli.Font = new System.Drawing.Font("Leelawadee UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloCli.Location = new System.Drawing.Point(57, 151);
+            this.lblTituloCli.Name = "lblTituloCli";
+            this.lblTituloCli.Size = new System.Drawing.Size(128, 37);
+            this.lblTituloCli.TabIndex = 9;
+            this.lblTituloCli.Text = "Usuarios";
             // 
             // btnEditarUsuario
             // 
@@ -397,16 +407,6 @@
             this.descripcion.ReadOnly = true;
             this.descripcion.Width = 88;
             // 
-            // lblTituloCli
-            // 
-            this.lblTituloCli.AutoSize = true;
-            this.lblTituloCli.Font = new System.Drawing.Font("Leelawadee UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloCli.Location = new System.Drawing.Point(57, 151);
-            this.lblTituloCli.Name = "lblTituloCli";
-            this.lblTituloCli.Size = new System.Drawing.Size(128, 37);
-            this.lblTituloCli.TabIndex = 9;
-            this.lblTituloCli.Text = "Usuarios";
-            // 
             // FormUsu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -419,9 +419,9 @@
             this.Text = "FormUsu";
             this.Load += new System.EventHandler(this.FormUsu_Load);
             this.panelTopUsuario.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             this.panelBuscador.ResumeLayout(false);
             this.panelBuscador.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
             this.panelRigtUsuario.ResumeLayout(false);
             this.panelRigtUsuario.PerformLayout();
             this.panelContenedorUsu.ResumeLayout(false);

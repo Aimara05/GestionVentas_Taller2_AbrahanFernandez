@@ -46,13 +46,7 @@ namespace CapaDatos
                                 nombreCliente = dr["nombreCliente"].ToString(),
                                 apellidoCliente = dr["apellidoCliente"].ToString(),
                                 documentoCliente = dr["documentoCliente"].ToString(),
-                                idProducto = dr["idProducto"].ToString(),
-                                NombreProducto = dr["NombreProducto"].ToString(),
-                                Categoria = dr["Categoria"].ToString(),
-                                Marca = dr["Marca"].ToString(),
-                                precioVenta = dr["precioVenta"].ToString(),
-                                cantidad = dr["cantidad"].ToString(),
-                                subtotal = dr["subtotal"].ToString(),
+
 
     });
                         }

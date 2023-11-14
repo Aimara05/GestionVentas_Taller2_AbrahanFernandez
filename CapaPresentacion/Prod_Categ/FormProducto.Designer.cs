@@ -28,11 +28,13 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProducto));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelTopProd = new System.Windows.Forms.Panel();
             this.panelLogoTit = new System.Windows.Forms.Panel();
             this.panelBuscador = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
@@ -88,6 +90,7 @@
             // panelBuscador
             // 
             this.panelBuscador.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscador.Controls.Add(this.btnLimpiar);
             this.panelBuscador.Controls.Add(this.btnBuscar);
             this.panelBuscador.Controls.Add(this.textBox1);
             this.panelBuscador.Controls.Add(this.txtBusqueda);
@@ -95,8 +98,28 @@
             this.panelBuscador.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelBuscador.Location = new System.Drawing.Point(0, 0);
             this.panelBuscador.Name = "panelBuscador";
-            this.panelBuscador.Size = new System.Drawing.Size(425, 107);
+            this.panelBuscador.Size = new System.Drawing.Size(509, 107);
             this.panelBuscador.TabIndex = 26;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.Silver;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnLimpiar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.Image = global::CapaPresentacion.Properties.Resources.limpieza_de_datos;
+            this.btnLimpiar.Location = new System.Drawing.Point(438, 42);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(33, 26);
+            this.btnLimpiar.TabIndex = 31;
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
             // 
             // btnBuscar
             // 
@@ -109,9 +132,9 @@
             this.btnBuscar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBuscar.ForeColor = System.Drawing.Color.Black;
             this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.busqueda;
-            this.btnBuscar.Location = new System.Drawing.Point(397, 40);
+            this.btnBuscar.Location = new System.Drawing.Point(397, 42);
             this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(25, 30);
+            this.btnBuscar.Size = new System.Drawing.Size(33, 26);
             this.btnBuscar.TabIndex = 2;
             this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -163,8 +186,8 @@
             // picUsuario
             // 
             this.picUsuario.BackColor = System.Drawing.Color.LightGray;
-            this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.wishlist_product_list_order_cart_icon_225172;
-            this.picUsuario.Location = new System.Drawing.Point(58, 31);
+            this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
+            this.picUsuario.Location = new System.Drawing.Point(80, 41);
             this.picUsuario.Name = "picUsuario";
             this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 40, 0);
             this.picUsuario.Size = new System.Drawing.Size(89, 89);
@@ -194,6 +217,7 @@
             this.lblTituloCli.Size = new System.Drawing.Size(148, 37);
             this.lblTituloCli.TabIndex = 8;
             this.lblTituloCli.Text = "Productos";
+            this.lblTituloCli.Click += new System.EventHandler(this.lblTituloCli_Click);
             // 
             // btnEditarProd
             // 
@@ -224,7 +248,7 @@
             this.btnAgregarProd.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
             this.btnAgregarProd.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnAgregarProd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnAgregarProd.Image = global::CapaPresentacion.Properties.Resources.anadir;
+            this.btnAgregarProd.Image = ((System.Drawing.Image)(resources.GetObject("btnAgregarProd.Image")));
             this.btnAgregarProd.Location = new System.Drawing.Point(112, 228);
             this.btnAgregarProd.Name = "btnAgregarProd";
             this.btnAgregarProd.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
@@ -416,5 +440,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn idCateg;
         private System.Windows.Forms.DataGridViewTextBoxColumn descripcion;
         private System.Windows.Forms.Label lblTituloCli;
+        private System.Windows.Forms.Button btnLimpiar;
     }
 }

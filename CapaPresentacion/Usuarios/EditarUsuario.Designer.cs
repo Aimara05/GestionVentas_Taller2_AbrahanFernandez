@@ -50,8 +50,6 @@
             this.TBapellido = new System.Windows.Forms.TextBox();
             this.LUsuario = new System.Windows.Forms.Label();
             this.TBusuario = new System.Windows.Forms.TextBox();
-            this.TBcontrasena = new System.Windows.Forms.TextBox();
-            this.LContrasena = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.lblid = new System.Windows.Forms.Label();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
@@ -88,7 +86,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(537, 431);
+            this.btnCancelar.Location = new System.Drawing.Point(521, 398);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 31);
             this.btnCancelar.TabIndex = 12;
@@ -108,7 +106,7 @@
             this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnGuardar.Image = global::CapaPresentacion.Properties.Resources.flecha_de_circulo_de_disquete_a_la_derecha;
             this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(406, 431);
+            this.BtnGuardar.Location = new System.Drawing.Point(385, 398);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.BtnGuardar.Size = new System.Drawing.Size(111, 31);
@@ -123,7 +121,7 @@
             this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(463, 370);
+            this.comboBox1.Location = new System.Drawing.Point(463, 345);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
             this.comboBox1.TabIndex = 10;
@@ -229,7 +227,7 @@
             this.Lestado.BackColor = System.Drawing.Color.Black;
             this.Lestado.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lestado.ForeColor = System.Drawing.Color.White;
-            this.Lestado.Location = new System.Drawing.Point(324, 372);
+            this.Lestado.Location = new System.Drawing.Point(324, 347);
             this.Lestado.Name = "Lestado";
             this.Lestado.Size = new System.Drawing.Size(51, 17);
             this.Lestado.TabIndex = 48;
@@ -249,7 +247,7 @@
             this.CBRol.BackColor = System.Drawing.Color.White;
             this.CBRol.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBRol.FormattingEnabled = true;
-            this.CBRol.Location = new System.Drawing.Point(463, 342);
+            this.CBRol.Location = new System.Drawing.Point(463, 317);
             this.CBRol.Name = "CBRol";
             this.CBRol.Size = new System.Drawing.Size(185, 21);
             this.CBRol.TabIndex = 9;
@@ -272,7 +270,7 @@
             this.LRol.BackColor = System.Drawing.Color.Black;
             this.LRol.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRol.ForeColor = System.Drawing.Color.White;
-            this.LRol.Location = new System.Drawing.Point(324, 345);
+            this.LRol.Location = new System.Drawing.Point(324, 320);
             this.LRol.Name = "LRol";
             this.LRol.Size = new System.Drawing.Size(30, 17);
             this.LRol.TabIndex = 47;
@@ -307,27 +305,6 @@
             this.TBusuario.Size = new System.Drawing.Size(185, 20);
             this.TBusuario.TabIndex = 7;
             this.TBusuario.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBusuario_KeyPress);
-            // 
-            // TBcontrasena
-            // 
-            this.TBcontrasena.BackColor = System.Drawing.Color.White;
-            this.TBcontrasena.Location = new System.Drawing.Point(463, 317);
-            this.TBcontrasena.Name = "TBcontrasena";
-            this.TBcontrasena.Size = new System.Drawing.Size(185, 20);
-            this.TBcontrasena.TabIndex = 8;
-            this.TBcontrasena.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TBcontrasena_KeyPress);
-            // 
-            // LContrasena
-            // 
-            this.LContrasena.AutoSize = true;
-            this.LContrasena.BackColor = System.Drawing.Color.Black;
-            this.LContrasena.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LContrasena.ForeColor = System.Drawing.Color.White;
-            this.LContrasena.Location = new System.Drawing.Point(324, 316);
-            this.LContrasena.Name = "LContrasena";
-            this.LContrasena.Size = new System.Drawing.Size(77, 17);
-            this.LContrasena.TabIndex = 40;
-            this.LContrasena.Text = "Contraseña:";
             // 
             // openFileDialog1
             // 
@@ -414,8 +391,6 @@
             this.Controls.Add(this.TBapellido);
             this.Controls.Add(this.LUsuario);
             this.Controls.Add(this.TBusuario);
-            this.Controls.Add(this.TBcontrasena);
-            this.Controls.Add(this.LContrasena);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "EditarUsuario";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -443,7 +418,6 @@
         private System.Windows.Forms.Label LApellido;
         private System.Windows.Forms.Label LRol;
         private System.Windows.Forms.Label LUsuario;
-        private System.Windows.Forms.Label LContrasena;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         public System.Windows.Forms.TextBox textCorreo;
         public System.Windows.Forms.TextBox txtDomicilio;
@@ -452,7 +426,6 @@
         public System.Windows.Forms.TextBox TBNombree;
         public System.Windows.Forms.TextBox TBapellido;
         public System.Windows.Forms.TextBox TBusuario;
-        public System.Windows.Forms.TextBox TBcontrasena;
         public System.Windows.Forms.ComboBox comboBox1;
         public System.Windows.Forms.ComboBox CBRol;
         public System.Windows.Forms.Label lblid;

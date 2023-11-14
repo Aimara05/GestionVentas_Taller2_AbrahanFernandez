@@ -23,10 +23,16 @@ namespace CapaPresentacion
         public Login()
         {
             InitializeComponent();
-            
+
         }
 
+        //Método para cuando carga el formulario
 
+        private void Login_Load(object sender, EventArgs e)
+        {
+            this.AcceptButton = btnIngresar;
+
+        }
 
         //Método para que finalice la aplicacion
         private void frm_clossing(object sender, FormClosingEventArgs e)
@@ -102,7 +108,7 @@ namespace CapaPresentacion
                             form.lblRol.Text = ousuario.oRol.descripcion;
 
                             form.btnArticulos.Visible = false;
-                            form.btnCategorias.Visible = false;
+                            //form.btnCategorias.Visible = false;
                             form.btnProductos.Visible = false;
                             form.btnClientes.Visible = false;
                             form.btnVentas.Visible = false;
@@ -123,7 +129,8 @@ namespace CapaPresentacion
                             form.lblRol.Text = ousuario.oRol.descripcion;
 
                             form.btnUsuarios.Visible = false;
-                            form.btnCategorias.Visible = false;
+
+                            //form.btnCategorias.Visible = false;
 
                             form.btnReportes.Visible = false;
                             form.btnSeguridad.Visible = false;
@@ -134,7 +141,7 @@ namespace CapaPresentacion
                             form.FormClosing += frm_clossing;
                         }
                     }
-                    
+
 
 
 
@@ -145,9 +152,9 @@ namespace CapaPresentacion
                 }
             }
 
-            }
-     
-      
+        }
+
+
         //Metodo para el boton cerrar
         private void picCerrar_Click(object sender, EventArgs e)
         {
@@ -160,13 +167,14 @@ namespace CapaPresentacion
             }
         }
 
-        //Metodo para el boton mi
+        //Metodo para el boton minimizar
         private void picMinimizar_Click(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Minimized;
         }
 
-       //validaciones 
+
+        //validaciones 
         private void txtContrasena_TextChanged(object sender, EventArgs e)
         {
             if (txtContrasena.Text.Length > 8)
@@ -193,8 +201,9 @@ namespace CapaPresentacion
         {
             if (e.KeyChar == Convert.ToChar(Keys.Enter))
             {
+
                 List<USUARIO> TEST = new CN_Usuario().Listar();
-                USUARIO ousuario = new CN_Usuario().Listar().Where(u => u.usuario == txtUsuario.Text && u.clave == txtContrasena.Text).FirstOrDefault(); //expresiones lambda
+                USUARIO ousuario = new CN_Usuario().Listar().Where(u => u.usuario == txtUsuario.Text).FirstOrDefault(); //expresiones lambda
 
                 if (string.IsNullOrWhiteSpace(txtUsuario.Text) || string.IsNullOrWhiteSpace(txtContrasena.Text)) // para validar valores null y espacios vacíos.
                 {
@@ -204,69 +213,79 @@ namespace CapaPresentacion
                 {
                     if (ousuario != null) // validar si recibe informacion  la variable osuario
                     {
-                        if (ousuario.oRol.idRol == 1) // administrador
+                        string test = BCrypt.Net.BCrypt.EnhancedHashPassword(txtContrasena.Text);
+                        bool passwordMatches2 = BCrypt.Net.BCrypt.EnhancedVerify(txtContrasena.Text, test);
+                        bool passwordMatches = BCrypt.Net.BCrypt.EnhancedVerify(txtContrasena.Text, ousuario.clave);
+
+
+                        if (passwordMatches)
                         {
-                            Inicio form = new Inicio(ousuario); //instancia
-                            form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
-                            form.lblRol.Text = ousuario.oRol.descripcion;
+                            if (ousuario.oRol.idRol == 1) // administrador
+                            {
+                                Inicio form = new Inicio(ousuario); //instancia
+                                form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
+                                form.lblRol.Text = ousuario.oRol.descripcion;
 
-                            form.btnUsuarios.Visible = false;
-                            form.btnRegistrarVent.Visible = false;
-                            form.btnSeguridad.Visible = false;
+                                form.btnUsuarios.Visible = false;
+                                form.btnRegistrarVent.Visible = false;
+                                form.btnSeguridad.Visible = false;
+                                form.btnVentas.Visible = false;
 
-                            form.Show(); //se muestre el formulario
+                                form.Show(); //se muestre el formulario
 
-                            this.Hide();    //que se oculte el login
+                                this.Hide();    //que se oculte el login
 
-                            form.FormClosing += frm_clossing; //cuando estamos cerrando el formulario tome el evento
+                                form.FormClosing += frm_clossing; //cuando estamos cerrando el formulario tome el evento
 
+                            }
+                            else if (ousuario.oRol.idRol == 2) //superAdmin
+                            {
+
+                                Inicio form = new Inicio(ousuario);
+                                form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
+                                form.lblRol.Text = ousuario.oRol.descripcion;
+
+                                form.btnArticulos.Visible = false;
+                               // form.btnCategorias.Visible = false;
+                                form.btnProductos.Visible = false;
+                                form.btnClientes.Visible = false;
+                                form.btnVentas.Visible = false;
+                                form.btnReportes.Visible = false;
+                                form.btnVentas.Visible = false;
+
+                                form.Show(); //se muestre el formulario
+                                this.Hide();    //que se oculte el login
+
+                                form.FormClosing += frm_clossing;
+
+
+                            }
+                            else if (ousuario.oRol.idRol == 3) // vendedor
+                            {
+                                Inicio form = new Inicio(ousuario);
+                                form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
+                                form.lblRol.Text = ousuario.oRol.descripcion;
+
+                                form.btnUsuarios.Visible = false;
+                                //form.btnCategorias.Visible = false;
+
+                                form.btnReportes.Visible = false;
+                                form.btnSeguridad.Visible = false;
+
+                                form.Show(); //se muestre el formulario
+                                this.Hide();    //que se oculte el login
+
+                                form.FormClosing += frm_clossing;
+                            }
                         }
-                        else if (ousuario.oRol.idRol == 2) //superAdmin
-                        {
-
-                            Inicio form = new Inicio(ousuario);
-                            form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
-                            form.lblRol.Text = ousuario.oRol.descripcion;
-
-                            form.btnArticulos.Visible = false;
-                            form.btnCategorias.Visible = false;
-                            form.btnProductos.Visible = false;
-                            form.btnClientes.Visible = false;
-                            form.btnVentas.Visible = false;
-                            form.btnReportes.Visible = false;
-                            form.btnVentas.Visible = false;
-
-                            form.Show(); //se muestre el formulario
-                            this.Hide();    //que se oculte el login
-
-                            form.FormClosing += frm_clossing;
-
-
-                        }
-                        else if (ousuario.oRol.idRol == 3) // vendedor
-                        {
-                            Inicio form = new Inicio(ousuario);
-                            form.lblUsuario.Text = ousuario.nombre + " " + ousuario.apellido;
-                            form.lblRol.Text = ousuario.oRol.descripcion;
-
-                            form.btnUsuarios.Visible = false;
-                            form.btnCategorias.Visible = false;
-
-                            form.btnReportes.Visible = false;
-                            form.btnSeguridad.Visible = false;
-
-                            form.Show(); //se muestre el formulario
-                            this.Hide();    //que se oculte el login
-
-                            form.FormClosing += frm_clossing;
-                        }
-                    }
-                    else
-                    {
-                        MessageBox.Show("Usuario y/o Contraseña incorrectos");
                     }
                 }
+
             }
+
         }
+
+
+      
     }
 }

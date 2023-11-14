@@ -29,7 +29,7 @@ namespace CapaPresentacion.Usuarios
         //metodo para cuando carga el form editar
         private void EditarUsuario_Load(object sender, EventArgs e)
         {
-            
+            this.AcceptButton = BtnGuardar;
         }
 
         //metodo para cancelar 
@@ -54,7 +54,7 @@ namespace CapaPresentacion.Usuarios
             if (string.IsNullOrWhiteSpace(TBdni.Text) || string.IsNullOrWhiteSpace(TBNombree.Text) ||
                string.IsNullOrWhiteSpace(TBapellido.Text) || string.IsNullOrWhiteSpace(txtTelefono.Text) ||
                string.IsNullOrWhiteSpace(txtDomicilio.Text) || string.IsNullOrWhiteSpace(textCorreo.Text)
-               || string.IsNullOrWhiteSpace(TBusuario.Text) || string.IsNullOrWhiteSpace(TBcontrasena.Text)) // para validar valores null y espacios vacíos.
+               || string.IsNullOrWhiteSpace(TBusuario.Text) ) // para validar valores null y espacios vacíos.
             {
                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -70,7 +70,7 @@ namespace CapaPresentacion.Usuarios
                     direccion = txtDomicilio.Text,
                     correo = textCorreo.Text,
                     usuario = TBusuario.Text,
-                    clave = TBcontrasena.Text,
+                    
                     oRol = new ROL() { idRol = Convert.ToInt32(((ComboBoxOpc)CBRol.SelectedItem).Valor) },
                     estado = Convert.ToInt32(((ComboBoxOpc)comboBox1.SelectedItem).Valor) == 1 ? true : false
                 };
@@ -108,6 +108,8 @@ namespace CapaPresentacion.Usuarios
             }
         }
 
+
+        //VALIDACIONES
         private void TBdni_KeyPress(object sender, KeyPressEventArgs e)
         {
             if ((e.KeyChar >= 32 && e.KeyChar <= 47) || (e.KeyChar >= 58 && e.KeyChar <= 255))
@@ -157,15 +159,7 @@ namespace CapaPresentacion.Usuarios
             }
         }
 
-        private void TBcontrasena_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            // Verificar si ya hay 8 caracteres en el TextBox.
-            if (TBcontrasena.Text.Length >= 8)
-            {
-                // Evitar que se ingrese más caracteres.
-                e.Handled = true;
-            }
-        }
+       
 
         private void textCorreo_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -192,6 +186,7 @@ namespace CapaPresentacion.Usuarios
             }
         }
 
+        //Metodo para el boton cerrar.
         private void picCerrar_Click_1(object sender, EventArgs e)
         {
             DialogResult ask = MessageBox.Show("Seguro que desea cerrar el formulario de Editar Usuario?"

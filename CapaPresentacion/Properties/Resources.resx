@@ -118,9 +118,6 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
-  <data name="cruz-pequena1" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\cruz-pequena1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="flecha-de-circulo-de-disquete-a-la-derecha" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flecha-de-circulo-de-disquete-a-la-derecha.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -136,11 +133,9 @@
   <data name="print-black-printer-tool-symbol_icon-icons.com_54467" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\print-black-printer-tool-symbol_icon-icons.com_54467.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  
   <data name="recargar" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\recargar.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
- 
   <data name="checkbox_ckeck_icon_143039" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\checkbox_ckeck_icon_143039.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -150,14 +145,12 @@
   <data name="products_filled_icon_142867" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\products_filled_icon_142867.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="cerrar-con-llave1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cerrar-con-llave1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
- 
   <data name="PlantillaVenta" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\PlantillaVenta.html;System.String, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089;utf-8</value>
   </data>
@@ -170,12 +163,9 @@
   <data name="usuario1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuario1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="usuarios-alt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuarios-alt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
-
   <data name="anadir - Copia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\anadir - Copia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -206,7 +196,6 @@
   <data name="users_gear_icon_198627" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\users_gear_icon_198627.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="chat-flecha-crecer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\chat-flecha-crecer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -219,8 +208,8 @@
   <data name="cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="wishlist_product_list_order_cart_icon_225172" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\wishlist_product_list_order_cart_icon_225172.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="altaProducto" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\altaProducto.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="edit_user_icon_195392" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\edit_user_icon_195392.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -261,11 +250,25 @@
   <data name="usuarios-alt1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\usuarios-alt1.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-
   <data name="Edit_User_icon-icons.com_55920" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Edit_User_icon-icons.com_55920.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="candado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\candado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="alta" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\alta.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="datos" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\datos.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="datos2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\datos2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="kisspng_computer_icons_pie_chart_statistics_chart_pie_statistics_icon_5ab09e1a7550a3_1426448515215242504805" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\kisspng-computer-icons-pie-chart-statistics-chart-pie-statistics-icon-5ab09e1a7550a3.1426448515215242504805.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

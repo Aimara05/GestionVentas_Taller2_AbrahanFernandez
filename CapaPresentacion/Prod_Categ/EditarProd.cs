@@ -1,4 +1,6 @@
-﻿using CapaEntidad;
+﻿
+//Formulario de editar producto
+using CapaEntidad;
 using CapaNegocios;
 using CapaPresentacion.Utilidades;
 using System;
@@ -32,19 +34,6 @@ namespace CapaPresentacion.Prod_Categ
             }
         }
 
-
-      
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-            DialogResult ask = MessageBox.Show("Seguro que desea cerrar el formulario de alta?"
-                     , "Confirmar Cancelar",
-                          MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
-            if (ask == DialogResult.Yes)
-            {
-                this.Close();
-            }
-        }
-
         //VALIDACIONES
         private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -57,21 +46,6 @@ namespace CapaPresentacion.Prod_Categ
             }
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Solamente se pueden letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
-
-        private void TBdescr_KeyPress(object sender, KeyPressEventArgs e)
-        {
-
-        }
-
         private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
         {
 
@@ -82,7 +56,6 @@ namespace CapaPresentacion.Prod_Categ
                 return;
             }
         }
-
 
         private void txtPrecio_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -146,14 +119,21 @@ namespace CapaPresentacion.Prod_Categ
             }
         }
 
-        private void txtCod_TextChanged(object sender, EventArgs e)
+        //Metodo para el boton cerrar
+        private void picCerrar_Click(object sender, EventArgs e)
         {
-
+            DialogResult ask = MessageBox.Show("Seguro que desea cerrar el formulario de Editar Producto?"
+                     , "Confirmar Cancelar",
+                          MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation, MessageBoxDefaultButton.Button2);
+            if (ask == DialogResult.Yes)
+            {
+                this.Close();
+            }
         }
 
         private void EditarProd_Load(object sender, EventArgs e)
         {
-
+            this.AcceptButton = BtnGuardar;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,6 +10,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using OpenFileDialog = System.Windows.Forms.OpenFileDialog;
+using SaveFileDialog = System.Windows.Forms.SaveFileDialog;
 
 namespace CapaPresentacion.Seguridad
 {
@@ -23,41 +26,58 @@ namespace CapaPresentacion.Seguridad
         {
            
                
-            }
-        
-
-        private void label2_Click(object sender, EventArgs e)
-        {
-
         }
 
-        private void panelSegur_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void button1_Click(object sender, EventArgs e)
+        //Metodo para el boton guardar del backup
+        private void btnGuardar_Click(object sender, EventArgs e)
         {
             using (SqlConnection oconexion = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=DBInfiniteFenandezAbrahan;Integrated Security=True"))
             {
                 oconexion.Open();
 
-                using (SqlCommand command = new SqlCommand("BACKUP DATABASE DBInfiniteFenandezAbrahan TO DISK = @ruta", oconexion))
+                // Crear SaveFileDialog
+                using (SaveFileDialog saveFileDialog = new SaveFileDialog())
                 {
-                    SaveFileDialog saveFileDialog = new SaveFileDialog();
+                    // Establecer la carpeta predeterminada
+                    string rutaPredeterminada = @"C:\backup";
+
+                    // Generar el nombre con timestamp
+                    string nombreArchivoConTimestamp = GenerarNombreTimestamp();
+
+                    // Establecer el nombre del archivo en el SaveFileDialog
+                    saveFileDialog.FileName = nombreArchivoConTimestamp;
                     saveFileDialog.Filter = "Archivos de respaldo (*.bak)|*.bak";
+                    saveFileDialog.InitialDirectory = rutaPredeterminada;
                     saveFileDialog.Title = "Guardar respaldo";
+
                     if (saveFileDialog.ShowDialog() == DialogResult.OK)
                     {
-                        command.Parameters.AddWithValue("@ruta", saveFileDialog.FileName);
-                        command.ExecuteNonQuery();
-                        MessageBox.Show("Respaldo completado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        // Obtener la ruta seleccionada por el usuario
+                        string rutaDeRespaldo = saveFileDialog.FileName;
+
+                        using (SqlCommand command = new SqlCommand("BACKUP DATABASE DBInfiniteFenandezAbrahan TO DISK = @ruta", oconexion))
+                        {
+                            // Configurar el parámetro @ruta con el nuevo nombre del archivo
+                            command.Parameters.AddWithValue("@ruta", rutaDeRespaldo);
+
+                            // Asignar la ruta al TextBox en el formulario
+                            txtBackup.Text = rutaDeRespaldo;
+
+                            // Ejecutar el comando de respaldo
+                            command.ExecuteNonQuery();
+
+                            MessageBox.Show("Respaldo completado correctamente", "Éxito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        }
                     }
                 }
             }
+
+
         }
 
-        private void button2_Click(object sender, EventArgs e)
+        //Metodo para el boton restaurar
+
+        private void btnRestaurar_Click(object sender, EventArgs e)
         {
             using (SqlConnection connection = new SqlConnection("Data Source=.\\sqlexpress;Initial Catalog=DBInfiniteFenandezAbrahan;Integrated Security=True"))
             {
@@ -69,6 +89,9 @@ namespace CapaPresentacion.Seguridad
                     openFileDialog.Filter = "Archivos de respaldo (*.bak)|*.bak";
                     openFileDialog.Title = "Seleccionar respaldo";
 
+                    // Establecer la carpeta predeterminada en el disco C:\backup
+                    openFileDialog.InitialDirectory = @"C:\backup";
+
                     if (openFileDialog.ShowDialog() == DialogResult.OK)
                     {
                         // Obtener la ruta y el nombre de archivo seleccionados por el usuario
@@ -77,6 +100,9 @@ namespace CapaPresentacion.Seguridad
                         // Asignar el valor al parámetro @ruta
                         command.Parameters.AddWithValue("@ruta", rutaDeRespaldo);
 
+                        // Asignar la ruta al TextBox en el formulario
+                        txtRestore.Text = rutaDeRespaldo;
+
                         // Ejecutar el comando de restauración
                         command.ExecuteNonQuery();
 
@@ -84,6 +110,20 @@ namespace CapaPresentacion.Seguridad
                     }
                 }
             }
+        }
+
+        string GenerarNombreTimestamp()
+        {
+            // Obtener la fecha y hora actual
+            DateTime fechaActual = DateTime.Now;
+
+            // Convertir la fecha y hora a formato yyyyMMddHHmmss
+            string timestamp = fechaActual.ToString("yyyyMMddHHmmss");
+
+            // Agregar el prefijo "respaldo-"
+            string nombreArchivoConTimestamp = "respaldo-" + timestamp;
+
+            return nombreArchivoConTimestamp;
         }
     }
 }

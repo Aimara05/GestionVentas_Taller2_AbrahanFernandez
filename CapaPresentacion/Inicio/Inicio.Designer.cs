@@ -38,7 +38,6 @@
             this.btnRegistrarVent = new System.Windows.Forms.Button();
             this.btnVentas = new System.Windows.Forms.Button();
             this.panelDesplegableArt = new System.Windows.Forms.Panel();
-            this.btnCategorias = new System.Windows.Forms.Button();
             this.btnProductos = new System.Windows.Forms.Button();
             this.btnArticulos = new System.Windows.Forms.Button();
             this.btnClientes = new System.Windows.Forms.Button();
@@ -216,33 +215,12 @@
             // panelDesplegableArt
             // 
             this.panelDesplegableArt.BackColor = System.Drawing.Color.DarkGray;
-            this.panelDesplegableArt.Controls.Add(this.btnCategorias);
             this.panelDesplegableArt.Controls.Add(this.btnProductos);
             this.panelDesplegableArt.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDesplegableArt.Location = new System.Drawing.Point(0, 130);
             this.panelDesplegableArt.Name = "panelDesplegableArt";
             this.panelDesplegableArt.Size = new System.Drawing.Size(149, 70);
             this.panelDesplegableArt.TabIndex = 11;
-            // 
-            // btnCategorias
-            // 
-            this.btnCategorias.BackColor = System.Drawing.Color.DarkGray;
-            this.btnCategorias.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCategorias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnCategorias.FlatAppearance.BorderSize = 0;
-            this.btnCategorias.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnCategorias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.btnCategorias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCategorias.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCategorias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCategorias.Location = new System.Drawing.Point(0, 31);
-            this.btnCategorias.Name = "btnCategorias";
-            this.btnCategorias.Padding = new System.Windows.Forms.Padding(20, 0, 0, 0);
-            this.btnCategorias.Size = new System.Drawing.Size(149, 31);
-            this.btnCategorias.TabIndex = 2;
-            this.btnCategorias.Text = "Categorías";
-            this.btnCategorias.UseVisualStyleBackColor = false;
-            this.btnCategorias.Click += new System.EventHandler(this.BCategorias_Click);
             // 
             // btnProductos
             // 
@@ -456,7 +434,6 @@
             this.panelBienvenido.Name = "panelBienvenido";
             this.panelBienvenido.Size = new System.Drawing.Size(338, 364);
             this.panelBienvenido.TabIndex = 3;
-            this.panelBienvenido.Paint += new System.Windows.Forms.PaintEventHandler(this.panelBienvenido_Paint);
             // 
             // lblReloj
             // 
@@ -619,7 +596,6 @@
         private System.Windows.Forms.Panel panel2;
         public System.Windows.Forms.Button btnUsuarios;
         public System.Windows.Forms.Button btnClientes;
-        public System.Windows.Forms.Button btnCategorias;
         public System.Windows.Forms.Button btnProductos;
         public System.Windows.Forms.Button btnVentas;
         public System.Windows.Forms.Button btnArticulos;

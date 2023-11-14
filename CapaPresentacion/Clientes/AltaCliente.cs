@@ -23,6 +23,7 @@ namespace CapaPresentacion.Clientes
 
         private void AltaCliente_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = BtnGuardar;
             CBEstado.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
             CBEstado.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
 
@@ -120,7 +121,9 @@ namespace CapaPresentacion.Clientes
         //Metodo para el btn guardar
         private void BtnGuardar_Click(object sender, EventArgs e)
         {
+            
             string mensaje = string.Empty;
+
 
 
             if (string.IsNullOrWhiteSpace(TBdni.Text) || string.IsNullOrWhiteSpace(txtNombre.Text) ||

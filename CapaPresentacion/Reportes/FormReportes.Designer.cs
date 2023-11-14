@@ -29,8 +29,26 @@
         private void InitializeComponent()
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormReportes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dataGridReportes = new System.Windows.Forms.DataGridView();
             this.fechaRegistro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codigoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -42,29 +60,39 @@
             this.nombreCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.apellidoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.documentoCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idProducto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nombreProd = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionCateg = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.descripcionMarca = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.precioVenta = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cboBusqueda = new System.Windows.Forms.ComboBox();
-            this.txtBusqueda = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.btnBuscar = new System.Windows.Forms.Button();
-            this.lblTituloUsu = new System.Windows.Forms.Label();
-            this.panetop = new System.Windows.Forms.Panel();
-            this.btnExcel = new System.Windows.Forms.Button();
+            this.btndetalles = new System.Windows.Forms.DataGridViewButtonColumn();
             this.Btnbuscarfecha = new System.Windows.Forms.Button();
-            this.Btnlimp = new System.Windows.Forms.Button();
             this.Dfechafin = new System.Windows.Forms.DateTimePicker();
             this.Dfechainicio = new System.Windows.Forms.DateTimePicker();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
+            this.dataGridDetalles = new System.Windows.Forms.DataGridView();
+            this.Producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Precio = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnExcel = new System.Windows.Forms.Button();
             this.BtnGraficos = new System.Windows.Forms.Button();
+            this.lblTituloUsu = new System.Windows.Forms.Label();
+            this.panelTopUsuario = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.panelBuscador = new System.Windows.Forms.Panel();
+            this.btnLimpiar = new System.Windows.Forms.Button();
+            this.cboBusqueda = new System.Windows.Forms.ComboBox();
+            this.btnBuscar = new System.Windows.Forms.Button();
+            this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.panelRigtUsuario = new System.Windows.Forms.Panel();
+            this.picUsuario = new System.Windows.Forms.PictureBox();
+            this.panelContenedor = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReportes)).BeginInit();
-            this.panetop.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDetalles)).BeginInit();
+            this.panelTopUsuario.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panelBuscador.SuspendLayout();
+            this.panelRigtUsuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).BeginInit();
+            this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // dataGridReportes
@@ -91,223 +119,121 @@
             this.nombreCliente,
             this.apellidoCliente,
             this.documentoCliente,
-            this.idProducto,
-            this.nombreProd,
-            this.descripcionCateg,
-            this.descripcionMarca,
-            this.precioVenta,
-            this.cantidad,
-            this.subtotal});
-            this.dataGridReportes.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridReportes.Location = new System.Drawing.Point(0, 107);
+            this.btndetalles});
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.ButtonHighlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataGridReportes.DefaultCellStyle = dataGridViewCellStyle13;
+            this.dataGridReportes.GridColor = System.Drawing.Color.Black;
+            this.dataGridReportes.Location = new System.Drawing.Point(0, 0);
             this.dataGridReportes.MultiSelect = false;
             this.dataGridReportes.Name = "dataGridReportes";
             this.dataGridReportes.ReadOnly = true;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
-            this.dataGridReportes.RowsDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridReportes.RowsDefaultCellStyle = dataGridViewCellStyle14;
             this.dataGridReportes.RowTemplate.Height = 28;
-            this.dataGridReportes.Size = new System.Drawing.Size(1740, 343);
+            this.dataGridReportes.Size = new System.Drawing.Size(534, 221);
             this.dataGridReportes.TabIndex = 27;
+            this.dataGridReportes.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridReportes_CellContentClick);
+            this.dataGridReportes.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.dataGridReportes_CellPainting);
             // 
             // fechaRegistro
             // 
+            dataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black;
+            this.fechaRegistro.DefaultCellStyle = dataGridViewCellStyle2;
             this.fechaRegistro.HeaderText = "FechaRegistro";
             this.fechaRegistro.Name = "fechaRegistro";
             this.fechaRegistro.ReadOnly = true;
             // 
             // codigoFactura
             // 
+            dataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black;
+            this.codigoFactura.DefaultCellStyle = dataGridViewCellStyle3;
             this.codigoFactura.HeaderText = "CodigoFactura";
             this.codigoFactura.Name = "codigoFactura";
             this.codigoFactura.ReadOnly = true;
             // 
             // montoTotal
             // 
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black;
+            this.montoTotal.DefaultCellStyle = dataGridViewCellStyle4;
             this.montoTotal.HeaderText = "MontoTotal";
             this.montoTotal.Name = "montoTotal";
             this.montoTotal.ReadOnly = true;
             // 
             // tipoPago
             // 
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
+            this.tipoPago.DefaultCellStyle = dataGridViewCellStyle5;
             this.tipoPago.HeaderText = "TipoPago";
             this.tipoPago.Name = "tipoPago";
             this.tipoPago.ReadOnly = true;
             // 
             // nombreUsuario
             // 
+            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black;
+            this.nombreUsuario.DefaultCellStyle = dataGridViewCellStyle6;
             this.nombreUsuario.HeaderText = "NombreUsuario";
             this.nombreUsuario.Name = "nombreUsuario";
             this.nombreUsuario.ReadOnly = true;
             // 
             // apellidoUsuario
             // 
+            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black;
+            this.apellidoUsuario.DefaultCellStyle = dataGridViewCellStyle7;
             this.apellidoUsuario.HeaderText = "ApellidoUsuario";
             this.apellidoUsuario.Name = "apellidoUsuario";
             this.apellidoUsuario.ReadOnly = true;
             // 
             // dniUsuario
             // 
+            dataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black;
+            this.dniUsuario.DefaultCellStyle = dataGridViewCellStyle8;
             this.dniUsuario.HeaderText = "DniUsuario";
             this.dniUsuario.Name = "dniUsuario";
             this.dniUsuario.ReadOnly = true;
             // 
             // nombreCliente
             // 
+            dataGridViewCellStyle9.ForeColor = System.Drawing.Color.Black;
+            this.nombreCliente.DefaultCellStyle = dataGridViewCellStyle9;
             this.nombreCliente.HeaderText = "NombreCliente";
             this.nombreCliente.Name = "nombreCliente";
             this.nombreCliente.ReadOnly = true;
             // 
             // apellidoCliente
             // 
+            dataGridViewCellStyle10.ForeColor = System.Drawing.Color.Black;
+            this.apellidoCliente.DefaultCellStyle = dataGridViewCellStyle10;
             this.apellidoCliente.HeaderText = "ApellidoCliente";
             this.apellidoCliente.Name = "apellidoCliente";
             this.apellidoCliente.ReadOnly = true;
             // 
             // documentoCliente
             // 
+            dataGridViewCellStyle11.ForeColor = System.Drawing.Color.Black;
+            this.documentoCliente.DefaultCellStyle = dataGridViewCellStyle11;
             this.documentoCliente.HeaderText = "DocumentoCliente";
             this.documentoCliente.Name = "documentoCliente";
             this.documentoCliente.ReadOnly = true;
+            this.documentoCliente.Width = 120;
             // 
-            // idProducto
+            // btndetalles
             // 
-            this.idProducto.HeaderText = "IdProducto";
-            this.idProducto.Name = "idProducto";
-            this.idProducto.ReadOnly = true;
-            // 
-            // nombreProd
-            // 
-            this.nombreProd.HeaderText = "NombreProducto";
-            this.nombreProd.Name = "nombreProd";
-            this.nombreProd.ReadOnly = true;
-            // 
-            // descripcionCateg
-            // 
-            this.descripcionCateg.HeaderText = "Categoria";
-            this.descripcionCateg.Name = "descripcionCateg";
-            this.descripcionCateg.ReadOnly = true;
-            // 
-            // descripcionMarca
-            // 
-            this.descripcionMarca.HeaderText = "Marca";
-            this.descripcionMarca.Name = "descripcionMarca";
-            this.descripcionMarca.ReadOnly = true;
-            // 
-            // precioVenta
-            // 
-            this.precioVenta.HeaderText = "PrecioVenta";
-            this.precioVenta.Name = "precioVenta";
-            this.precioVenta.ReadOnly = true;
-            // 
-            // cantidad
-            // 
-            this.cantidad.HeaderText = "Cantidad";
-            this.cantidad.Name = "cantidad";
-            this.cantidad.ReadOnly = true;
-            // 
-            // subtotal
-            // 
-            this.subtotal.HeaderText = "Subtotal";
-            this.subtotal.Name = "subtotal";
-            this.subtotal.ReadOnly = true;
-            // 
-            // cboBusqueda
-            // 
-            this.cboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cboBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cboBusqueda.FormattingEnabled = true;
-            this.cboBusqueda.Location = new System.Drawing.Point(787, 76);
-            this.cboBusqueda.Name = "cboBusqueda";
-            this.cboBusqueda.Size = new System.Drawing.Size(118, 25);
-            this.cboBusqueda.TabIndex = 27;
-            this.cboBusqueda.SelectedIndexChanged += new System.EventHandler(this.cboBusqueda_SelectedIndexChanged);
-            // 
-            // txtBusqueda
-            // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(911, 76);
-            this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(119, 25);
-            this.txtBusqueda.TabIndex = 28;
-            this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.LightGray;
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox1.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(787, 46);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(89, 22);
-            this.textBox1.TabIndex = 25;
-            this.textBox1.Text = "Buscar por :";
-            this.textBox1.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
-            // 
-            // btnBuscar
-            // 
-            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
-            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.btnBuscar.FlatAppearance.BorderSize = 0;
-            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.btnBuscar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnBuscar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
-            this.btnBuscar.Image = ((System.Drawing.Image)(resources.GetObject("btnBuscar.Image")));
-            this.btnBuscar.Location = new System.Drawing.Point(973, 46);
-            this.btnBuscar.Name = "btnBuscar";
-            this.btnBuscar.Size = new System.Drawing.Size(25, 22);
-            this.btnBuscar.TabIndex = 25;
-            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnBuscar.UseVisualStyleBackColor = false;
-            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
-            // 
-            // lblTituloUsu
-            // 
-            this.lblTituloUsu.AutoSize = true;
-            this.lblTituloUsu.Font = new System.Drawing.Font("Leelawadee UI", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloUsu.Location = new System.Drawing.Point(3, 1);
-            this.lblTituloUsu.Name = "lblTituloUsu";
-            this.lblTituloUsu.Size = new System.Drawing.Size(235, 37);
-            this.lblTituloUsu.TabIndex = 1;
-            this.lblTituloUsu.Text = "Reporte de Ventas";
-            // 
-            // panetop
-            // 
-            this.panetop.BackColor = System.Drawing.Color.LightGray;
-            this.panetop.Controls.Add(this.BtnGraficos);
-            this.panetop.Controls.Add(this.btnExcel);
-            this.panetop.Controls.Add(this.Btnbuscarfecha);
-            this.panetop.Controls.Add(this.Btnlimp);
-            this.panetop.Controls.Add(this.Dfechafin);
-            this.panetop.Controls.Add(this.Dfechainicio);
-            this.panetop.Controls.Add(this.textBox3);
-            this.panetop.Controls.Add(this.textBox2);
-            this.panetop.Controls.Add(this.lblTituloUsu);
-            this.panetop.Controls.Add(this.textBox1);
-            this.panetop.Controls.Add(this.btnBuscar);
-            this.panetop.Controls.Add(this.cboBusqueda);
-            this.panetop.Controls.Add(this.txtBusqueda);
-            this.panetop.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panetop.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.panetop.Location = new System.Drawing.Point(0, 0);
-            this.panetop.Name = "panetop";
-            this.panetop.Size = new System.Drawing.Size(1740, 107);
-            this.panetop.TabIndex = 26;
-            // 
-            // btnExcel
-            // 
-            this.btnExcel.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnExcel.Location = new System.Drawing.Point(387, 9);
-            this.btnExcel.Name = "btnExcel";
-            this.btnExcel.Size = new System.Drawing.Size(133, 29);
-            this.btnExcel.TabIndex = 36;
-            this.btnExcel.Text = "Descargar Excel";
-            this.btnExcel.UseVisualStyleBackColor = true;
-            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.BackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("MS Reference Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btndetalles.DefaultCellStyle = dataGridViewCellStyle12;
+            this.btndetalles.HeaderText = "";
+            this.btndetalles.Name = "btndetalles";
+            this.btndetalles.ReadOnly = true;
+            this.btndetalles.Text = "DETALLES";
+            this.btndetalles.Width = 35;
             // 
             // Btnbuscarfecha
             // 
@@ -317,45 +243,23 @@
             this.Btnbuscarfecha.FlatAppearance.BorderSize = 0;
             this.Btnbuscarfecha.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
             this.Btnbuscarfecha.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.Btnbuscarfecha.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.Btnbuscarfecha.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Btnbuscarfecha.ForeColor = System.Drawing.Color.Black;
             this.Btnbuscarfecha.Image = ((System.Drawing.Image)(resources.GetObject("Btnbuscarfecha.Image")));
-            this.Btnbuscarfecha.Location = new System.Drawing.Point(290, 73);
+            this.Btnbuscarfecha.Location = new System.Drawing.Point(87, 67);
             this.Btnbuscarfecha.Name = "Btnbuscarfecha";
-            this.Btnbuscarfecha.Size = new System.Drawing.Size(53, 28);
+            this.Btnbuscarfecha.Size = new System.Drawing.Size(80, 28);
             this.Btnbuscarfecha.TabIndex = 35;
             this.Btnbuscarfecha.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.Btnbuscarfecha.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.Btnbuscarfecha.UseVisualStyleBackColor = false;
             this.Btnbuscarfecha.Click += new System.EventHandler(this.Btnbuscarfecha_Click);
             // 
-            // Btnlimp
-            // 
-            this.Btnlimp.BackColor = System.Drawing.Color.Silver;
-            this.Btnlimp.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Btnlimp.FlatAppearance.BorderColor = System.Drawing.Color.Black;
-            this.Btnlimp.FlatAppearance.BorderSize = 0;
-            this.Btnlimp.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.Btnlimp.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.Btnlimp.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Btnlimp.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Btnlimp.ForeColor = System.Drawing.Color.Black;
-            this.Btnlimp.Image = global::CapaPresentacion.Properties.Resources.limpieza_de_datos;
-            this.Btnlimp.Location = new System.Drawing.Point(1004, 46);
-            this.Btnlimp.Name = "Btnlimp";
-            this.Btnlimp.Size = new System.Drawing.Size(25, 22);
-            this.Btnlimp.TabIndex = 34;
-            this.Btnlimp.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.Btnlimp.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.Btnlimp.UseVisualStyleBackColor = false;
-            this.Btnlimp.Click += new System.EventHandler(this.Btnlimp_Click);
-            // 
             // Dfechafin
             // 
             this.Dfechafin.Font = new System.Drawing.Font("Leelawadee UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dfechafin.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dfechafin.Location = new System.Drawing.Point(152, 74);
+            this.Dfechafin.Location = new System.Drawing.Point(137, 34);
             this.Dfechafin.Name = "Dfechafin";
             this.Dfechafin.Size = new System.Drawing.Size(119, 27);
             this.Dfechafin.TabIndex = 33;
@@ -364,7 +268,7 @@
             // 
             this.Dfechainicio.Font = new System.Drawing.Font("Leelawadee UI", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Dfechainicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.Dfechainicio.Location = new System.Drawing.Point(17, 73);
+            this.Dfechainicio.Location = new System.Drawing.Point(3, 34);
             this.Dfechainicio.Name = "Dfechainicio";
             this.Dfechainicio.Size = new System.Drawing.Size(119, 27);
             this.Dfechainicio.TabIndex = 32;
@@ -374,7 +278,7 @@
             this.textBox3.BackColor = System.Drawing.Color.LightGray;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(152, 53);
+            this.textBox3.Location = new System.Drawing.Point(137, 12);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(73, 16);
             this.textBox3.TabIndex = 31;
@@ -385,37 +289,284 @@
             this.textBox2.BackColor = System.Drawing.Color.LightGray;
             this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox2.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(17, 52);
+            this.textBox2.Location = new System.Drawing.Point(3, 12);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(89, 16);
             this.textBox2.TabIndex = 30;
             this.textBox2.Text = "Fecha Inicio:";
             this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
+            // dataGridDetalles
+            // 
+            this.dataGridDetalles.AllowUserToAddRows = false;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle15.Padding = new System.Windows.Forms.Padding(2);
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataGridDetalles.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle15;
+            this.dataGridDetalles.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridDetalles.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Producto,
+            this.Precio,
+            this.Cantidad,
+            this.Subtotal});
+            this.dataGridDetalles.GridColor = System.Drawing.Color.Black;
+            this.dataGridDetalles.Location = new System.Drawing.Point(0, 227);
+            this.dataGridDetalles.MultiSelect = false;
+            this.dataGridDetalles.Name = "dataGridDetalles";
+            this.dataGridDetalles.ReadOnly = true;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.Color.White;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.Color.Black;
+            this.dataGridDetalles.RowsDefaultCellStyle = dataGridViewCellStyle20;
+            this.dataGridDetalles.RowTemplate.Height = 28;
+            this.dataGridDetalles.Size = new System.Drawing.Size(534, 158);
+            this.dataGridDetalles.TabIndex = 28;
+            // 
+            // Producto
+            // 
+            dataGridViewCellStyle16.ForeColor = System.Drawing.Color.Black;
+            this.Producto.DefaultCellStyle = dataGridViewCellStyle16;
+            this.Producto.HeaderText = "nombreProd";
+            this.Producto.Name = "Producto";
+            this.Producto.ReadOnly = true;
+            // 
+            // Precio
+            // 
+            dataGridViewCellStyle17.ForeColor = System.Drawing.Color.Black;
+            this.Precio.DefaultCellStyle = dataGridViewCellStyle17;
+            this.Precio.HeaderText = "precioVenta";
+            this.Precio.Name = "Precio";
+            this.Precio.ReadOnly = true;
+            // 
+            // Cantidad
+            // 
+            dataGridViewCellStyle18.ForeColor = System.Drawing.Color.Black;
+            this.Cantidad.DefaultCellStyle = dataGridViewCellStyle18;
+            this.Cantidad.HeaderText = "cantidad";
+            this.Cantidad.Name = "Cantidad";
+            this.Cantidad.ReadOnly = true;
+            // 
+            // Subtotal
+            // 
+            dataGridViewCellStyle19.ForeColor = System.Drawing.Color.Black;
+            this.Subtotal.DefaultCellStyle = dataGridViewCellStyle19;
+            this.Subtotal.HeaderText = "subtotal";
+            this.Subtotal.Name = "Subtotal";
+            this.Subtotal.ReadOnly = true;
+            // 
+            // btnExcel
+            // 
+            this.btnExcel.BackColor = System.Drawing.Color.Silver;
+            this.btnExcel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.btnExcel.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnExcel.ForeColor = System.Drawing.Color.Black;
+            this.btnExcel.Location = new System.Drawing.Point(133, 210);
+            this.btnExcel.Name = "btnExcel";
+            this.btnExcel.Size = new System.Drawing.Size(83, 37);
+            this.btnExcel.TabIndex = 36;
+            this.btnExcel.Text = "Excel";
+            this.btnExcel.UseVisualStyleBackColor = false;
+            this.btnExcel.Click += new System.EventHandler(this.btnExcel_Click);
+            // 
             // BtnGraficos
             // 
-            this.BtnGraficos.Location = new System.Drawing.Point(444, 53);
+            this.BtnGraficos.AllowDrop = true;
+            this.BtnGraficos.BackColor = System.Drawing.Color.Silver;
+            this.BtnGraficos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.BtnGraficos.Cursor = System.Windows.Forms.Cursors.Default;
+            this.BtnGraficos.Font = new System.Drawing.Font("Microsoft JhengHei UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.BtnGraficos.ForeColor = System.Drawing.Color.Black;
+            this.BtnGraficos.Location = new System.Drawing.Point(133, 262);
             this.BtnGraficos.Name = "BtnGraficos";
-            this.BtnGraficos.Size = new System.Drawing.Size(150, 43);
+            this.BtnGraficos.Size = new System.Drawing.Size(83, 37);
             this.BtnGraficos.TabIndex = 37;
-            this.BtnGraficos.Text = "Graficos";
-            this.BtnGraficos.UseVisualStyleBackColor = true;
+            this.BtnGraficos.Text = "Gráficos";
+            this.BtnGraficos.UseVisualStyleBackColor = false;
             this.BtnGraficos.Click += new System.EventHandler(this.BtnGraficos_Click);
+            // 
+            // lblTituloUsu
+            // 
+            this.lblTituloUsu.AutoSize = true;
+            this.lblTituloUsu.Font = new System.Drawing.Font("Leelawadee UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTituloUsu.ForeColor = System.Drawing.Color.Black;
+            this.lblTituloUsu.Location = new System.Drawing.Point(103, 148);
+            this.lblTituloUsu.Name = "lblTituloUsu";
+            this.lblTituloUsu.Size = new System.Drawing.Size(128, 37);
+            this.lblTituloUsu.TabIndex = 1;
+            this.lblTituloUsu.Text = "Reporte ";
+            // 
+            // panelTopUsuario
+            // 
+            this.panelTopUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.panelTopUsuario.Controls.Add(this.panel3);
+            this.panelTopUsuario.Controls.Add(this.panelBuscador);
+            this.panelTopUsuario.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panelTopUsuario.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.panelTopUsuario.Location = new System.Drawing.Point(0, 0);
+            this.panelTopUsuario.Name = "panelTopUsuario";
+            this.panelTopUsuario.Size = new System.Drawing.Size(800, 107);
+            this.panelTopUsuario.TabIndex = 29;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.Btnbuscarfecha);
+            this.panel3.Controls.Add(this.textBox2);
+            this.panel3.Controls.Add(this.Dfechainicio);
+            this.panel3.Controls.Add(this.Dfechafin);
+            this.panel3.Controls.Add(this.textBox3);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panel3.Location = new System.Drawing.Point(475, 0);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(325, 107);
+            this.panel3.TabIndex = 27;
+            // 
+            // panelBuscador
+            // 
+            this.panelBuscador.BackColor = System.Drawing.Color.Transparent;
+            this.panelBuscador.Controls.Add(this.btnLimpiar);
+            this.panelBuscador.Controls.Add(this.cboBusqueda);
+            this.panelBuscador.Controls.Add(this.btnBuscar);
+            this.panelBuscador.Controls.Add(this.txtBusqueda);
+            this.panelBuscador.Controls.Add(this.textBox1);
+            this.panelBuscador.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panelBuscador.Location = new System.Drawing.Point(0, 0);
+            this.panelBuscador.Name = "panelBuscador";
+            this.panelBuscador.Size = new System.Drawing.Size(485, 107);
+            this.panelBuscador.TabIndex = 26;
+            // 
+            // btnLimpiar
+            // 
+            this.btnLimpiar.BackColor = System.Drawing.Color.Silver;
+            this.btnLimpiar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLimpiar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnLimpiar.FlatAppearance.BorderSize = 0;
+            this.btnLimpiar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnLimpiar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnLimpiar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.ForeColor = System.Drawing.Color.Black;
+            this.btnLimpiar.Image = global::CapaPresentacion.Properties.Resources.limpieza_de_datos;
+            this.btnLimpiar.Location = new System.Drawing.Point(424, 44);
+            this.btnLimpiar.Name = "btnLimpiar";
+            this.btnLimpiar.Size = new System.Drawing.Size(33, 26);
+            this.btnLimpiar.TabIndex = 36;
+            this.btnLimpiar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnLimpiar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnLimpiar.UseVisualStyleBackColor = false;
+            this.btnLimpiar.Click += new System.EventHandler(this.btnLimpiar_Click);
+            // 
+            // cboBusqueda
+            // 
+            this.cboBusqueda.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cboBusqueda.FormattingEnabled = true;
+            this.cboBusqueda.Location = new System.Drawing.Point(116, 44);
+            this.cboBusqueda.Name = "cboBusqueda";
+            this.cboBusqueda.Size = new System.Drawing.Size(118, 25);
+            this.cboBusqueda.TabIndex = 35;
+            this.cboBusqueda.TabStop = false;
+            // 
+            // btnBuscar
+            // 
+            this.btnBuscar.BackColor = System.Drawing.Color.Silver;
+            this.btnBuscar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnBuscar.FlatAppearance.BorderColor = System.Drawing.Color.Black;
+            this.btnBuscar.FlatAppearance.BorderSize = 0;
+            this.btnBuscar.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
+            this.btnBuscar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
+            this.btnBuscar.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnBuscar.ForeColor = System.Drawing.Color.Black;
+            this.btnBuscar.Image = global::CapaPresentacion.Properties.Resources.busqueda;
+            this.btnBuscar.Location = new System.Drawing.Point(390, 43);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(33, 26);
+            this.btnBuscar.TabIndex = 33;
+            this.btnBuscar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuscar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnBuscar.UseVisualStyleBackColor = false;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
+            // txtBusqueda
+            // 
+            this.txtBusqueda.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBusqueda.Location = new System.Drawing.Point(240, 44);
+            this.txtBusqueda.Name = "txtBusqueda";
+            this.txtBusqueda.Size = new System.Drawing.Size(144, 25);
+            this.txtBusqueda.TabIndex = 32;
+            // 
+            // textBox1
+            // 
+            this.textBox1.BackColor = System.Drawing.Color.LightGray;
+            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.textBox1.Location = new System.Drawing.Point(4, 44);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(106, 26);
+            this.textBox1.TabIndex = 34;
+            this.textBox1.TabStop = false;
+            this.textBox1.Text = "Buscar por :";
+            // 
+            // panelRigtUsuario
+            // 
+            this.panelRigtUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.panelRigtUsuario.Controls.Add(this.BtnGraficos);
+            this.panelRigtUsuario.Controls.Add(this.lblTituloUsu);
+            this.panelRigtUsuario.Controls.Add(this.btnExcel);
+            this.panelRigtUsuario.Controls.Add(this.picUsuario);
+            this.panelRigtUsuario.Dock = System.Windows.Forms.DockStyle.Right;
+            this.panelRigtUsuario.Location = new System.Drawing.Point(540, 107);
+            this.panelRigtUsuario.Name = "panelRigtUsuario";
+            this.panelRigtUsuario.Size = new System.Drawing.Size(260, 343);
+            this.panelRigtUsuario.TabIndex = 30;
+            // 
+            // picUsuario
+            // 
+            this.picUsuario.BackColor = System.Drawing.Color.LightGray;
+            this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
+            this.picUsuario.Location = new System.Drawing.Point(142, 56);
+            this.picUsuario.Name = "picUsuario";
+            this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
+            this.picUsuario.Size = new System.Drawing.Size(89, 89);
+            this.picUsuario.TabIndex = 2;
+            this.picUsuario.TabStop = false;
+            // 
+            // panelContenedor
+            // 
+            this.panelContenedor.Controls.Add(this.dataGridDetalles);
+            this.panelContenedor.Controls.Add(this.dataGridReportes);
+            this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelContenedor.Location = new System.Drawing.Point(0, 107);
+            this.panelContenedor.Name = "panelContenedor";
+            this.panelContenedor.Size = new System.Drawing.Size(540, 343);
+            this.panelContenedor.TabIndex = 31;
             // 
             // FormReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1740, 450);
-            this.Controls.Add(this.dataGridReportes);
-            this.Controls.Add(this.panetop);
+            this.BackColor = System.Drawing.Color.LightGray;
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.panelContenedor);
+            this.Controls.Add(this.panelRigtUsuario);
+            this.Controls.Add(this.panelTopUsuario);
+            this.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.MinimizeBox = false;
             this.Name = "FormReportes";
             this.Text = "FormReportes";
             this.Load += new System.EventHandler(this.FormReportes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridReportes)).EndInit();
-            this.panetop.ResumeLayout(false);
-            this.panetop.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridDetalles)).EndInit();
+            this.panelTopUsuario.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panelBuscador.ResumeLayout(false);
+            this.panelBuscador.PerformLayout();
+            this.panelRigtUsuario.ResumeLayout(false);
+            this.panelRigtUsuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.picUsuario)).EndInit();
+            this.panelContenedor.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -423,19 +574,29 @@
         #endregion
 
         public System.Windows.Forms.DataGridView dataGridReportes;
-        private System.Windows.Forms.ComboBox cboBusqueda;
-        private System.Windows.Forms.TextBox txtBusqueda;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Button btnBuscar;
-        private System.Windows.Forms.Label lblTituloUsu;
-        private System.Windows.Forms.Panel panetop;
         private System.Windows.Forms.DateTimePicker Dfechainicio;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
         private System.Windows.Forms.DateTimePicker Dfechafin;
-        private System.Windows.Forms.Button Btnlimp;
         private System.Windows.Forms.Button Btnbuscarfecha;
+        public System.Windows.Forms.DataGridView dataGridDetalles;
         private System.Windows.Forms.Button btnExcel;
+        private System.Windows.Forms.Button BtnGraficos;
+        private System.Windows.Forms.Label lblTituloUsu;
+        private System.Windows.Forms.Panel panelTopUsuario;
+        private System.Windows.Forms.Panel panelBuscador;
+        private System.Windows.Forms.Panel panelRigtUsuario;
+        private System.Windows.Forms.PictureBox picUsuario;
+        private System.Windows.Forms.Button btnLimpiar;
+        private System.Windows.Forms.Button btnBuscar;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtBusqueda;
+        private System.Windows.Forms.ComboBox cboBusqueda;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Producto;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Precio;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Cantidad;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Subtotal;
         private System.Windows.Forms.DataGridViewTextBoxColumn fechaRegistro;
         private System.Windows.Forms.DataGridViewTextBoxColumn codigoFactura;
         private System.Windows.Forms.DataGridViewTextBoxColumn montoTotal;
@@ -446,13 +607,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn nombreCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn apellidoCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn documentoCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idProducto;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nombreProd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionCateg;
-        private System.Windows.Forms.DataGridViewTextBoxColumn descripcionMarca;
-        private System.Windows.Forms.DataGridViewTextBoxColumn precioVenta;
-        private System.Windows.Forms.DataGridViewTextBoxColumn cantidad;
-        private System.Windows.Forms.DataGridViewTextBoxColumn subtotal;
-        private System.Windows.Forms.Button BtnGraficos;
+        private System.Windows.Forms.DataGridViewButtonColumn btndetalles;
+        private System.Windows.Forms.Panel panelContenedor;
     }
 }

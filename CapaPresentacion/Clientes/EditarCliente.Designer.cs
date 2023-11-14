@@ -66,7 +66,7 @@
             this.btnCancelar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(481, 434);
+            this.btnCancelar.Location = new System.Drawing.Point(482, 375);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(111, 31);
             this.btnCancelar.TabIndex = 81;
@@ -86,7 +86,7 @@
             this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnGuardar.Image = global::CapaPresentacion.Properties.Resources.flecha_de_circulo_de_disquete_a_la_derecha;
             this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(346, 434);
+            this.BtnGuardar.Location = new System.Drawing.Point(349, 375);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.BtnGuardar.Size = new System.Drawing.Size(111, 31);
@@ -101,7 +101,7 @@
             this.comboBox1.BackColor = System.Drawing.Color.White;
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(435, 370);
+            this.comboBox1.Location = new System.Drawing.Point(435, 324);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(185, 21);
             this.comboBox1.TabIndex = 79;
@@ -109,7 +109,7 @@
             // txtCorreo
             // 
             this.txtCorreo.BackColor = System.Drawing.Color.White;
-            this.txtCorreo.Location = new System.Drawing.Point(435, 339);
+            this.txtCorreo.Location = new System.Drawing.Point(435, 293);
             this.txtCorreo.Name = "txtCorreo";
             this.txtCorreo.Size = new System.Drawing.Size(185, 20);
             this.txtCorreo.TabIndex = 78;
@@ -121,7 +121,7 @@
             this.lblCorreo.BackColor = System.Drawing.Color.Black;
             this.lblCorreo.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCorreo.ForeColor = System.Drawing.Color.White;
-            this.lblCorreo.Location = new System.Drawing.Point(296, 342);
+            this.lblCorreo.Location = new System.Drawing.Point(296, 296);
             this.lblCorreo.Name = "lblCorreo";
             this.lblCorreo.Size = new System.Drawing.Size(52, 17);
             this.lblCorreo.TabIndex = 77;
@@ -130,7 +130,7 @@
             // txtTelefono
             // 
             this.txtTelefono.BackColor = System.Drawing.Color.White;
-            this.txtTelefono.Location = new System.Drawing.Point(435, 278);
+            this.txtTelefono.Location = new System.Drawing.Point(435, 263);
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.Size = new System.Drawing.Size(185, 20);
             this.txtTelefono.TabIndex = 74;
@@ -142,7 +142,7 @@
             this.lblTel.BackColor = System.Drawing.Color.Black;
             this.lblTel.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel.ForeColor = System.Drawing.Color.White;
-            this.lblTel.Location = new System.Drawing.Point(297, 281);
+            this.lblTel.Location = new System.Drawing.Point(297, 266);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(62, 17);
             this.lblTel.TabIndex = 73;
@@ -151,7 +151,7 @@
             // TBdni
             // 
             this.TBdni.BackColor = System.Drawing.Color.White;
-            this.TBdni.Location = new System.Drawing.Point(436, 191);
+            this.TBdni.Location = new System.Drawing.Point(436, 176);
             this.TBdni.Name = "TBdni";
             this.TBdni.Size = new System.Drawing.Size(185, 20);
             this.TBdni.TabIndex = 65;
@@ -163,7 +163,7 @@
             this.LDni.BackColor = System.Drawing.Color.Black;
             this.LDni.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LDni.ForeColor = System.Drawing.Color.White;
-            this.LDni.Location = new System.Drawing.Point(297, 191);
+            this.LDni.Location = new System.Drawing.Point(297, 176);
             this.LDni.Name = "LDni";
             this.LDni.Size = new System.Drawing.Size(115, 17);
             this.LDni.TabIndex = 60;
@@ -175,7 +175,7 @@
             this.LNombree.BackColor = System.Drawing.Color.Black;
             this.LNombree.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombree.ForeColor = System.Drawing.Color.White;
-            this.LNombree.Location = new System.Drawing.Point(297, 223);
+            this.LNombree.Location = new System.Drawing.Point(297, 208);
             this.LNombree.Name = "LNombree";
             this.LNombree.Size = new System.Drawing.Size(60, 17);
             this.LNombree.TabIndex = 61;
@@ -187,7 +187,7 @@
             this.Lestado.BackColor = System.Drawing.Color.Black;
             this.Lestado.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lestado.ForeColor = System.Drawing.Color.White;
-            this.Lestado.Location = new System.Drawing.Point(297, 373);
+            this.Lestado.Location = new System.Drawing.Point(297, 327);
             this.Lestado.Name = "Lestado";
             this.Lestado.Size = new System.Drawing.Size(51, 17);
             this.Lestado.TabIndex = 72;
@@ -196,7 +196,7 @@
             // TBNombree
             // 
             this.TBNombree.BackColor = System.Drawing.Color.White;
-            this.TBNombree.Location = new System.Drawing.Point(436, 220);
+            this.TBNombree.Location = new System.Drawing.Point(436, 205);
             this.TBNombree.Name = "TBNombree";
             this.TBNombree.Size = new System.Drawing.Size(185, 20);
             this.TBNombree.TabIndex = 66;
@@ -208,7 +208,7 @@
             this.LApellido.BackColor = System.Drawing.Color.Black;
             this.LApellido.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellido.ForeColor = System.Drawing.Color.White;
-            this.LApellido.Location = new System.Drawing.Point(297, 252);
+            this.LApellido.Location = new System.Drawing.Point(297, 237);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(59, 17);
             this.LApellido.TabIndex = 62;
@@ -217,7 +217,7 @@
             // TBapellido
             // 
             this.TBapellido.BackColor = System.Drawing.Color.White;
-            this.TBapellido.Location = new System.Drawing.Point(436, 249);
+            this.TBapellido.Location = new System.Drawing.Point(436, 234);
             this.TBapellido.Name = "TBapellido";
             this.TBapellido.Size = new System.Drawing.Size(185, 20);
             this.TBapellido.TabIndex = 67;
@@ -242,7 +242,7 @@
             this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTitulo.ForeColor = System.Drawing.Color.Transparent;
             this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LTitulo.Location = new System.Drawing.Point(379, 130);
+            this.LTitulo.Location = new System.Drawing.Point(379, 115);
             this.LTitulo.Name = "LTitulo";
             this.LTitulo.Size = new System.Drawing.Size(156, 28);
             this.LTitulo.TabIndex = 22;
@@ -273,7 +273,7 @@
             this.panel2.Location = new System.Drawing.Point(505, 0);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(36, 100);
-            this.panel2.TabIndex = 75;
+            this.panel2.TabIndex = 76;
             // 
             // picCerrar
             // 
@@ -284,7 +284,7 @@
             this.picCerrar.Size = new System.Drawing.Size(23, 23);
             this.picCerrar.TabIndex = 75;
             this.picCerrar.TabStop = false;
-            this.picCerrar.Click += new System.EventHandler(this.picCerrar_Click_1);
+            this.picCerrar.Click += new System.EventHandler(this.picCerrar_Click);
             // 
             // EditarCliente
             // 
@@ -314,6 +314,7 @@
             this.Name = "EditarCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EditarCliente";
+            this.Load += new System.EventHandler(this.EditarCliente_Load_1);
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

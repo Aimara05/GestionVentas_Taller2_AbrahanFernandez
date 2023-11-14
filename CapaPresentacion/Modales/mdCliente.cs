@@ -1,4 +1,7 @@
-﻿using CapaEntidad;
+﻿
+//Formulario modal de clientes
+
+using CapaEntidad;
 using CapaNegocios;
 using CapaPresentacion.Utilidades;
 using System;
@@ -22,16 +25,22 @@ namespace CapaPresentacion.Modales
             InitializeComponent();
         }
 
+
+        //Método para cuando cargue el formulario.
         private void mdCliente_Load(object sender, EventArgs e)
         {
             foreach (DataGridViewColumn columna in dataGridUsuario.Columns)
             {
-                cboBusqueda.Items.Add((new ComboBoxOpc() { Valor = columna.Name, Texto = columna.HeaderText }));
-
+                if (columna.Visible == true && columna.Name != "btnSeleccionar")
+                {
+                    cboBusqueda.Items.Add((new ComboBoxOpc() { Valor = columna.Name, Texto = columna.HeaderText }));
+                }
             }
             cboBusqueda.DisplayMember = "Texto";
             cboBusqueda.ValueMember = "Valor";
             cboBusqueda.SelectedIndex = 0;
+
+            
 
 
             List<CLIENTES> listaCliente = new CN_Cliente().Listar();
@@ -48,6 +57,8 @@ namespace CapaPresentacion.Modales
             }
         }
 
+
+        //Método
         private void dataGridUsuario_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             int iRow = e.RowIndex;
@@ -69,6 +80,7 @@ namespace CapaPresentacion.Modales
             }
         }
 
+        //Método para el botón buscar.
         private void btnBuscar_Click(object sender, EventArgs e)
         {
             string columnaFiltro = ((ComboBoxOpc)cboBusqueda.SelectedItem).Valor.ToString();
@@ -89,6 +101,7 @@ namespace CapaPresentacion.Modales
             }
         }
 
+        //Método para el botón limpiar.
         private void btnLimpiar_Click(object sender, EventArgs e)
         {
             txtBusqueda.Text = "";
@@ -96,6 +109,13 @@ namespace CapaPresentacion.Modales
             {
                 row.Visible = true;
             }
+        }
+
+      
+        //Método para el botón cerrar.
+        private void picCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

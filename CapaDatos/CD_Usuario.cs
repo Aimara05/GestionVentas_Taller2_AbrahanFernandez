@@ -146,7 +146,7 @@ namespace CapaDatos
                      cmd.Parameters.AddWithValue("apellido", obj.apellido);
                      cmd.Parameters.AddWithValue("correo", obj.correo);
                      cmd.Parameters.AddWithValue("usuario", obj.usuario);
-                     cmd.Parameters.AddWithValue("clave", obj.clave);
+                    
                      cmd.Parameters.AddWithValue("telefono", obj.telefono);
                      cmd.Parameters.AddWithValue("direccion", obj.direccion);
                      cmd.Parameters.AddWithValue("estado", obj.estado);

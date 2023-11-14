@@ -108,7 +108,7 @@
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Silver;
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
             this.btnCancelar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
+            this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCancelar.Location = new System.Drawing.Point(474, 388);
             this.btnCancelar.Name = "btnCancelar";

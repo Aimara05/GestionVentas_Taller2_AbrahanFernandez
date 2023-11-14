@@ -69,7 +69,7 @@
             this.panelLogin.Name = "panelLogin";
             this.panelLogin.Size = new System.Drawing.Size(329, 334);
             this.panelLogin.TabIndex = 9;
-           
+            
             // 
             // Subtitulo
             // 
@@ -230,7 +230,7 @@
             this.Opacity = 0.9D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
-
+            this.Load += new System.EventHandler(this.Login_Load);
             this.panelLogin.ResumeLayout(false);
             this.panelLogin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();

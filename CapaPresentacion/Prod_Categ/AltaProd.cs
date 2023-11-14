@@ -36,54 +36,6 @@ namespace CapaPresentacion.Prod_Categ
         }
 
 
-        /* private void BtnGuardar_Click(object sender, EventArgs e)
-         {
-             string mensaje = string.Empty;
-
-             if ( string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                string.IsNullOrWhiteSpace(txtDescr.Text) || string.IsNullOrWhiteSpace(txtStock.Text) ||
-                string.IsNullOrWhiteSpace(txtPrecio.Text) || CBRol.SelectedItem == null || CBMarca.SelectedItem == null || // Validar ComboBox cbRol
-         CBEstado.SelectedItem == null)     
-                     // para validar valores null y espacios vacíos.
-             {
-                 MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-             }
-             else
-             {
-                PRODUCTOS objproducto = new PRODUCTOS()
-                 {
-
-                     nombreProd = txtNombre.Text,
-                     descripcionProd = txtDescr.Text,
-                     telefono = txtTelefono.Text,
-                     direccion = txtDomicilio.Text,
-                     correo = textCorreo.Text,
-                     usuario = TBusuario.Text,
-                     clave = TBcontrasena.Text,
-                     oRol = new ROL() { idRol = Convert.ToInt32(((ComboBoxOpc)CBRol.SelectedItem).Valor) },
-                     estado = Convert.ToInt32(((ComboBoxOpc)CBEstado.SelectedItem).Valor) == 1 ? true : false
-                 };
-
-                 int idusuariogenerado = new CN_Usuario().Registrar(objusuario, out mensaje);
-
-                 if (idusuariogenerado != 0)
-                 {
-                     MessageBox.Show("Usuario registrado de forma exitosa");
-
-                     this.Close();
-                 }
-                 else
-                 {
-                     MessageBox.Show(mensaje);
-                 }
-             }
-
-
-
-
-     }
-        */
-
 
         //VALIDACIONES
         private void txtCod_KeyPress(object sender, KeyPressEventArgs e)
@@ -96,15 +48,7 @@ namespace CapaPresentacion.Prod_Categ
             }
         }
 
-        private void txtNombre_KeyPress(object sender, KeyPressEventArgs e)
-        {
-            if ((e.KeyChar >= 32 && e.KeyChar <= 64) || (e.KeyChar >= 91 && e.KeyChar <= 96) || (e.KeyChar >= 123 && e.KeyChar <= 255))
-            {
-                MessageBox.Show("Solamente se pueden letras", "Alerta", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                e.Handled = true;
-                return;
-            }
-        }
+      //VALIDACIONES
 
         private void txtStock_KeyPress(object sender, KeyPressEventArgs e)
         {
@@ -140,12 +84,8 @@ namespace CapaPresentacion.Prod_Categ
             }
         }
 
-        private void txtImagen_TextChanged(object sender, EventArgs e)
-        {
 
-        }
-
-        // Método para el botón Imagen 
+     /*   // Método para el botón Imagen 
         private void btnImgProd_Click(object sender, EventArgs e)
         {
             openFileDialog1.InitialDirectory = "C:";
@@ -162,10 +102,11 @@ namespace CapaPresentacion.Prod_Categ
 
                 txtImagen.Text = Path.GetFileName(openFileDialog1.FileName);
             }
-        }
+        }*/
 
         private void AltaProd_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = BtnGuardar;
             CBEstado.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
             CBEstado.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
 
@@ -199,73 +140,7 @@ namespace CapaPresentacion.Prod_Categ
 
         }
 
-        /*   private void BtnGuardar_Click(object sender, EventArgs e)
-           {
-               string mensaje = string.Empty;
-
-               if (string.IsNullOrWhiteSpace(txtNombre.Text) ||
-                  string.IsNullOrWhiteSpace(txtDescr.Text) || string.IsNullOrWhiteSpace(txtStock.Text) ||
-                  string.IsNullOrWhiteSpace(txtPrecio.Text) || CBcateg.SelectedItem == null || CBMarca.SelectedItem == null || // Validar ComboBox cbRol
-           CBEstado.SelectedItem == null)
-               // para validar valores null y espacios vacíos.
-               {
-                   MessageBox.Show("Debe completar todos los campos", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-               }
-               else
-               {
-                   PRODUCTOS objproducto = new PRODUCTOS()
-                   {
-
-                       nombreProd = txtNombre.Text,
-                       descripcionProd = txtDescr.Text,
-                       talle=txtTalle.Text,    
-                       stock = int.Parse(txtStock.Text),
-                       precioUni = double.Parse(txtPrecio.Text),
-                       oCategoria = new CATEGORIAS() { idCateg = Convert.ToInt32(((ComboBoxOpc)CBcateg.SelectedItem).Valor) },
-                       oMarcas = new MARCAS() { idMarca = Convert.ToInt32(((ComboBoxOpc)CBMarca.SelectedItem).Valor) },
-                       estado = Convert.ToInt32(((ComboBoxOpc)CBEstado.SelectedItem).Valor) == 1 ? true : false
-                   };
-
-                   int idproductogenerado = new CN_Producto().Registrar(objproducto, out mensaje);
-
-                   if (idproductogenerado != 0)
-                   {
-                       MessageBox.Show("Producto registrado de forma exitosa");
-
-                       this.Close();
-                   }
-                   else
-                   {
-                       MessageBox.Show(mensaje);
-                   }
-               }
-
-
-
-
-           }*/
-
-        private void CBMarca_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel3_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void BtnGuardar_Click(object sender, EventArgs e)
+         private void BtnGuardar_Click(object sender, EventArgs e)
         {
             string mensaje = string.Empty;
 
@@ -308,14 +183,6 @@ namespace CapaPresentacion.Prod_Categ
             }
         }
 
-        private void LTitulo_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
+      
     }
 }

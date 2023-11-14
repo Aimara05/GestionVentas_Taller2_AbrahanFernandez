@@ -2,13 +2,18 @@
 //Formulario de  Clientes
 using CapaEntidad;
 using CapaNegocios;
+using CapaPresentacion.Clientes;
 using CapaPresentacion.Utilidades;
+using DocumentFormat.OpenXml.Bibliography;
+using DocumentFormat.OpenXml.Drawing.Diagrams;
+using iTextSharp.text.pdf.codec.wmf;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -20,7 +25,8 @@ namespace CapaPresentacion
 
         private int filaSeleccionada = -1; // variable para mantener el indice de mi fila seleccionada en mi dgv
         private DataGridViewButtonCell botonSeleccionado = null;
-
+        private Clientes.EditarCliente formularioEditarCliente;
+        private Clientes.AltaCliente formularioAltaCliente;
 
         public FormClientes()
         {
@@ -28,23 +34,81 @@ namespace CapaPresentacion
             dataGridClientes.CellFormatting += dataGridClientes_CellFormatting;
         }
 
-
-
-        //Métodos para abrir formulario.
-        private void abrirFormularios(Form formulario)
+       // Método para abrir formularios
+       private void abrirFormulario(Form formulario)
         {
-            formulario.TopLevel = false; // Importante para evitar que sea un formulario independiente
-            formulario.FormBorderStyle = FormBorderStyle.None; // Quita el borde del formulario
-            formulario.Dock = DockStyle.Fill; // Ajusta el formulario al tamaño del contenedor
+            if (formulario != null && !formulario.IsDisposed)
+            {
+                formulario.TopLevel = false; // Importante para evitar que sea un formulario independiente
+                formulario.FormBorderStyle = FormBorderStyle.None; // Quita el borde del formulario
+                formulario.Dock = DockStyle.Fill; // Ajusta el formulario al tamaño del contenedor
 
-            panelCliente.Controls.Add(formulario); // Agrega el formulario al panel
-            panelCliente.Tag = formulario;
-            formulario.BringToFront();
+                panelCliente.Controls.Add(formulario); // Agrega el formulario al panel
+                panelCliente.Tag = formulario;
+                formulario.BringToFront();
 
-            formulario.Show();
-
-
+                formulario.Show();
+                formulario.Activate();
+            }
+            else
+            {
+                MessageBox.Show("El formulario no está disponible.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
         }
+
+        private void btnEditarCliente_Click(object sender, EventArgs e)
+        {
+            if (formularioAltaCliente != null && !formularioAltaCliente.IsDisposed)
+            {
+                MessageBox.Show("Debe cerrar el formulario de alta antes de abrir otro formulario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (filaSeleccionada >= 0)
+                {
+                    if (formularioEditarCliente == null || formularioEditarCliente.IsDisposed)
+                    {
+                        formularioEditarCliente = new Clientes.EditarCliente();
+
+                        // Configurar los datos en el formulario de edición
+                        formularioEditarCliente.label1.Text = dataGridClientes.Rows[filaSeleccionada].Cells["idCliente"].Value.ToString();
+                        formularioEditarCliente.TBdni.Text = dataGridClientes.Rows[filaSeleccionada].Cells["dni"].Value.ToString();
+                        formularioEditarCliente.TBNombree.Text = dataGridClientes.Rows[filaSeleccionada].Cells["nombre"].Value.ToString();
+                        formularioEditarCliente.TBapellido.Text = dataGridClientes.Rows[filaSeleccionada].Cells["apellido"].Value.ToString();
+                        formularioEditarCliente.txtTelefono.Text = dataGridClientes.Rows[filaSeleccionada].Cells["telefono"].Value.ToString();
+                        formularioEditarCliente.txtCorreo.Text = dataGridClientes.Rows[filaSeleccionada].Cells["Correo"].Value.ToString();
+                        string estadostr = dataGridClientes.Rows[filaSeleccionada].Cells["Estado"].Value.ToString();
+
+                        formularioEditarCliente.comboBox1.Items.Clear(); // Limpiar los elementos antes de agregar nuevos
+                        formularioEditarCliente.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
+                        formularioEditarCliente.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
+
+                        formularioEditarCliente.comboBox1.DisplayMember = "Texto";
+                        formularioEditarCliente.comboBox1.ValueMember = "Valor";
+
+                        if (estadostr == "Activo")
+                        {
+                            formularioEditarCliente.comboBox1.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            formularioEditarCliente.comboBox1.SelectedIndex = 1;
+                        }
+
+                        abrirFormulario(formularioEditarCliente);
+                    }
+                    else
+                    {
+                        abrirFormulario(formularioEditarCliente);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un cliente antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+       
 
         //Método para cuando carga el form
         private void FormClientes_Load(object sender, EventArgs e)
@@ -54,8 +118,8 @@ namespace CapaPresentacion
             DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
             btnEliminar.Name = "Baja";
             dataGridClientes.Columns.Add(btnEliminar);
-            btnEliminar.Width =40;
-           
+            btnEliminar.Width = 40;
+
             DataGridViewButtonColumn btnAlta = new DataGridViewButtonColumn();
             btnAlta.Name = "Alta";
             dataGridClientes.Columns.Add(btnAlta);
@@ -78,7 +142,8 @@ namespace CapaPresentacion
 
             foreach (DataGridViewColumn columna in dataGridClientes.Columns)
             {
-                if (columna.Visible == true && columna.Name != "btnSeleccionar")
+                if (columna.Visible == true && columna.Name != "btnSeleccionar"
+                    && columna.Name != "Baja" && columna.Name != "Alta")
                 {
                     cboBusqueda.Items.Add((new ComboBoxOpc() { Valor = columna.Name, Texto = columna.HeaderText }));
                 }
@@ -89,60 +154,10 @@ namespace CapaPresentacion
 
         }
 
-        //Metodo para btn Alta Cliente
-        private void btnAltaCliente_Click(object sender, EventArgs e)
-        {
-            Clientes.AltaCliente altaCliente = new Clientes.AltaCliente();
-            abrirFormularios(altaCliente);
-        }
-
-        //Método editar cliente
-        private void btnEditarCliente_Click(object sender, EventArgs e)
-        {
-            if (filaSeleccionada >= 0)
-            {
-                Clientes.EditarCliente editarCliente = new Clientes.EditarCliente();
-                editarCliente.label1.Text = dataGridClientes.Rows[filaSeleccionada].Cells["idCliente"].Value.ToString();
-                editarCliente.TBdni.Text = dataGridClientes.Rows[filaSeleccionada].Cells["dni"].Value.ToString();
-                editarCliente.TBNombree.Text = dataGridClientes.Rows[filaSeleccionada].Cells["nombre"].Value.ToString();
-                editarCliente.TBapellido.Text = dataGridClientes.Rows[filaSeleccionada].Cells["apellido"].Value.ToString();
-                editarCliente.txtTelefono.Text = dataGridClientes.Rows[filaSeleccionada].Cells["telefono"].Value.ToString();
-                editarCliente.txtCorreo.Text = dataGridClientes.Rows[filaSeleccionada].Cells["Correo"].Value.ToString();
-                string estadostr = dataGridClientes.Rows[filaSeleccionada].Cells["Estado"].Value.ToString();
+      
 
 
 
-                editarCliente.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
-                editarCliente.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
-
-                editarCliente.comboBox1.DisplayMember = "Texto";
-                editarCliente.comboBox1.ValueMember = "Valor";
-
-                if (estadostr == "Activo")
-                {
-                    editarCliente.comboBox1.SelectedIndex = 0;
-
-                }
-                else
-                {
-                    editarCliente.comboBox1.SelectedIndex = 1;
-                }
-
-
-                abrirFormularios(editarCliente);
-
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un usuario antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
- 
-        
-
-
-       
         private void btnRefresh_Click_1(object sender, EventArgs e)
         {
             // limpio el dataGridView
@@ -275,15 +290,15 @@ namespace CapaPresentacion
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
                 // Personalizar la apariencia del botón "Alta" con una imagen
-                var w = Properties.Resources.altaClienteUsuario.Width; // Obtener el ancho de tu icono
-                var h = Properties.Resources.altaClienteUsuario.Height; // Obtener el alto de tu icono
+                var w = Properties.Resources.alta.Width; // Obtener el ancho de tu icono
+                var h = Properties.Resources.alta.Height; // Obtener el alto de tu icono
 
                 // Posicionamiento de la imagen en el centro de la celda del botón "Alta"
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2; // Poner la imagen en el centro (eje x)
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2; // Poner la imagen en el centro del eje y
 
                 // Dibujar la imagen en la celda del botón "Alta"
-                e.Graphics.DrawImage(Properties.Resources.altaClienteUsuario, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.alta, new Rectangle(x, y, w, h));
 
                 e.Handled = true;
             }
@@ -368,6 +383,36 @@ namespace CapaPresentacion
             }
         }
 
+        private void btnAltaCliente_Click_1(object sender, EventArgs e)
+        {
+
+            if (formularioEditarCliente != null && !formularioEditarCliente.IsDisposed)
+            {
+                MessageBox.Show("Debe cerrar el formulario de edición antes de abrir otro formulario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (formularioAltaCliente == null || formularioAltaCliente.IsDisposed)
+                {
+                    formularioAltaCliente = new Clientes.AltaCliente();
+                    abrirFormulario(formularioAltaCliente);
+                }
+                else
+                {
+                    abrirFormulario(formularioAltaCliente);
+                }
+            }
+        }
+
+
        
     }
+
+
+
+
+
+
+
+
 }

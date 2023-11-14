@@ -38,6 +38,7 @@ namespace CapaPresentacion.Usuarios
 
         private void AltaUsuario_Load(object sender, EventArgs e)
         {
+            this.AcceptButton = BtnGuardar;
             CBEstado.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
             CBEstado.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
 

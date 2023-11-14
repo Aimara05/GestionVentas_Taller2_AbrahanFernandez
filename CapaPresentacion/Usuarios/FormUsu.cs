@@ -26,7 +26,8 @@ namespace CapaPresentacion.Usuarios
     {
         private int filaSeleccionada = -1; // variable para mantener el indice de mi fila seleccionada en mi dgv
         private DataGridViewButtonCell botonSeleccionado = null;
-
+        private Usuarios.EditarUsuario formularioEditarUsuario;
+        private Usuarios.AltaUsuario formularioAltaUsu;
         public FormUsu()
         {
             InitializeComponent();
@@ -37,24 +38,30 @@ namespace CapaPresentacion.Usuarios
         //Métodos para abrir formulario.
         private void abrirFormularios(Form formulario)
         {
-            formulario.TopLevel = false; // Importante para evitar que sea un formulario independiente
-            formulario.FormBorderStyle = FormBorderStyle.None; // Quita el borde del formulario
-            formulario.Dock = DockStyle.Fill; // Ajusta el formulario al tamaño del contenedor
+            if (formulario != null && !formulario.IsDisposed)
+            {
+                formulario.TopLevel = false; // Importante para evitar que sea un formulario independiente
+                formulario.FormBorderStyle = FormBorderStyle.None; // Quita el borde del formulario
+                formulario.Dock = DockStyle.Fill; // Ajusta el formulario al tamaño del contenedor
 
-            panelContenedorUsu.Controls.Add(formulario); // Agrega el formulario al panel
-            
-            
-            panelContenedorUsu.Tag = formulario;
-            formulario.BringToFront();
+                panelContenedorUsu.Controls.Add(formulario); // Agrega el formulario al panel
+                panelContenedorUsu.Tag = formulario;
+                formulario.BringToFront();
 
-            formulario.Show();
+                formulario.Show();
+                formulario.Activate();
+            }
+            else
+            {
+                MessageBox.Show("El formulario no está disponible.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
 
         }
 
         //Método para darle color a los usuarios "no activos"
         private void dataGridUsuario_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
         {
-          
+
             if (dataGridUsuario.Columns[e.ColumnIndex].Name == "Estado")
             {
                 // Verifica si el valor de la celda es "No activo"
@@ -78,12 +85,12 @@ namespace CapaPresentacion.Usuarios
 
             DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
             btnEliminar.Name = "Baja";
-          dataGridUsuario.Columns.Add(btnEliminar);
+            dataGridUsuario.Columns.Add(btnEliminar);
             btnEliminar.Width = 40;
 
             DataGridViewButtonColumn btnAlta = new DataGridViewButtonColumn();
             btnAlta.Name = "Alta";
-          dataGridUsuario.Columns.Add(btnAlta);
+            dataGridUsuario.Columns.Add(btnAlta);
             btnAlta.Width = 40;
 
             List<USUARIO> listaUsuario = new CN_Usuario().Listar();
@@ -105,9 +112,10 @@ namespace CapaPresentacion.Usuarios
 
             foreach (DataGridViewColumn columna in dataGridUsuario.Columns)
             {
-                if (columna.Visible== true && columna.Name != "btnSeleccionar")
+                if (columna.Visible == true && columna.Name != "btnSeleccionar"
+                    && columna.Name != "Baja" && columna.Name != "Alta")
                 {
-                 cboBusqueda.Items.Add((new ComboBoxOpc() { Valor = columna.Name, Texto = columna.HeaderText }));
+                    cboBusqueda.Items.Add((new ComboBoxOpc() { Valor = columna.Name, Texto = columna.HeaderText }));
                 }
             }
             cboBusqueda.DisplayMember = "Texto";
@@ -116,13 +124,9 @@ namespace CapaPresentacion.Usuarios
 
         }
 
-        //
 
-        
-
-
-         private void dataGridUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
-         {
+        private void dataGridUsuario_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
             if (e.ColumnIndex == dataGridUsuario.Columns["btnSeleccionar"].Index && e.RowIndex >= 0)
             {
 
@@ -131,106 +135,8 @@ namespace CapaPresentacion.Usuarios
                 dataGridUsuario.Invalidate(); // Esto dispara el evento CellPainting
 
             }
-        } 
+        }
         
-
-        //Método para btn Usuarios
-        private void btnAltausuario_Click(object sender, EventArgs e)
-        {
-
-            Usuarios.AltaUsuario altauser = new Usuarios.AltaUsuario();
-            abrirFormularios(altauser);
-            
-        }
-
-
-        //metodo para el btn editarUsuario
-        private void btnEditarUsuario_Click(object sender, EventArgs e)
-        {
-            if (filaSeleccionada >= 0)
-            {
-                EditarUsuario edit = new EditarUsuario();
-                edit.lblid.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["idUsuario"].Value.ToString();
-                edit.TBdni.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["dni"].Value.ToString();
-                edit.TBNombree.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["nombre"].Value.ToString();
-                edit.TBapellido.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["apellido"].Value.ToString();
-                edit.txtTelefono.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["telefono"].Value.ToString();
-                edit.txtDomicilio.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["Domicilio"].Value.ToString();
-                edit.textCorreo.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["Correo"].Value.ToString();
-                edit.TBusuario.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["usuario"].Value.ToString();
-                edit.TBcontrasena.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["clave"].Value.ToString();
-                int index = Convert.ToInt32(dataGridUsuario.Rows[filaSeleccionada].Cells["idRol"].Value);
-                string estadostr = dataGridUsuario.Rows[filaSeleccionada].Cells["Estado"].Value.ToString();
-
-
-
-                edit.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
-                edit.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
-
-                edit.comboBox1.DisplayMember = "Texto";
-                edit.comboBox1.ValueMember = "Valor";
-
-                if (estadostr == "Activo")
-                {
-                    edit.comboBox1.SelectedIndex = 0;
-
-                }
-                else
-                {
-                    edit.comboBox1.SelectedIndex = 1;
-                }
-                
-                List<ROL> listaRol = new CN_Rol().Listar();
-
-                foreach (ROL item in listaRol)
-                {
-                    edit.CBRol.Items.Add(new ComboBoxOpc() { Valor = item.idRol, Texto = item.descripcion });
-
-                }
-
-                edit.CBRol.DisplayMember = "Texto";
-                edit.CBRol.ValueMember = "Valor";
-                edit.CBRol.SelectedIndex = index - 1;
-
-
-
-                abrirFormularios(edit);
-
-            }
-            else
-            {
-                MessageBox.Show("Por favor, seleccione un usuario antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-
-        }
-
-
-        //Método para el botón refresh
-        private void btnRefresh_Click(object sender, EventArgs e)
-        {
-            // limpio el dataGridView
-            dataGridUsuario.Rows.Clear();
-
-
-            //traigo los datos de la base nuevamente
-            List<USUARIO> listaUsuario = new CN_Usuario().Listar();
-
-            foreach (USUARIO item in listaUsuario)
-            {
-                dataGridUsuario.Rows.Add(new object[] {"",item.idUsuario,item.documento,item.nombre,item.apellido,item.correo,item.usuario,item.clave,
-                item.telefono,
-                item.direccion,
-                item.estado == true ? "Activo" : "No activo",
-                item.oRol.idRol,
-                item.oRol.descripcion
-            }); 
-            
-                // Actualizo el datagrid
-                dataGridUsuario.Refresh();
-                 }
-        }
-
-
         //Método para el btn BajaUsuario
         private void btnBajaUsuario_Click(object sender, EventArgs e)
         {
@@ -239,8 +145,8 @@ namespace CapaPresentacion.Usuarios
                 DataGridViewRow fila = dataGridUsuario.Rows[filaSeleccionada];
                 string estadoUsuario = fila.Cells["Estado"].Value.ToString(); // Obtener el estado del usuario
 
-                
-                if(estadoUsuario == "Activo")
+
+                if (estadoUsuario == "Activo")
                 {
                     USUARIO usuario = new USUARIO();
                     DialogResult resultado = MessageBox.Show("¿Está seguro de que desea eliminar este usuario?", "Confirmación de eliminación", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -269,9 +175,8 @@ namespace CapaPresentacion.Usuarios
                 MessageBox.Show("Por favor, seleccione un usuario antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
-        
-        
-        //Método para el btn AltaUsu
+
+     //Método para el btn AltaUsu
         private void btnAltaUsu_Click(object sender, EventArgs e)
         {
             if (filaSeleccionada >= 0)
@@ -279,7 +184,7 @@ namespace CapaPresentacion.Usuarios
                 DataGridViewRow fila = dataGridUsuario.Rows[filaSeleccionada];
                 string estadoUsuario = fila.Cells["Estado"].Value.ToString();
 
-                if(estadoUsuario == "No activo")
+                if (estadoUsuario == "No activo")
                 {
                     DialogResult resultado = MessageBox.Show("¿Está seguro de que desea dar de alta este usuario?", "Confirmación de alta", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                     USUARIO usuario = new USUARIO();
@@ -302,8 +207,8 @@ namespace CapaPresentacion.Usuarios
                     MessageBox.Show("ERROR, El usuario ya fue dado de alta anterriormente");
                 }
 
-                
-                
+
+
             }
             else
             {
@@ -314,19 +219,19 @@ namespace CapaPresentacion.Usuarios
         //Método para buscar
         private void btnBuscar_Click(object sender, EventArgs e)
         {
-            string columnaFiltro= ((ComboBoxOpc)cboBusqueda.SelectedItem).Valor.ToString();
-            if (dataGridUsuario.Rows.Count > 0 )
+            string columnaFiltro = ((ComboBoxOpc)cboBusqueda.SelectedItem).Valor.ToString();
+            if (dataGridUsuario.Rows.Count > 0)
             {
                 foreach (DataGridViewRow row in dataGridUsuario.Rows)
                 {
                     if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.  //trim: espacion al final o al inicio
-                        Text.Trim().ToUpper ()))                                                          //toupper: convertir en mayuscula
+                        Text.Trim().ToUpper()))                                                          //toupper: convertir en mayuscula
                     {
                         row.Visible = true;
                     }
                     else
                     {
-                        row.Visible=false;
+                        row.Visible = false;
                     }
                 }
             }
@@ -338,7 +243,7 @@ namespace CapaPresentacion.Usuarios
             txtBusqueda.Text = "";
             foreach (DataGridViewRow row in dataGridUsuario.Rows)
             {
-                row.Visible=true;
+                row.Visible = true;
             }
         }
 
@@ -349,7 +254,7 @@ namespace CapaPresentacion.Usuarios
                 return;   // si se encuentra en la primer columna que no devuelva nada
             }
 
-            if (e.ColumnIndex ==dataGridUsuario.Columns["btnSeleccionar"].Index)
+            if (e.ColumnIndex == dataGridUsuario.Columns["btnSeleccionar"].Index)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
@@ -391,15 +296,15 @@ namespace CapaPresentacion.Usuarios
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
                 // Personalizar la apariencia del botón "Alta" con una imagen
-                var w = Properties.Resources.altaClienteUsuario.Width; // Obtener el ancho de tu icono
-                var h = Properties.Resources.altaClienteUsuario.Height; // Obtener el alto de tu icono
+                var w = Properties.Resources.alta.Width; // Obtener el ancho de tu icono
+                var h = Properties.Resources.alta.Height; // Obtener el alto de tu icono
 
                 // Posicionamiento de la imagen en el centro de la celda del botón "Alta"
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2; // Poner la imagen en el centro (eje x)
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2; // Poner la imagen en el centro del eje y
 
                 // Dibujar la imagen en la celda del botón "Alta"
-                e.Graphics.DrawImage(Properties.Resources.altaClienteUsuario, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.alta, new Rectangle(x, y, w, h));
 
                 e.Handled = true;
             }
@@ -482,5 +387,114 @@ namespace CapaPresentacion.Usuarios
                 }
             }
         }
+
+        private void btnAltausuario_Click(object sender, EventArgs e)
+        {
+            if (formularioEditarUsuario != null && !formularioEditarUsuario.IsDisposed)
+            {
+                MessageBox.Show("Debe cerrar el formulario de edición antes de abrir otro formulario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (formularioAltaUsu == null || formularioAltaUsu.IsDisposed)
+                {
+                    formularioAltaUsu = new Usuarios.AltaUsuario();
+                    abrirFormularios(formularioAltaUsu);
+                }
+                else
+                {
+                    abrirFormularios(formularioAltaUsu);
+                }
+            }
+        }
+
+        private void btnEditarUsuario_Click(object sender, EventArgs e)
+        {
+            if (formularioAltaUsu != null && !formularioAltaUsu.IsDisposed)
+            {
+                MessageBox.Show("Debe cerrar el formulario de alta antes de abrir otro formulario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (filaSeleccionada >= 0)
+                {
+                    if (formularioEditarUsuario == null || formularioEditarUsuario.IsDisposed)
+                    {
+                        formularioEditarUsuario = new Usuarios.EditarUsuario();
+
+                        // Configurar los datos en el formulario de edición
+                        formularioEditarUsuario.lblid.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["idUsuario"].Value.ToString();
+                        formularioEditarUsuario.TBdni.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["dni"].Value.ToString();
+                        formularioEditarUsuario.TBNombree.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["nombre"].Value.ToString();
+                        formularioEditarUsuario.TBapellido.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["apellido"].Value.ToString();
+                        formularioEditarUsuario.txtTelefono.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["telefono"].Value.ToString();
+                        formularioEditarUsuario.txtDomicilio.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["Domicilio"].Value.ToString();
+                        formularioEditarUsuario.textCorreo.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["Correo"].Value.ToString();
+                        formularioEditarUsuario.TBusuario.Text = dataGridUsuario.Rows[filaSeleccionada].Cells["usuario"].Value.ToString();
+
+                        int index = Convert.ToInt32(dataGridUsuario.Rows[filaSeleccionada].Cells["idRol"].Value);
+                        string estadostr = dataGridUsuario.Rows[filaSeleccionada].Cells["Estado"].Value.ToString();
+
+                        formularioEditarUsuario.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
+                        formularioEditarUsuario.comboBox1.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
+
+                        formularioEditarUsuario.comboBox1.DisplayMember = "Texto";
+                        formularioEditarUsuario.comboBox1.ValueMember = "Valor";
+
+                        if (estadostr == "Activo")
+                        {
+                            formularioEditarUsuario.comboBox1.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            formularioEditarUsuario.comboBox1.SelectedIndex = 1;
+                        }
+
+                        List<ROL> listaRol = new CN_Rol().Listar();
+
+                        foreach (ROL item in listaRol)
+                        {
+                            formularioEditarUsuario.CBRol.Items.Add(new ComboBoxOpc() { Valor = item.idRol, Texto = item.descripcion });
+                        }
+
+                        formularioEditarUsuario.CBRol.DisplayMember = "Texto";
+                        formularioEditarUsuario.CBRol.ValueMember = "Valor";
+                        formularioEditarUsuario.CBRol.SelectedIndex = index - 1;
+                    }
+
+                    abrirFormularios(formularioEditarUsuario);
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un cliente antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnRefresh_Click_1(object sender, EventArgs e)
+        {
+            // limpio el dataGridView
+            dataGridUsuario.Rows.Clear();
+
+
+            //traigo los datos de la base nuevamente
+            List<USUARIO> listaUsuario = new CN_Usuario().Listar();
+
+            foreach (USUARIO item in listaUsuario)
+            {
+                dataGridUsuario.Rows.Add(new object[] {"",item.idUsuario,item.documento,item.nombre,item.apellido,item.correo,item.usuario,item.clave,
+                item.telefono,
+                item.direccion,
+                item.estado == true ? "Activo" : "No activo",
+                item.oRol.idRol,
+                item.oRol.descripcion
+            });
+
+                // Actualizo el datagrid
+                dataGridUsuario.Refresh();
+            }
+        }
     }
 }
+
+

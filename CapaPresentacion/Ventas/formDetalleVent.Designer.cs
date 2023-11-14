@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formDetalleVent));
             this.GbxInfoVent = new System.Windows.Forms.GroupBox();
             this.dataGridVenta = new System.Windows.Forms.DataGridView();
             this.producto = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -35,6 +36,7 @@
             this.Cantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Subtotal = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.GbxCliente = new System.Windows.Forms.GroupBox();
+            this.Bbuscarventas = new System.Windows.Forms.Button();
             this.btnLimpiardetalle = new System.Windows.Forms.Button();
             this.txttotal = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
@@ -64,7 +66,6 @@
             this.label4 = new System.Windows.Forms.Label();
             this.txtdnicliente = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.Bbuscarventas = new System.Windows.Forms.Button();
             this.GbxInfoVent.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridVenta)).BeginInit();
             this.GbxCliente.SuspendLayout();
@@ -138,6 +139,19 @@
             this.GbxCliente.TabStop = false;
             this.GbxCliente.Text = "Información de la Venta";
             // 
+            // Bbuscarventas
+            // 
+            this.Bbuscarventas.BackColor = System.Drawing.Color.Silver;
+            this.Bbuscarventas.Image = ((System.Drawing.Image)(resources.GetObject("Bbuscarventas.Image")));
+            this.Bbuscarventas.Location = new System.Drawing.Point(199, 77);
+            this.Bbuscarventas.Name = "Bbuscarventas";
+            this.Bbuscarventas.Size = new System.Drawing.Size(203, 97);
+            this.Bbuscarventas.TabIndex = 36;
+            this.Bbuscarventas.Text = "Buscar Ventas";
+            this.Bbuscarventas.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Bbuscarventas.UseVisualStyleBackColor = false;
+            this.Bbuscarventas.Click += new System.EventHandler(this.Bbuscarventas_Click);
+            // 
             // btnLimpiardetalle
             // 
             this.btnLimpiardetalle.BackColor = System.Drawing.Color.Silver;
@@ -149,9 +163,9 @@
             this.btnLimpiardetalle.Font = new System.Drawing.Font("Leelawadee UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnLimpiardetalle.ForeColor = System.Drawing.Color.Black;
             this.btnLimpiardetalle.Image = global::CapaPresentacion.Properties.Resources.limpieza_de_datos;
-            this.btnLimpiardetalle.Location = new System.Drawing.Point(45, 208);
+            this.btnLimpiardetalle.Location = new System.Drawing.Point(273, 190);
             this.btnLimpiardetalle.Name = "btnLimpiardetalle";
-            this.btnLimpiardetalle.Size = new System.Drawing.Size(95, 41);
+            this.btnLimpiardetalle.Size = new System.Drawing.Size(54, 43);
             this.btnLimpiardetalle.TabIndex = 34;
             this.btnLimpiardetalle.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLimpiardetalle.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -161,7 +175,7 @@
             // txttotal
             // 
             this.txttotal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txttotal.Location = new System.Drawing.Point(15, 159);
+            this.txttotal.Location = new System.Drawing.Point(26, 208);
             this.txttotal.Name = "txttotal";
             this.txttotal.Size = new System.Drawing.Size(95, 25);
             this.txttotal.TabIndex = 28;
@@ -170,7 +184,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Leelawadee UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(21, 136);
+            this.label9.Location = new System.Drawing.Point(23, 173);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(57, 20);
             this.label9.TabIndex = 27;
@@ -179,7 +193,7 @@
             // txtfechaventa
             // 
             this.txtfechaventa.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtfechaventa.Location = new System.Drawing.Point(181, 51);
+            this.txtfechaventa.Location = new System.Drawing.Point(15, 115);
             this.txtfechaventa.Name = "txtfechaventa";
             this.txtfechaventa.Size = new System.Drawing.Size(125, 25);
             this.txtfechaventa.TabIndex = 4;
@@ -188,7 +202,7 @@
             // 
             this.lblNombreyApe.AutoSize = true;
             this.lblNombreyApe.Font = new System.Drawing.Font("Leelawadee UI", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreyApe.Location = new System.Drawing.Point(188, 35);
+            this.lblNombreyApe.Location = new System.Drawing.Point(22, 99);
             this.lblNombreyApe.Name = "lblNombreyApe";
             this.lblNombreyApe.Size = new System.Drawing.Size(37, 13);
             this.lblNombreyApe.TabIndex = 3;
@@ -287,7 +301,7 @@
             // 
             this.picUsuario.BackColor = System.Drawing.Color.DarkGray;
             this.picUsuario.Image = global::CapaPresentacion.Properties.Resources.sales_store_ecommerce_shopping_and_commerce_shop_online_icon_255549;
-            this.picUsuario.Location = new System.Drawing.Point(49, 111);
+            this.picUsuario.Location = new System.Drawing.Point(67, 123);
             this.picUsuario.Name = "picUsuario";
             this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.picUsuario.Size = new System.Drawing.Size(69, 73);
@@ -298,7 +312,7 @@
             // 
             this.lblTituloCli.AutoSize = true;
             this.lblTituloCli.Font = new System.Drawing.Font("Leelawadee UI", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloCli.Location = new System.Drawing.Point(9, 37);
+            this.lblTituloCli.Location = new System.Drawing.Point(27, 49);
             this.lblTituloCli.Name = "lblTituloCli";
             this.lblTituloCli.Size = new System.Drawing.Size(142, 30);
             this.lblTituloCli.TabIndex = 1;
@@ -311,9 +325,9 @@
             this.panelRigtUsuario.Controls.Add(this.picUsuario);
             this.panelRigtUsuario.Controls.Add(this.btnImprimir);
             this.panelRigtUsuario.Dock = System.Windows.Forms.DockStyle.Right;
-            this.panelRigtUsuario.Location = new System.Drawing.Point(1079, 103);
+            this.panelRigtUsuario.Location = new System.Drawing.Point(1045, 103);
             this.panelRigtUsuario.Name = "panelRigtUsuario";
-            this.panelRigtUsuario.Size = new System.Drawing.Size(154, 503);
+            this.panelRigtUsuario.Size = new System.Drawing.Size(188, 503);
             this.panelRigtUsuario.TabIndex = 44;
             // 
             // btnImprimir
@@ -327,7 +341,7 @@
             this.btnImprimir.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnImprimir.Image = global::CapaPresentacion.Properties.Resources.print_black_printer_tool_symbol_icon_icons_com_54467;
             this.btnImprimir.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnImprimir.Location = new System.Drawing.Point(16, 442);
+            this.btnImprimir.Location = new System.Drawing.Point(39, 440);
             this.btnImprimir.Name = "btnImprimir";
             this.btnImprimir.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
             this.btnImprimir.Size = new System.Drawing.Size(130, 39);
@@ -367,7 +381,6 @@
             this.txtidcliente.Name = "txtidcliente";
             this.txtidcliente.Size = new System.Drawing.Size(25, 25);
             this.txtidcliente.TabIndex = 32;
-            this.txtidcliente.Visible = false;
             this.txtidcliente.TextChanged += new System.EventHandler(this.txtidcliente_TextChanged);
             // 
             // txtcorreocliente
@@ -441,16 +454,6 @@
             this.label5.Size = new System.Drawing.Size(26, 13);
             this.label5.TabIndex = 0;
             this.label5.Text = "DNI";
-            // 
-            // Bbuscarventas
-            // 
-            this.Bbuscarventas.Location = new System.Drawing.Point(206, 114);
-            this.Bbuscarventas.Name = "Bbuscarventas";
-            this.Bbuscarventas.Size = new System.Drawing.Size(203, 135);
-            this.Bbuscarventas.TabIndex = 35;
-            this.Bbuscarventas.Text = "Buscar Ventas";
-            this.Bbuscarventas.UseVisualStyleBackColor = true;
-            this.Bbuscarventas.Click += new System.EventHandler(this.Bbuscarventas_Click);
             // 
             // formDetalleVent
             // 

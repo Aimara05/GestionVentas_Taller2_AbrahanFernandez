@@ -40,19 +40,48 @@ namespace CapaPresentacion.Modales
             cboBusqueda.SelectedIndex = 0;
 
             List<VENTAS> listaVenta = new CN_Ventas().Listar(_Usuario);
-            
+
             foreach (VENTAS item in listaVenta)
             {
-                dataGridVenta.Rows.Add(new object[] { item.idVenta, item.oUsuario.idUsuario, item.oCliente.idCliente, item.oCliente.nombreCliente, 
-                    item.oCliente.apellidoCliente, item.oTipoPago.idTipoPago, item.oTipoPago.descripcion, 
+                dataGridVenta.Rows.Add(new object[] { item.idVenta, item.oUsuario.idUsuario, item.oCliente.idCliente, item.oCliente.nombreCliente,
+                    item.oCliente.apellidoCliente, item.oTipoPago.idTipoPago, item.oTipoPago.descripcion,
                     item.codigoFactura, item.fechaReg, item.montoTotal, });
             }
 
-
-
         }
 
-        private void dataGridVenta_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        private void btnBuscar2_Click(object sender, EventArgs e)
+        {
+            string columnaFiltro = ((ComboBoxOpc)cboBusqueda.SelectedItem).Valor.ToString();
+            if (dataGridVenta.Rows.Count > 0)
+            {
+                foreach (DataGridViewRow row in dataGridVenta.Rows)
+                {
+                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.  //trim: espacion al final o al inicio
+                        Text.Trim().ToUpper()))                                                          //toupper: convertir en mayuscula
+                    {
+                        row.Visible = true;
+                    }
+                    else
+                    {
+                        row.Visible = false;
+                    }
+                }
+            }
+        }
+
+
+
+        private void btnLimpiar2_Click(object sender, EventArgs e)
+        {
+            txtBusqueda.Text = "";
+            foreach (DataGridViewRow row in dataGridVenta.Rows)
+            {
+                row.Visible = true;
+            }
+        }
+
+        private void dataGridVenta_CellDoubleClick_1(object sender, DataGridViewCellEventArgs e)
         {
             int iRow = e.RowIndex;
             int iCol = e.ColumnIndex;
@@ -61,7 +90,8 @@ namespace CapaPresentacion.Modales
                 _Venta = new VENTAS()
                 {
                     idVenta = Convert.ToInt32(dataGridVenta.Rows[iRow].Cells["idVenta"].Value.ToString()),
-                    oUsuario = new USUARIO() { 
+                    oUsuario = new USUARIO()
+                    {
                         idUsuario = Convert.ToInt32(dataGridVenta.Rows[iRow].Cells["idUsuario"].Value.ToString()),
                     },
                     oCliente = new CLIENTES()
@@ -87,33 +117,14 @@ namespace CapaPresentacion.Modales
             }
         }
 
-        private void btnBuscar2_Click(object sender, EventArgs e)
+        private void panelTopUsuario_Paint(object sender, PaintEventArgs e)
         {
-            string columnaFiltro = ((ComboBoxOpc)cboBusqueda.SelectedItem).Valor.ToString();
-            if (dataGridVenta.Rows.Count > 0)
-            {
-                foreach (DataGridViewRow row in dataGridVenta.Rows)
-                {
-                    if (row.Cells[columnaFiltro].Value.ToString().Trim().ToUpper().Contains(txtBusqueda.  //trim: espacion al final o al inicio
-                        Text.Trim().ToUpper()))                                                          //toupper: convertir en mayuscula
-                    {
-                        row.Visible = true;
-                    }
-                    else
-                    {
-                        row.Visible = false;
-                    }
-                }
-            }
+
         }
 
-        private void btnLimpiar2_Click(object sender, EventArgs e)
+        private void picCerrar_Click(object sender, EventArgs e)
         {
-            txtBusqueda.Text = "";
-            foreach (DataGridViewRow row in dataGridVenta.Rows)
-            {
-                row.Visible = true;
-            }
+            this.Close();
         }
     }
 }

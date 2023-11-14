@@ -1,14 +1,18 @@
-CREDENCIALES PARA ALGUNOS USUARIOS:
+CREDENCIALES 
 
 
 Usuario: Aimara05
 contraseña: 11223344
 Rol: "ADMINISTRADOR"
 
-Usuario: Ulises05
+Usuario: Super05
 contraseña: 11223344
 Rol: "SUPERADMINISTRADOR"
 
-Usuario: Yenhy05
+Usuario: Ulises05
 contraseña: 11223344
-Rol: "VENDEDOR"
+Rol: "VENDEDOR 1"
+
+Usuario: Vend05
+contraseña: 11223344
+Rol: "VENDEDOR 2"

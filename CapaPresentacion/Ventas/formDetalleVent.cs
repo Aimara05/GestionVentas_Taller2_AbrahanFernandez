@@ -14,6 +14,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Microsoft.IO.RecyclableMemoryStreamManager;
 
 namespace CapaPresentacion.Ventas
 {
@@ -64,36 +65,42 @@ namespace CapaPresentacion.Ventas
 
             string Texto_Html = Properties.Resources.PlantillaVenta.ToString();
 
-            Texto_Html = Texto_Html.Replace("@nombrenegocio", "Infinite Store");
-            Texto_Html = Texto_Html.Replace("@direcnegocio", "Los Cocos 5431");
+
 
             Texto_Html = Texto_Html.Replace("@codigoFactura", txtcodigoFactura.Text);
 
-            Texto_Html = Texto_Html.Replace("@doccliente", txtdnicliente.Text);
-            Texto_Html = Texto_Html.Replace("@nombrecliente", txtnomyapecliente.Text);
-            Texto_Html = Texto_Html.Replace("@fecharegistro", txtfechaventa.Text);
-            Texto_Html = Texto_Html.Replace("@usuarioregistro", txtnomyapeusuario.Text);
+            Texto_Html = Texto_Html.Replace("@DOCUMENTO", txtdnicliente.Text);
+            //string nombrecompletocliente = oVenta.oCliente.nombreCliente + " " + oVenta.oCliente.apellidoCliente;
+            Texto_Html = Texto_Html.Replace("@CLIENTE", txtnomyapecliente.Text);
+            Texto_Html = Texto_Html.Replace("@FECHA", txtfechaventa.Text);
+            //string nombyapeusuario = oVenta.oUsuario.nombre + " " + oVenta.oUsuario.apellido;
+            Texto_Html = Texto_Html.Replace("@VENDEDOR", txtnomyapeusuario.Text);
 
-            string filas = string.Empty;
-            foreach(DataGridViewRow row in dataGridVenta.Rows)
+            StringBuilder filasHtml = new StringBuilder();
+
+
+            foreach (DataGridViewRow row in dataGridVenta.Rows)
             {
-                filas += "<tr>";
-                filas += "<td>" + row.Cells["producto"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["precio"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>";
-                filas += "<td>" + row.Cells["Subtotal"].Value.ToString() + "</td>";
-                filas += "</tr>";
+                filasHtml.AppendLine("<tr>");
+                filasHtml.AppendLine("<td>" + row.Cells["Cantidad"].Value.ToString() + "</td>");
+                filasHtml.AppendLine("<td>" + row.Cells["producto"].Value + "</td>");
+                filasHtml.AppendLine("<td>" + row.Cells["precio"].Value.ToString() + "</td>");
+                filasHtml.AppendLine("<td>" + row.Cells["Subtotal"].Value.ToString() + "</td>");
+                filasHtml.AppendLine("</tr>");
             }
-            Texto_Html = Texto_Html.Replace("@filas", filas);
-            Texto_Html = Texto_Html.Replace("@montototal", txttotal.Text);
 
+
+            Texto_Html = Texto_Html.Replace("@FILAS", filasHtml.ToString());
+            Texto_Html = Texto_Html.Replace("@TOTAL", txttotal.Text);
+            //Texto_Html = Texto_Html.Replace("@pagocon", txtmontopago.Text);
+            //Texto_Html = Texto_Html.Replace("@cambio", txtmontocambio.Text);
 
 
             SaveFileDialog savefile = new SaveFileDialog();
             savefile.FileName = string.Format("Compra_{0}.pdf", txtcodigoFactura.Text);
             savefile.Filter = "Pdf Files|*.pdf";
 
-            if(savefile.ShowDialog() == DialogResult.OK)
+            if (savefile.ShowDialog() == DialogResult.OK)
             {
                 using (FileStream stream = new FileStream(savefile.FileName, FileMode.Create))
                 {
@@ -110,7 +117,7 @@ namespace CapaPresentacion.Ventas
                     pdfDoc.Close();
                     stream.Close();
                     MessageBox.Show("Documento Generado", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    
+
                 }
             }
 
@@ -120,7 +127,47 @@ namespace CapaPresentacion.Ventas
 
         private void bfactura_Click(object sender, EventArgs e)
         {
-            
+            VENTAS oVenta = new CN_Ventas().ObtenerVenta(txtcodigoFactura.Text);
+
+            if(oVenta.idVenta != 0)
+            {
+                //datos venta
+                txtcodigoFactura.Text = oVenta.codigoFactura;
+                txtfechaventa.Text = oVenta.fechaReg;
+                txttotal.Text = oVenta.montoTotal.ToString("0.00");
+
+
+                //datos usuario
+                txtDniUsu.Text = oVenta.oUsuario.documento;
+                string nombrecompleto = oVenta.oUsuario.nombre + " " + oVenta.oUsuario.apellido;
+                txtnomyapeusuario.Text = nombrecompleto;
+
+                //datos cliente
+                txtidcliente.Text = oVenta.oCliente.idCliente.ToString();
+                txtdnicliente.Text = oVenta.oCliente.documentoCliente;
+                string nombyapecliente = oVenta.oCliente.nombreCliente + " " + oVenta.oCliente.apellidoCliente;
+                txtnomyapecliente.Text = nombyapecliente;
+                txttelcliente.Text = oVenta.oCliente.telefono;
+                txtcorreocliente.Text = oVenta.oCliente.correo;
+
+                //datos datagrid
+                dataGridVenta.Rows.Clear();
+                foreach (VENTADETALLE dv in oVenta.oDetalle_Venta)
+                {
+                    dataGridVenta.Rows.Add(new object[] {
+                        dv.oProducto.nombreProd,
+                        dv.precioVenta,
+                        dv.cantidad,
+                        dv.subtotal
+                    });
+                }
+
+
+            }
+            else
+            {
+                MessageBox.Show("No se encontro ninguna venta");
+            }
 
         }
 

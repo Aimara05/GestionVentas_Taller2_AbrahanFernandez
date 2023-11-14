@@ -19,113 +19,146 @@ namespace CapaPresentacion
 
         private int filaSeleccionada = -1; // variable para mantener el indice de mi fila seleccionada en mi dgv
         private DataGridViewButtonCell botonSeleccionado = null;
-
+        private Prod_Categ.EditarProd formularioEditarProd;
+        private Prod_Categ.AltaProd formularioAltaProd;
         public FormProducto()
         {
             InitializeComponent();
            dataGridProd.CellFormatting += dataGridProd_CellFormatting;
         }
 
-
-        //Métodos para abrir formulario.
-        private void abrirFormularios(Form formulario)
+        // Método para abrir formularios
+        private void abrirFormulario(Form formulario)
         {
-
-            formulario.TopLevel = false; // Importante para evitar que sea un formulario independiente
-            formulario.FormBorderStyle = FormBorderStyle.None; // Quita el borde del formulario
-            formulario.Dock = DockStyle.Fill; // Ajusta el formulario al tamaño del contenedor
-
-            panelFormu.Controls.Add(formulario); // Agrega el formulario al panel
-            panelFormu.Tag = formulario;
-            formulario.BringToFront();
-
-            formulario.Show();
-
-        }
-
-
-        //Metodo para agregar un producto
-        private void btnAgregarProd_Click(object sender, EventArgs e)
-        {
-            Prod_Categ.AltaProd altaprod = new Prod_Categ.AltaProd();
-            abrirFormularios(altaprod);
-        }
-
-
-        //Metodo para editar producto
-        private void btnEditarProd_Click(object sender, EventArgs e)
-        {
-            if (filaSeleccionada >= 0)
+            if (formulario != null && !formulario.IsDisposed)
             {
-                Prod_Categ.EditarProd editarprod = new Prod_Categ.EditarProd();
-                editarprod.lblidprod.Text = dataGridProd.Rows[filaSeleccionada].Cells["idProd"].Value.ToString();
-                editarprod.txtNombre.Text = dataGridProd.Rows[filaSeleccionada].Cells["nombreProd"].Value.ToString();
-                editarprod.TBdescr.Text = dataGridProd.Rows[filaSeleccionada].Cells["descripcionProd"].Value.ToString();
-                editarprod.txtTalle.Text = dataGridProd.Rows[filaSeleccionada].Cells["talle"].Value.ToString();
-                editarprod.txtStock.Text = dataGridProd.Rows[filaSeleccionada].Cells["stock"].Value.ToString();
-                editarprod.txtPrecio.Text = dataGridProd.Rows[filaSeleccionada].Cells["precioUni"].Value.ToString();
-                editarprod.txtStock.Text = dataGridProd.Rows[filaSeleccionada].Cells["stock"].Value.ToString();
-                editarprod.txtStock.Text = dataGridProd.Rows[filaSeleccionada].Cells["stock"].Value.ToString();
-                editarprod.txtStock.Text = dataGridProd.Rows[filaSeleccionada].Cells["stock"].Value.ToString();
-                int indexMarca = Convert.ToInt32(dataGridProd.Rows[filaSeleccionada].Cells["idMarca"].Value);
-                int indexCateg = Convert.ToInt32(dataGridProd.Rows[filaSeleccionada].Cells["idCateg"].Value);
-                string estadostr = dataGridProd.Rows[filaSeleccionada].Cells["estado"].Value.ToString();
+                formulario.TopLevel = false; // Importante para evitar que sea un formulario independiente
+                formulario.FormBorderStyle = FormBorderStyle.None; // Quita el borde del formulario
+                formulario.Dock = DockStyle.Fill; // Ajusta el formulario al tamaño del contenedor
 
-                editarprod.CBEstado.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
-                editarprod.CBEstado.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
+                panelFormu.Controls.Add(formulario); // Agrega el formulario al panel
+                panelFormu.Tag = formulario;
+                formulario.BringToFront();
 
-
-                editarprod.CBEstado.DisplayMember = "Texto";
-                editarprod.CBEstado.ValueMember = "Valor";
-
-                if (estadostr == "Activo")
-                {
-                    editarprod.CBEstado.SelectedIndex = 0;
-
-                }
-                else
-                {
-                    editarprod.CBEstado.SelectedIndex = 1;
-                }
-
-                List<MARCAS> listaMarca = new CN_Marca().Listar();
-
-                foreach (MARCAS item in listaMarca)
-                {
-                    editarprod.CbMarca.Items.Add(new ComboBoxOpc() { Valor = item.idMarca, Texto = item.descripcionMarca });
-
-                }
-
-                editarprod.CbMarca.DisplayMember = "Texto";
-                editarprod.CbMarca.ValueMember = "Valor";
-                editarprod.CbMarca.SelectedIndex = indexMarca - 1;
-
-
-                List<CATEGORIAS> listaCategoria = new CN_Categoria().Listar();
-
-                foreach (CATEGORIAS item in listaCategoria)
-                {
-                    editarprod.CBRol.Items.Add(new ComboBoxOpc() { Valor = item.idCateg, Texto = item.descripcion });
-
-                }
-
-                editarprod.CBRol.DisplayMember = "Texto";
-                editarprod.CBRol.ValueMember = "Valor";
-                editarprod.CBRol.SelectedIndex = indexCateg - 1;
-
-
-
-
-                abrirFormularios(editarprod);
+                formulario.Show();
+                formulario.Activate();
             }
             else
             {
-                MessageBox.Show("Por favor, seleccione un productos antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("El formulario no está disponible.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
-
         }
 
+        /*private Prod_Categ.AltaProd formularioAltaProd;
+        //Metodo para agregar un producto
+        private void btnAgregarProd_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay algún formulario de edición abierto
+            if (formularioEditarProd != null && !formularioEditarProd.IsDisposed)
+            {
+                MessageBox.Show("Debe cerrar el formulario abierto antes de abrir otro formulario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (formularioAltaProd == null || formularioAltaProd.IsDisposed)
+                {
+                    // Si no hay instancia abierta, crea una nueva
+                    formularioAltaProd = new Prod_Categ.AltaProd();
 
+                    // Mostrar el formulario de alta
+                    abrirFormularios(formularioAltaProd);
+                }
+                else
+                {
+                    // Si ya hay una instancia abierta, activarla en lugar de abrir una nueva
+                    formularioAltaProd.Activate();
+                }
+            }
+        }
+  
+        
+        private Prod_Categ.EditarProd formularioEditarProd;
+
+        private void btnEditarProd_Click(object sender, EventArgs e)
+        {
+            // Verificar si hay algún formulario de alta abierto
+            if (formularioAltaProd != null && !formularioAltaProd.IsDisposed)
+            {
+                MessageBox.Show("Debe cerrar el formulario de alta antes de abrir otro formulario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (formularioEditarProd == null || formularioEditarProd.IsDisposed)
+                {
+                    // Si no hay instancia abierta, crea una nueva
+                    formularioEditarProd = new Prod_Categ.EditarProd();
+                }
+                else
+                {
+
+                    if (filaSeleccionada >= 0)
+                    {
+                        formularioEditarProd.lblidprod.Text = dataGridProd.Rows[filaSeleccionada].Cells["idProd"].Value.ToString();
+                        formularioEditarProd.txtNombre.Text = dataGridProd.Rows[filaSeleccionada].Cells["nombreProd"].Value.ToString();
+                        formularioEditarProd.TBdescr.Text = dataGridProd.Rows[filaSeleccionada].Cells["descripcionProd"].Value.ToString();
+                        formularioEditarProd.txtTalle.Text = dataGridProd.Rows[filaSeleccionada].Cells["talle"].Value.ToString();
+                        formularioEditarProd.txtStock.Text = dataGridProd.Rows[filaSeleccionada].Cells["stock"].Value.ToString();
+                        formularioEditarProd.txtPrecio.Text = dataGridProd.Rows[filaSeleccionada].Cells["precioUni"].Value.ToString();
+
+                        int indexMarca = Convert.ToInt32(dataGridProd.Rows[filaSeleccionada].Cells["idMarca"].Value);
+                        int indexCateg = Convert.ToInt32(dataGridProd.Rows[filaSeleccionada].Cells["idCateg"].Value);
+                        string estadostr = dataGridProd.Rows[filaSeleccionada].Cells["estado"].Value.ToString();
+
+                        formularioEditarProd.CBEstado.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
+                        formularioEditarProd.CBEstado.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
+
+                        formularioEditarProd.CBEstado.DisplayMember = "Texto";
+                        formularioEditarProd.CBEstado.ValueMember = "Valor";
+
+                        if (estadostr == "Activo")
+                        {
+                            formularioEditarProd.CBEstado.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            formularioEditarProd.CBEstado.SelectedIndex = 1;
+                        }
+
+                        List<MARCAS> listaMarca = new CN_Marca().Listar();
+                        formularioEditarProd.CbMarca.Items.Clear();
+
+                        foreach (MARCAS item in listaMarca)
+                        {
+                            formularioEditarProd.CbMarca.Items.Add(new ComboBoxOpc() { Valor = item.idMarca, Texto = item.descripcionMarca });
+                        }
+
+                        formularioEditarProd.CbMarca.DisplayMember = "Texto";
+                        formularioEditarProd.CbMarca.ValueMember = "Valor";
+                        formularioEditarProd.CbMarca.SelectedIndex = indexMarca - 1;
+
+                        List<CATEGORIAS> listaCategoria = new CN_Categoria().Listar();
+                        formularioEditarProd.CBRol.Items.Clear();
+
+                        foreach (CATEGORIAS item in listaCategoria)
+                        {
+                            formularioEditarProd.CBRol.Items.Add(new ComboBoxOpc() { Valor = item.idCateg, Texto = item.descripcion });
+                        }
+
+                        formularioEditarProd.CBRol.DisplayMember = "Texto";
+                        formularioEditarProd.CBRol.ValueMember = "Valor";
+                        formularioEditarProd.CBRol.SelectedIndex = indexCateg - 1;
+
+                        abrirFormularios(formularioEditarProd);
+                    }
+                    else
+                    {
+                        MessageBox.Show("Por favor, seleccione un producto antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+            }
+        }
+
+*/
         private void dataGridProd_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
             if (e.RowIndex < 0)
@@ -175,21 +208,23 @@ namespace CapaPresentacion
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
                 // Personalizar la apariencia del botón "Alta" con una imagen
-                var w = Properties.Resources.altaClienteUsuario.Width; // Obtener el ancho de tu icono
-                var h = Properties.Resources.altaClienteUsuario.Height; // Obtener el alto de tu icono
+                var w = Properties.Resources.altaProducto.Width; // Obtener el ancho de tu icono
+                var h = Properties.Resources.altaProducto.Height; // Obtener el alto de tu icono
 
                 // Posicionamiento de la imagen en el centro de la celda del botón "Alta"
                 var x = e.CellBounds.Left + (e.CellBounds.Width - w) / 2; // Poner la imagen en el centro (eje x)
                 var y = e.CellBounds.Top + (e.CellBounds.Height - h) / 2; // Poner la imagen en el centro del eje y
 
                 // Dibujar la imagen en la celda del botón "Alta"
-                e.Graphics.DrawImage(Properties.Resources.altaClienteUsuario, new Rectangle(x, y, w, h));
+                e.Graphics.DrawImage(Properties.Resources.altaProducto, new Rectangle(x, y, w, h));
 
                 e.Handled = true;
             }
         }
 
-        private void FormProducto_Load(object sender, EventArgs e)
+
+        //Método para cuando carge el formulario.
+        public void FormProducto_Load(object sender, EventArgs e)
         {
 
             DataGridViewButtonColumn btnEliminar = new DataGridViewButtonColumn();
@@ -225,7 +260,9 @@ namespace CapaPresentacion
 
             foreach (DataGridViewColumn columna in dataGridProd.Columns)
             {
-                if (columna.Visible == true && columna.Name != "btnSeleccionar")
+                if (columna.Visible == true && columna.Name != "btnSeleccionar"
+                    && columna.Name != "btnSeleccionar"
+                    && columna.Name != "Baja" && columna.Name != "Alta")
                 {
                     cboBusqueda.Items.Add((new ComboBoxOpc() { Valor = columna.Name, Texto = columna.HeaderText }));
                 }
@@ -376,5 +413,122 @@ namespace CapaPresentacion
                 }
             }
         }
+
+
+//Metodo para limpiar el datagrid de la busqueda
+        private void btnLimpiar_Click(object sender, EventArgs e)
+        {
+            txtBusqueda.Text = "";
+            foreach (DataGridViewRow row in dataGridProd.Rows)
+            {
+                row.Visible = true;
+            }
+        }
+
+        private void btnEditarProd_Click(object sender, EventArgs e)
+        {
+
+            if (formularioAltaProd != null && !formularioAltaProd.IsDisposed)
+            {
+                MessageBox.Show("Debe cerrar el formulario de alta antes de abrir otro formulario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (filaSeleccionada >= 0)
+                {
+                    if (formularioEditarProd == null || formularioEditarProd.IsDisposed)
+                    {
+                        formularioEditarProd = new Prod_Categ.EditarProd();
+
+                        // Configurar los datos en el formulario de edición
+                        formularioEditarProd.lblidprod.Text = dataGridProd.Rows[filaSeleccionada].Cells["idProd"].Value.ToString();
+                        formularioEditarProd.txtNombre.Text = dataGridProd.Rows[filaSeleccionada].Cells["nombreProd"].Value.ToString();
+                        formularioEditarProd.TBdescr.Text = dataGridProd.Rows[filaSeleccionada].Cells["descripcionProd"].Value.ToString();
+                        formularioEditarProd.txtTalle.Text = dataGridProd.Rows[filaSeleccionada].Cells["talle"].Value.ToString();
+                        formularioEditarProd.txtStock.Text = dataGridProd.Rows[filaSeleccionada].Cells["stock"].Value.ToString();
+                        formularioEditarProd.txtPrecio.Text = dataGridProd.Rows[filaSeleccionada].Cells["precioUni"].Value.ToString();
+
+                        int indexMarca = Convert.ToInt32(dataGridProd.Rows[filaSeleccionada].Cells["idMarca"].Value);
+                        int indexCateg = Convert.ToInt32(dataGridProd.Rows[filaSeleccionada].Cells["idCateg"].Value);
+                        string estadostr = dataGridProd.Rows[filaSeleccionada].Cells["estado"].Value.ToString();
+
+                        formularioEditarProd.CBEstado.Items.Add(new ComboBoxOpc() { Valor = 1, Texto = "Activo" });
+                        formularioEditarProd.CBEstado.Items.Add(new ComboBoxOpc() { Valor = 0, Texto = "No Activo" });
+
+                        formularioEditarProd.CBEstado.DisplayMember = "Texto";
+                        formularioEditarProd.CBEstado.ValueMember = "Valor";
+
+                        if (estadostr == "Activo")
+                        {
+                            formularioEditarProd.CBEstado.SelectedIndex = 0;
+                        }
+                        else
+                        {
+                            formularioEditarProd.CBEstado.SelectedIndex = 1;
+                        }
+
+                        List<MARCAS> listaMarca = new CN_Marca().Listar();
+                        formularioEditarProd.CbMarca.Items.Clear();
+
+                        foreach (MARCAS item in listaMarca)
+                        {
+                            formularioEditarProd.CbMarca.Items.Add(new ComboBoxOpc() { Valor = item.idMarca, Texto = item.descripcionMarca });
+                        }
+
+                        formularioEditarProd.CbMarca.DisplayMember = "Texto";
+                        formularioEditarProd.CbMarca.ValueMember = "Valor";
+                        formularioEditarProd.CbMarca.SelectedIndex = indexMarca - 1;
+
+                        List<CATEGORIAS> listaCategoria = new CN_Categoria().Listar();
+                        formularioEditarProd.CBRol.Items.Clear();
+
+                        foreach (CATEGORIAS item in listaCategoria)
+                        {
+                            formularioEditarProd.CBRol.Items.Add(new ComboBoxOpc() { Valor = item.idCateg, Texto = item.descripcion });
+                        }
+
+                        formularioEditarProd.CBRol.DisplayMember = "Texto";
+                        formularioEditarProd.CBRol.ValueMember = "Valor";
+                        formularioEditarProd.CBRol.SelectedIndex = indexCateg - 1;
+
+                        abrirFormulario(formularioEditarProd);
+                    }
+                    else
+                    {
+                        abrirFormulario(formularioEditarProd);
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("Por favor, seleccione un cliente antes de continuar", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void btnAgregarProd_Click(object sender, EventArgs e)
+        {
+            if (formularioEditarProd != null && !formularioEditarProd.IsDisposed)
+            {
+                MessageBox.Show("Debe cerrar el formulario de edición antes de abrir otro formulario.", "Mensaje", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            else
+            {
+                if (formularioAltaProd == null || formularioAltaProd.IsDisposed)
+                {
+                    formularioAltaProd = new Prod_Categ.AltaProd();
+                    abrirFormulario(formularioAltaProd);
+                }
+                else
+                {
+                    abrirFormulario(formularioAltaProd);
+                }
+            }
+        }
+
+        private void lblTituloCli_Click(object sender, EventArgs e)
+        {
+
+        }
     }
-}
+    }
+

@@ -45,20 +45,16 @@
             this.txtDescr = new System.Windows.Forms.TextBox();
             this.Marca = new System.Windows.Forms.Label();
             this.CBMarca = new System.Windows.Forms.ComboBox();
-            this.txtImagen = new System.Windows.Forms.TextBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.picCerrar = new System.Windows.Forms.PictureBox();
-            this.picImgProd = new System.Windows.Forms.PictureBox();
-            this.btnImgProd = new System.Windows.Forms.Button();
             this.lblTalle = new System.Windows.Forms.Label();
             this.txtTalle = new System.Windows.Forms.TextBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImgProd)).BeginInit();
             this.SuspendLayout();
             // 
             // LTitulo
@@ -67,13 +63,12 @@
             this.LTitulo.Font = new System.Drawing.Font("Leelawadee UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LTitulo.ForeColor = System.Drawing.Color.Transparent;
             this.LTitulo.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.LTitulo.Location = new System.Drawing.Point(313, 63);
+            this.LTitulo.Location = new System.Drawing.Point(335, 57);
             this.LTitulo.Name = "LTitulo";
-            this.LTitulo.Size = new System.Drawing.Size(223, 31);
+            this.LTitulo.Size = new System.Drawing.Size(207, 31);
             this.LTitulo.TabIndex = 0;
             this.LTitulo.Text = "Agregar   Producto";
             this.LTitulo.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.LTitulo.Click += new System.EventHandler(this.LTitulo_Click);
             // 
             // btnCancelar
             // 
@@ -84,11 +79,11 @@
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
             this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnCancelar.Font = new System.Drawing.Font("Leelawadee UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena1;
+            this.btnCancelar.Image = global::CapaPresentacion.Properties.Resources.cruz_pequena;
             this.btnCancelar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelar.Location = new System.Drawing.Point(408, 423);
+            this.btnCancelar.Location = new System.Drawing.Point(498, 467);
             this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(108, 31);
+            this.btnCancelar.Size = new System.Drawing.Size(100, 31);
             this.btnCancelar.TabIndex = 11;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -106,10 +101,10 @@
             this.BtnGuardar.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.BtnGuardar.Image = global::CapaPresentacion.Properties.Resources.flecha_de_circulo_de_disquete_a_la_derecha;
             this.BtnGuardar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.BtnGuardar.Location = new System.Drawing.Point(262, 424);
+            this.BtnGuardar.Location = new System.Drawing.Point(352, 468);
             this.BtnGuardar.Name = "BtnGuardar";
             this.BtnGuardar.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.BtnGuardar.Size = new System.Drawing.Size(108, 31);
+            this.BtnGuardar.Size = new System.Drawing.Size(100, 31);
             this.BtnGuardar.TabIndex = 10;
             this.BtnGuardar.Text = "Guardar";
             this.BtnGuardar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -121,9 +116,9 @@
             this.CBEstado.BackColor = System.Drawing.Color.White;
             this.CBEstado.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBEstado.FormattingEnabled = true;
-            this.CBEstado.Location = new System.Drawing.Point(318, 363);
+            this.CBEstado.Location = new System.Drawing.Point(452, 417);
             this.CBEstado.Name = "CBEstado";
-            this.CBEstado.Size = new System.Drawing.Size(185, 21);
+            this.CBEstado.Size = new System.Drawing.Size(169, 21);
             this.CBEstado.TabIndex = 8;
             // 
             // lblDomicilio
@@ -132,7 +127,7 @@
             this.lblDomicilio.BackColor = System.Drawing.Color.Black;
             this.lblDomicilio.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblDomicilio.ForeColor = System.Drawing.Color.White;
-            this.lblDomicilio.Location = new System.Drawing.Point(179, 250);
+            this.lblDomicilio.Location = new System.Drawing.Point(287, 288);
             this.lblDomicilio.Name = "lblDomicilio";
             this.lblDomicilio.Size = new System.Drawing.Size(47, 17);
             this.lblDomicilio.TabIndex = 52;
@@ -141,18 +136,18 @@
             // txtPrecio
             // 
             this.txtPrecio.BackColor = System.Drawing.Color.White;
-            this.txtPrecio.Location = new System.Drawing.Point(318, 247);
+            this.txtPrecio.Location = new System.Drawing.Point(429, 285);
             this.txtPrecio.Name = "txtPrecio";
-            this.txtPrecio.Size = new System.Drawing.Size(185, 20);
+            this.txtPrecio.Size = new System.Drawing.Size(169, 20);
             this.txtPrecio.TabIndex = 5;
             this.txtPrecio.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrecio_KeyPress);
             // 
             // txtStock
             // 
             this.txtStock.BackColor = System.Drawing.Color.White;
-            this.txtStock.Location = new System.Drawing.Point(318, 210);
+            this.txtStock.Location = new System.Drawing.Point(429, 247);
             this.txtStock.Name = "txtStock";
-            this.txtStock.Size = new System.Drawing.Size(185, 20);
+            this.txtStock.Size = new System.Drawing.Size(169, 20);
             this.txtStock.TabIndex = 4;
             this.txtStock.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtStock_KeyPress);
             // 
@@ -162,7 +157,7 @@
             this.lblTel.BackColor = System.Drawing.Color.Black;
             this.lblTel.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTel.ForeColor = System.Drawing.Color.White;
-            this.lblTel.Location = new System.Drawing.Point(179, 212);
+            this.lblTel.Location = new System.Drawing.Point(287, 250);
             this.lblTel.Name = "lblTel";
             this.lblTel.Size = new System.Drawing.Size(42, 17);
             this.lblTel.TabIndex = 49;
@@ -174,7 +169,7 @@
             this.LNombree.BackColor = System.Drawing.Color.Black;
             this.LNombree.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LNombree.ForeColor = System.Drawing.Color.White;
-            this.LNombree.Location = new System.Drawing.Point(179, 121);
+            this.LNombree.Location = new System.Drawing.Point(287, 135);
             this.LNombree.Name = "LNombree";
             this.LNombree.Size = new System.Drawing.Size(60, 17);
             this.LNombree.TabIndex = 37;
@@ -186,7 +181,7 @@
             this.Lestado.BackColor = System.Drawing.Color.Black;
             this.Lestado.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Lestado.ForeColor = System.Drawing.Color.White;
-            this.Lestado.Location = new System.Drawing.Point(179, 367);
+            this.Lestado.Location = new System.Drawing.Point(310, 421);
             this.Lestado.Name = "Lestado";
             this.Lestado.Size = new System.Drawing.Size(51, 17);
             this.Lestado.TabIndex = 48;
@@ -195,20 +190,19 @@
             // txtNombre
             // 
             this.txtNombre.BackColor = System.Drawing.Color.White;
-            this.txtNombre.Location = new System.Drawing.Point(318, 121);
+            this.txtNombre.Location = new System.Drawing.Point(429, 132);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(185, 20);
+            this.txtNombre.Size = new System.Drawing.Size(169, 20);
             this.txtNombre.TabIndex = 1;
-            this.txtNombre.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNombre_KeyPress);
             // 
             // CBcateg
             // 
             this.CBcateg.BackColor = System.Drawing.Color.White;
             this.CBcateg.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBcateg.FormattingEnabled = true;
-            this.CBcateg.Location = new System.Drawing.Point(318, 282);
+            this.CBcateg.Location = new System.Drawing.Point(429, 321);
             this.CBcateg.Name = "CBcateg";
-            this.CBcateg.Size = new System.Drawing.Size(185, 21);
+            this.CBcateg.Size = new System.Drawing.Size(169, 21);
             this.CBcateg.TabIndex = 6;
             // 
             // LApellido
@@ -217,7 +211,7 @@
             this.LApellido.BackColor = System.Drawing.Color.Black;
             this.LApellido.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LApellido.ForeColor = System.Drawing.Color.White;
-            this.LApellido.Location = new System.Drawing.Point(179, 158);
+            this.LApellido.Location = new System.Drawing.Point(287, 174);
             this.LApellido.Name = "LApellido";
             this.LApellido.Size = new System.Drawing.Size(79, 17);
             this.LApellido.TabIndex = 38;
@@ -229,7 +223,7 @@
             this.LRol.BackColor = System.Drawing.Color.Black;
             this.LRol.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LRol.ForeColor = System.Drawing.Color.White;
-            this.LRol.Location = new System.Drawing.Point(179, 286);
+            this.LRol.Location = new System.Drawing.Point(287, 325);
             this.LRol.Name = "LRol";
             this.LRol.Size = new System.Drawing.Size(65, 17);
             this.LRol.TabIndex = 47;
@@ -238,9 +232,9 @@
             // txtDescr
             // 
             this.txtDescr.BackColor = System.Drawing.Color.White;
-            this.txtDescr.Location = new System.Drawing.Point(318, 157);
+            this.txtDescr.Location = new System.Drawing.Point(429, 171);
             this.txtDescr.Name = "txtDescr";
-            this.txtDescr.Size = new System.Drawing.Size(185, 20);
+            this.txtDescr.Size = new System.Drawing.Size(169, 20);
             this.txtDescr.TabIndex = 2;
             // 
             // Marca
@@ -249,7 +243,7 @@
             this.Marca.BackColor = System.Drawing.Color.Black;
             this.Marca.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Marca.ForeColor = System.Drawing.Color.White;
-            this.Marca.Location = new System.Drawing.Point(179, 324);
+            this.Marca.Location = new System.Drawing.Point(287, 363);
             this.Marca.Name = "Marca";
             this.Marca.Size = new System.Drawing.Size(45, 17);
             this.Marca.TabIndex = 58;
@@ -260,22 +254,10 @@
             this.CBMarca.BackColor = System.Drawing.Color.White;
             this.CBMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CBMarca.FormattingEnabled = true;
-            this.CBMarca.Location = new System.Drawing.Point(318, 320);
+            this.CBMarca.Location = new System.Drawing.Point(429, 359);
             this.CBMarca.Name = "CBMarca";
-            this.CBMarca.Size = new System.Drawing.Size(185, 21);
+            this.CBMarca.Size = new System.Drawing.Size(169, 21);
             this.CBMarca.TabIndex = 7;
-            this.CBMarca.SelectedIndexChanged += new System.EventHandler(this.CBMarca_SelectedIndexChanged);
-            // 
-            // txtImagen
-            // 
-            this.txtImagen.BackColor = System.Drawing.Color.Black;
-            this.txtImagen.Location = new System.Drawing.Point(561, 354);
-            this.txtImagen.Name = "txtImagen";
-            this.txtImagen.Size = new System.Drawing.Size(131, 20);
-            this.txtImagen.TabIndex = 0;
-            this.txtImagen.TabStop = false;
-            this.txtImagen.Visible = false;
-            this.txtImagen.TextChanged += new System.EventHandler(this.txtImagen_TextChanged);
             // 
             // openFileDialog1
             // 
@@ -288,7 +270,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(124, 498);
             this.panel1.TabIndex = 75;
-            this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
             // 
             // panel3
             // 
@@ -298,7 +279,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(588, 31);
             this.panel3.TabIndex = 76;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
             // panel2
             // 
@@ -320,45 +300,25 @@
             this.picCerrar.TabStop = false;
             this.picCerrar.Click += new System.EventHandler(this.picCerrar_Click);
             // 
-            // picImgProd
-            // 
-            this.picImgProd.Location = new System.Drawing.Point(541, 140);
-            this.picImgProd.Name = "picImgProd";
-            this.picImgProd.Size = new System.Drawing.Size(164, 127);
-            this.picImgProd.TabIndex = 77;
-            this.picImgProd.TabStop = false;
-            // 
-            // btnImgProd
-            // 
-            this.btnImgProd.Location = new System.Drawing.Point(561, 311);
-            this.btnImgProd.Name = "btnImgProd";
-            this.btnImgProd.Size = new System.Drawing.Size(131, 37);
-            this.btnImgProd.TabIndex = 9;
-            this.btnImgProd.Text = "Imagen";
-            this.btnImgProd.UseVisualStyleBackColor = true;
-            this.btnImgProd.Click += new System.EventHandler(this.btnImgProd_Click);
-            // 
             // lblTalle
             // 
             this.lblTalle.AutoSize = true;
             this.lblTalle.BackColor = System.Drawing.Color.Black;
             this.lblTalle.Font = new System.Drawing.Font("Leelawadee UI", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTalle.ForeColor = System.Drawing.Color.White;
-            this.lblTalle.Location = new System.Drawing.Point(179, 184);
+            this.lblTalle.Location = new System.Drawing.Point(287, 210);
             this.lblTalle.Name = "lblTalle";
             this.lblTalle.Size = new System.Drawing.Size(38, 17);
             this.lblTalle.TabIndex = 79;
             this.lblTalle.Text = "Talle:";
-            this.lblTalle.Click += new System.EventHandler(this.label1_Click);
             // 
             // txtTalle
             // 
             this.txtTalle.BackColor = System.Drawing.Color.White;
-            this.txtTalle.Location = new System.Drawing.Point(318, 183);
+            this.txtTalle.Location = new System.Drawing.Point(429, 207);
             this.txtTalle.Name = "txtTalle";
-            this.txtTalle.Size = new System.Drawing.Size(185, 20);
+            this.txtTalle.Size = new System.Drawing.Size(169, 20);
             this.txtTalle.TabIndex = 3;
-            this.txtTalle.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // AltaProd
             // 
@@ -368,11 +328,8 @@
             this.ClientSize = new System.Drawing.Size(712, 498);
             this.Controls.Add(this.lblTalle);
             this.Controls.Add(this.txtTalle);
-            this.Controls.Add(this.btnImgProd);
-            this.Controls.Add(this.picImgProd);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtImagen);
             this.Controls.Add(this.LTitulo);
             this.Controls.Add(this.CBMarca);
             this.Controls.Add(this.Marca);
@@ -398,7 +355,6 @@
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.picCerrar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picImgProd)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -421,14 +377,11 @@
         private System.Windows.Forms.Label LRol;
         private System.Windows.Forms.TextBox txtDescr;
         private System.Windows.Forms.Label Marca;
-        private System.Windows.Forms.TextBox txtImagen;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.PictureBox picCerrar;
-        private System.Windows.Forms.PictureBox picImgProd;
-        private System.Windows.Forms.Button btnImgProd;
         public System.Windows.Forms.ComboBox CBMarca;
         private System.Windows.Forms.Label lblTalle;
         private System.Windows.Forms.TextBox txtTalle;

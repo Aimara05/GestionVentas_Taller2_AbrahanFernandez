@@ -129,18 +129,41 @@
   <metadata name="Subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="producto.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="precio.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Cantidad.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
-  <metadata name="Subtotal.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>True</value>
-  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="Bbuscarventas.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        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
+        V/wFCEGaO9CeWa4AAAAASUVORK5CYII=
+</value>
+  </data>
   <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>

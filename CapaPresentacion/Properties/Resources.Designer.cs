@@ -73,9 +73,29 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap alta {
+            get {
+                object obj = ResourceManager.GetObject("alta", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap altaClienteUsuario {
             get {
                 object obj = ResourceManager.GetObject("altaClienteUsuario", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap altaProducto {
+            get {
+                object obj = ResourceManager.GetObject("altaProducto", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -223,9 +243,19 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap cruz_pequena1 {
+        internal static System.Drawing.Bitmap datos {
             get {
-                object obj = ResourceManager.GetObject("cruz-pequena1", resourceCulture);
+                object obj = ResourceManager.GetObject("datos", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap datos2 {
+            get {
+                object obj = ResourceManager.GetObject("datos2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -263,6 +293,16 @@ namespace CapaPresentacion.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap excel {
+            get {
+                object obj = ResourceManager.GetObject("excel", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap flecha_de_circulo_de_disquete_a_la_derecha {
             get {
                 object obj = ResourceManager.GetObject("flecha-de-circulo-de-disquete-a-la-derecha", resourceCulture);
@@ -286,6 +326,17 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap ingresar {
             get {
                 object obj = ResourceManager.GetObject("ingresar", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_computer_icons_pie_chart_statistics_chart_pie_statistics_icon_5ab09e1a7550a3_1426448515215242504805 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng_computer_icons_pie_chart_statistics_chart_pie_statistics_icon_5ab09e1a755" +
+                        "0a3_1426448515215242504805", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -538,16 +589,6 @@ namespace CapaPresentacion.Properties {
         internal static System.Drawing.Bitmap VENT {
             get {
                 object obj = ResourceManager.GetObject("VENT", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap wishlist_product_list_order_cart_icon_225172 {
-            get {
-                object obj = ResourceManager.GetObject("wishlist_product_list_order_cart_icon_225172", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

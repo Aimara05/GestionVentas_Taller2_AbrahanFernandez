@@ -25,7 +25,11 @@ namespace CapaPresentacion.Modales
         {
             foreach (DataGridViewColumn columna in dataGridProd.Columns)
             {
-                cboBusqueda.Items.Add((new ComboBoxOpc() { Valor = columna.Name, Texto = columna.HeaderText }));
+                if (columna.Visible == true && columna.Name != "btnSeleccionar")
+                {
+                    cboBusqueda.Items.Add((new ComboBoxOpc() { Valor = columna.Name, Texto = columna.HeaderText }));
+                }
+               
 
             }
             cboBusqueda.DisplayMember = "Texto";
@@ -36,11 +40,15 @@ namespace CapaPresentacion.Modales
 
             foreach (PRODUCTOS item in listaProducto)
             {
-                dataGridProd.Rows.Add(new object[] {item.idProducto,item.nombreProd,item.descripcionProd,item.stock,
+                if (item.estado)
+                {
+                    dataGridProd.Rows.Add(new object[] {item.idProducto,item.nombreProd,item.descripcionProd,item.stock,
 
                     item.precioUni,
-
             });
+                }
+
+
             }
         }
 
@@ -91,6 +99,22 @@ namespace CapaPresentacion.Modales
             {
                 row.Visible = true;
             }
+        }
+
+        //Método para el boton cerrar 
+        private void picCerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void dataGridProd_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

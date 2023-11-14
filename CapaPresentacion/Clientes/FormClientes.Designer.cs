@@ -28,9 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormClientes));
             this.panelTopUsuario = new System.Windows.Forms.Panel();
             this.panelBuscador = new System.Windows.Forms.Panel();
             this.btnLimpiar = new System.Windows.Forms.Button();
@@ -54,7 +54,6 @@
             this.Correo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cod_estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.button1 = new System.Windows.Forms.Button();
             this.panelCliente = new System.Windows.Forms.Panel();
             this.panelTopUsuario.SuspendLayout();
             this.panelBuscador.SuspendLayout();
@@ -67,7 +66,6 @@
             // panelTopUsuario
             // 
             this.panelTopUsuario.BackColor = System.Drawing.Color.LightGray;
-            this.panelTopUsuario.Controls.Add(this.button1);
             this.panelTopUsuario.Controls.Add(this.panelBuscador);
             this.panelTopUsuario.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTopUsuario.Font = new System.Drawing.Font("Leelawadee UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -162,7 +160,7 @@
             // 
             this.picUsuario.BackColor = System.Drawing.Color.LightGray;
             this.picUsuario.Image = ((System.Drawing.Image)(resources.GetObject("picUsuario.Image")));
-            this.picUsuario.Location = new System.Drawing.Point(70, 69);
+            this.picUsuario.Location = new System.Drawing.Point(70, 34);
             this.picUsuario.Name = "picUsuario";
             this.picUsuario.Padding = new System.Windows.Forms.Padding(0, 0, 20, 0);
             this.picUsuario.Size = new System.Drawing.Size(89, 89);
@@ -186,7 +184,7 @@
             // 
             this.lblTituloCli.AutoSize = true;
             this.lblTituloCli.Font = new System.Drawing.Font("Leelawadee UI", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTituloCli.Location = new System.Drawing.Point(63, 161);
+            this.lblTituloCli.Location = new System.Drawing.Point(63, 155);
             this.lblTituloCli.Name = "lblTituloCli";
             this.lblTituloCli.Size = new System.Drawing.Size(119, 37);
             this.lblTituloCli.TabIndex = 1;
@@ -205,7 +203,6 @@
             this.panelRigtUsuario.Name = "panelRigtUsuario";
             this.panelRigtUsuario.Size = new System.Drawing.Size(196, 343);
             this.panelRigtUsuario.TabIndex = 2;
-           
             // 
             // btnEditarCliente
             // 
@@ -216,7 +213,7 @@
             this.btnEditarCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
             this.btnEditarCliente.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditarCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEditarCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnEditarCliente.Image")));
+            this.btnEditarCliente.Image = global::CapaPresentacion.Properties.Resources.edit_user_icon_195392;
             this.btnEditarCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEditarCliente.Location = new System.Drawing.Point(53, 229);
             this.btnEditarCliente.Name = "btnEditarCliente";
@@ -245,7 +242,7 @@
             this.btnAltaCliente.TabIndex = 4;
             this.btnAltaCliente.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAltaCliente.UseVisualStyleBackColor = false;
-            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click);
+            this.btnAltaCliente.Click += new System.EventHandler(this.btnAltaCliente_Click_1);
             // 
             // dataGridClientes
             // 
@@ -355,25 +352,6 @@
             this.cod_estado.Visible = false;
             this.cod_estado.Width = 95;
             // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.LightGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.button1.FlatAppearance.BorderColor = System.Drawing.Color.Gray;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.SystemColors.ActiveBorder;
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(233)))), ((int)(((byte)(202)))), ((int)(((byte)(210)))));
-            this.button1.Font = new System.Drawing.Font("Leelawadee", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(638, 30);
-            this.button1.Name = "button1";
-            this.button1.Padding = new System.Windows.Forms.Padding(4, 0, 0, 0);
-            this.button1.Size = new System.Drawing.Size(48, 49);
-            this.button1.TabIndex = 9;
-            this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.button1.UseVisualStyleBackColor = false;
-            // 
             // panelCliente
             // 
             this.panelCliente.Controls.Add(this.dataGridClientes);
@@ -419,7 +397,6 @@
         private System.Windows.Forms.Panel panelRigtUsuario;
         public System.Windows.Forms.Button btnEditarCliente;
         public System.Windows.Forms.Button btnAltaCliente;
-        private System.Windows.Forms.DataGridView dataGridClientes;
         private System.Windows.Forms.PictureBox picUsuario;
         private System.Windows.Forms.Button btnRefresh;
         private System.Windows.Forms.Button btnLimpiar;
@@ -432,7 +409,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Correo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Estado;
         private System.Windows.Forms.DataGridViewTextBoxColumn cod_estado;
-        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panelCliente;
+        public System.Windows.Forms.DataGridView dataGridClientes;
     }
 }

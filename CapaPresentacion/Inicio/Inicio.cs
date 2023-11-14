@@ -202,25 +202,26 @@ namespace CapaPresentacion
         {
             FormProducto formprod = new FormProducto();
 
-            /*if (usuarioActual.oRol.idRol == 3)
+            if (usuarioActual.oRol.idRol == 3)
             {
                 formprod.btnAgregarProd.Visible = false;
                 formprod.btnEditarProd.Visible = false;
-                formprod.btnAltaProd.Visible = false;
-                formprod.btnBajaUsuario.Visible = false;
-            }*/
+
+
+            }
 
             abrirFormularios((Button)sender, formprod);
 
             ocultarSubmenu();
         }
 
-        //Metodo del botón Categoría.
+        /*Metodo del botón Categoría.
         private void BCategorias_Click(object sender, EventArgs e)
         {
             abrirFormularios((Button)sender, new FormCategorias());
             ocultarSubmenu();
         }
+        */
 
         //Metodo del botón Clientes.
         private void BClientes_Click(object sender, EventArgs e)
@@ -228,11 +229,7 @@ namespace CapaPresentacion
 
             FormClientes formClientes = new FormClientes();
 
-            //if (usuarioActual.oRol.idRol == 3)
-           // {
-               // formClientes.btnBajaUsuario.Visible = false;
 
-            //}
             abrirFormularios((Button)sender, formClientes);
         }
 
@@ -300,10 +297,6 @@ namespace CapaPresentacion
             abrirFormularios((Button)sender, new FormReportes());
         }
 
-        private void panelBienvenido_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
     }
 }
     

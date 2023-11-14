@@ -309,12 +309,6 @@
     <Compile Include="Modales\mdCliente.Designer.cs">
       <DependentUpon>mdCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="Modales\mdDetallesDeVenta.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Modales\mdDetallesDeVenta.Designer.cs">
-      <DependentUpon>mdDetallesDeVenta.cs</DependentUpon>
-    </Compile>
     <Compile Include="Modales\mdListarVentas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -326,6 +320,12 @@
     </Compile>
     <Compile Include="Modales\mdProducto.Designer.cs">
       <DependentUpon>mdProducto.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Modales\modalCantModificar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Modales\modalCantModificar.Designer.cs">
+      <DependentUpon>modalCantModificar.cs</DependentUpon>
     </Compile>
     <Compile Include="Prod_Categ\AltaCateg.cs">
       <SubType>Form</SubType>
@@ -444,14 +444,14 @@
     <EmbeddedResource Include="Modales\mdCliente.resx">
       <DependentUpon>mdCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Modales\mdDetallesDeVenta.resx">
-      <DependentUpon>mdDetallesDeVenta.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdListarVentas.resx">
       <DependentUpon>mdListarVentas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Modales\mdProducto.resx">
       <DependentUpon>mdProducto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Modales\modalCantModificar.resx">
+      <DependentUpon>modalCantModificar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Prod_Categ\AltaCateg.resx">
       <DependentUpon>AltaCateg.cs</DependentUpon>
@@ -532,9 +532,6 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\usuarioAvatar.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\avatarUsuario.png" />
   </ItemGroup>
   <ItemGroup>
@@ -583,9 +580,6 @@
     <None Include="Resources\CARRITO.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\VENTAS.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\VENTAS1.png" />
   </ItemGroup>
   <ItemGroup>
@@ -611,12 +605,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\456212.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user_girl_female_follow_icon_250745.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\user_girl_female_follow_icon_2507451.png" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\rosq.png" />
@@ -658,9 +646,6 @@
     <None Include="Resources\products_filled_icon_142867.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\wishlist_product_list_order_cart_icon_225172.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\lista.png" />
   </ItemGroup>
   <ItemGroup>
@@ -685,9 +670,6 @@
     <None Include="Resources\infiniteTienda.jpg" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\PlantillaVenta.html" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\usuario11.png" />
   </ItemGroup>
   <ItemGroup>
@@ -700,6 +682,12 @@
     <None Include="Resources\candado.png" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="Resources\ojo.png" />
+    <None Include="Resources\excel.png" />
+    <None Include="Resources\datos.png" />
+    <None Include="Resources\datos2.jpg" />
+    <None Include="Resources\kisspng-computer-icons-pie-chart-statistics-chart-pie-statistics-icon-5ab09e1a7550a3.1426448515215242504805.png" />
+    <None Include="Resources\PlantillaVenta.html" />
     <Content Include="Resources\remover.png" />
     <Content Include="Resources\alta.png" />
   </ItemGroup>
